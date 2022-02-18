@@ -11,7 +11,6 @@ tags: ["Basic"]
 categories: ["Basic"]
 ---
 
-## Welcome
 Welcome to my new site. It's still under development, but have a look around.
 
 ## Old posts
