@@ -34,7 +34,7 @@ params:
   # GitHub repo URL and branch of your site
   gitRepo: https://github.com/jmbhughes/jmbhughes.github.io
   gitBranch: main
-  # background: "images/eggs.png"
+  background: "images/eclipse2.jpg"
 
 
   # specify whether you want to write some blog posts or not
