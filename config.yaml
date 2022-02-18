@@ -33,7 +33,7 @@ enableEmoji: true
 params:
   # GitHub repo URL and branch of your site
   gitRepo: https://github.com/jmbhughes/jmbhughes.github.io
-  gitBranch: main
+  gitBranch: source
   background: "images/eclipse2.jpg"
 
 
