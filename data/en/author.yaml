@@ -1,0 +1,20 @@
+# some information about you
+name: "James Marcus Hughes"
+nickname: "Marcus"
+image: "images/me.jpeg"
+
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+
+# give your contact information. they will be used in the footer
+contactInfo:
+  email: "hughes.jmb@gmail.com"
+  phone: "1-270-704-3055"
+
+# a summary of what you do
+summary:
+- I am a research computer scientist
+- I work with Python
+- I work on understanding the Sun
+- I develop data reduction pipelines
+- I work at SwRI Boulder

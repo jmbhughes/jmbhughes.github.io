@@ -33,7 +33,9 @@ enableEmoji: true
 params:
   # GitHub repo URL and branch of your site
   gitRepo: https://github.com/jmbhughes/jmbhughes.github.io
-  gitBranch: gh-pages
+  gitBranch: main
+  background: "images/eggs.png"
+
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
@@ -51,3 +53,8 @@ params:
     provider: mailchimp
     # specify the target URL for the subscription form
     mailchimpURL: https://github.us1.list-manage.com/subscribe/post?u=19de52a4603135aae97163fd8&amp;id=094a24c76e
+  markup:
+    tableOfContents:
+      startLevel: 2
+      endLevel: 6
+      ordered: false
