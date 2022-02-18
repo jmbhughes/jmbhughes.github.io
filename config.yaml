@@ -42,7 +42,11 @@ params:
 
   # specify whether you want to show Table of Contents in reading page
   enableTOC: true
-
+  features:
+    comment:
+      enable: true
+      disqus:
+        shortName: jmbhughes-com
   # Provide newsletter configuration.
   # This feature has been implemented for Mailchimp only for now.
   # You can also hide it from the footer.
