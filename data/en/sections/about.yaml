@@ -18,7 +18,7 @@ company:
 resume: "files/resume.pdf"
 
 # a summary about you
-summary: "I am a passionate computer scientist with 3 years of working experience.
+summary: "I am a computer scientist with 3 years of working experience.
 I'm interested in software applications in solar physics, including machine learning.
 Currently, I'm working on building the data reduction pipeline for
 [PUNCH](https://punch.space.swri.edu/). This will help scientists decode
@@ -57,7 +57,7 @@ socialLinks:
 # currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
 - name: Leadership
-  percentage: 85
+  percentage: 80
   color: blue
 - name: Python Development
   percentage: 90

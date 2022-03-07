@@ -7,7 +7,7 @@ menu:
     name: mood tracking
     identifier: mood tracking
     weight: 101
-    parent: Coding
+    parent: Assorted Coding
 tags: ["Basic"]
 categories: ["Basic"]
 draft: false

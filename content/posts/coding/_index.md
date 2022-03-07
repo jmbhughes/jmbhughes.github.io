@@ -1,8 +1,8 @@
 ---
-title: Coding
+title: Assorted Coding
 menu:
   sidebar:
-    name: Coding
-    identifier: Coding
+    name: Assorted Coding
+    identifier: Assorted Coding
     weight: 20
 ---

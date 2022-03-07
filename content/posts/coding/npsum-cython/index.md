@@ -7,7 +7,7 @@ menu:
     name: np.sum speeds in Cython
     identifier: np.sums
     weight: 101
-    parent: Coding
+    parent: Assorted Coding
 tags: ["Basic"]
 categories: ["Basic"]
 draft: false

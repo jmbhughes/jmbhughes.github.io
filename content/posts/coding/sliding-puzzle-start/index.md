@@ -7,7 +7,7 @@ menu:
     name: sliding puzzles
     identifier: sliding puzzles
     weight: 101
-    parent: Coding
+    parent: Assorted Coding
 tags: ["Basic"]
 categories: ["Basic"]
 draft: false

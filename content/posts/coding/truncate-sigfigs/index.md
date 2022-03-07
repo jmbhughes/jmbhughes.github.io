@@ -7,7 +7,7 @@ menu:
     name: truncating numbers
     identifier: truncating
     weight: 101
-    parent: Coding
+    parent: Assorted Coding
 tags: ["Basic"]
 categories: ["Basic"]
 draft: false

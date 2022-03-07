@@ -11,10 +11,9 @@ tags: ["Basic"]
 categories: ["Basic"]
 ---
 
-Welcome to my new site. It's still under development, but have a look around.
+Welcome to my new site. I hope you find interesting tidbits from my work here. 
 
 ## Old posts
 Old posts can be found at
 [my old blog](https://1c683053382da213d2d50bba012e9a36.blogspot.com).
-New things will be posted here from now on. I will likely revisit some of the
-older posts and create new versions here.
+New things will be posted here from now on. I have copied many posts from the old blog.
