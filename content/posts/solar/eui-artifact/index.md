@@ -5,7 +5,7 @@ description: analyzing an artifact in EUI data
 menu:
   sidebar:
     name: EUI artifact
-    identifier: EUI articat
+    identifier: EUI artifact
     weight: 101
     parent: Solar
 ---
