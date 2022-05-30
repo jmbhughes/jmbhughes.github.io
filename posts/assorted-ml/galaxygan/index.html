@@ -1,0 +1,175 @@
+<!doctype html><html><head><title>Creating fake APOD pictures</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><link rel=stylesheet href=/css/bootstrap.min.css><link rel=stylesheet href=/css/layouts/main.css><link rel=stylesheet href=/css/navigators/navbar.css><link rel=stylesheet href=/css/plyr.css><link rel=stylesheet href=/css/flag-icon.min.css><link rel=stylesheet href=/css/katex.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css><meta property="og:title" content="Creating fake APOD pictures"><meta property="og:description" content="fake APOD picture generation using a GAN"><meta property="og:type" content="article"><meta property="og:url" content="https://jmbhughes.github.io/posts/assorted-ml/galaxygan/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-05-30T00:00:00+00:00"><meta property="article:modified_time" content="2022-05-30T00:00:00+00:00"><meta name=description content="fake APOD picture generation using a GAN"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css><link rel=stylesheet href=/css/layouts/single.css><link rel=stylesheet href=/css/navigators/sidebar.css><link rel=stylesheet href=/css/style.css></head><body data-spy=scroll data-target=#TableOfContents data-offset=80><div class="container-fluid bg-dimmed wrapper"><nav class="navbar navbar-expand-xl top-navbar final-navbar shadow"><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
+<span class=navbar-toggler-icon></span></button>
+<a class=navbar-brand href=/>J. Marcus Hughes</a>
+<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse lang-selector" id=top-nav-items><ul class="navbar-nav ml-auto"></ul></div></div></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><a href=/posts/introduction/ title=Welcome>Welcome</a></li><li><i class="fas fa-plus-circle"></i><a href=/posts/anomaly-detection/>Anomaly Detection</a><ul><li><a href=/posts/anomaly-detection/atypicality/ title=Atypicality>Atypicality</a></li><li><a href=/posts/anomaly-detection/axis-aligned-artifacts/ title="Axis-aligned RRCF artifacts">Axis-aligned RRCF artifacts</a></li><li><a href=/posts/anomaly-detection/nonstationary/ title="goal of nonstationary">goal of nonstationary</a></li><li><a href=/posts/anomaly-detection/mostly-noise/ title="Mostly noise training">Mostly noise training</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/coding/>Assorted Coding</a><ul><li><a href=/posts/coding/flood/ title=flood>flood</a></li><li><a href=/posts/coding/efficient-inclusion-check/ title="inclusion check">inclusion check</a></li><li><a href=/posts/coding/mood-tracking/ title="mood tracking">mood tracking</a></li><li><a href=/posts/coding/npsum-cython/ title="np.sum speeds in Cython">np.sum speeds in Cython</a></li><li><a href=/posts/coding/sliding-puzzle-start/ title="sliding puzzles">sliding puzzles</a></li><li><a href=/posts/coding/truncate-sigfigs/ title="truncating numbers">truncating numbers</a></li><li><a href=/posts/coding/ulamwarburton/ title="Ulam Warburton">Ulam Warburton</a></li></ul></li><li><i class="fas fa-minus-circle"></i><a class=active href=/posts/assorted-ml/>Assorted ML</a><ul class=active><li><a class=active href=/posts/assorted-ml/galaxygan/ title="fake APOD generation">fake APOD generation</a></li><li><a href=/posts/assorted-ml/tss-vs-f1/ title="TSS vs f1">TSS vs f1</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/denoise/>Denoising</a><ul><li><a href=/posts/denoise/autoencoder/ title="denoising autoencoder">denoising autoencoder</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/reading/>Paper Reading</a><ul><li><a href=/posts/reading/state-of-astro-informatics/ title="State of Astro-informatics">State of Astro-informatics</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/photography/>Photography</a><ul><li><a href=/posts/photography/new-instagram/ title="New Instagram">New Instagram</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/solar/>Solar</a><ul><li><a href=/posts/solar/eui-artifact/ title="EUI artifact">EUI artifact</a></li><li><a href=/posts/solar/hek-thmap/ title="HEK thematic maps">HEK thematic maps</a></li><li><a href=/posts/solar/suvi-calendar-heatmap/ title="SUVI calendar heatmap">SUVI calendar heatmap</a></li><li><a href=/posts/solar/thmap-paper/ title="Thematic Map Paper">Thematic Map Paper</a></li></ul></li><li><i class="fas fa-plus-circle"></i><a href=/posts/teaching/>Teaching</a><ul><li><a href=/posts/teaching/peer-review/ title="peer review activity">peer review activity</a></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class=content><div class="container p-0 read-area"><div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://jmbhughes.github.io/posts/assorted-ml/galaxygan/hero.jpg)></div><div class=page-content><div class="author-profile ml-auto align-self-lg-center"><img class=rounded-circle src=/images/me_hud64c66083c17530ba948c6f3936a14e6_10956_120x120_fit_q75_box.jpeg alt="Author Image"><h5 class=author-name>James Marcus Hughes</h5><p>Monday, May 30, 2022</p></div><div class=title><h1>Creating fake APOD pictures</h1></div><div class=post-content id=post-content><h2 id=introduction>Introduction</h2><p>I volunteer to teach programming to two high school students through a non-profit
+called <a href=https://the-cs.org/>The Coding School</a>, specifically the
+<a href=https://codeconnects.org/>CodeConnects</a> program. One of my students is taking
+AP Computer Science at the same time. His teacher requires all the students to
+complete a final project of their choosing; they have complete freedom in
+picking the project except it has to be approved by the teacher. (That sounds
+like an awesome teacher by the way, encouraging students to learn on their own
+by pursuing their own passion projects. That&rsquo;s how you really learn.)</p><p>I&rsquo;ve been teaching machine learning to this particular student, so we started
+brainstorming ML projects. Ultimately, he wanted to use a generative adversarial
+network (GAN) to generate fake space pictures. We were inspired by
+<a href=https://arxiv.org/pdf/2111.11578.pdf>several</a>
+<a href=https://arxiv.org/pdf/1904.10286v1.pdf>other</a>
+<a href=https://arxiv.org/pdf/1811.03081.pdf>projects</a> conducted by professional
+astronomers and computer scientists and reported in the academic literature.
+I was excited by this project because it unites two of my passions: machine learning
+and astronomy.</p><p>We decided the project would use images from <a href=https://apod.nasa.gov/apod/astropix.html>NASA&rsquo;s Astronomy Picture of the Day</a> (APOD).
+They are, after all, some of the best images of our universe!</p><p>We outlined the project in a few steps:</p><ol><li>Teach him about how GANs work</li><li>Implement a basic GAN on a common dataset like MNIST</li><li>Scrape APOD for all pictures that meet our criteria</li><li>Train a sophisticated GAN to fake APOD!</li></ol><p>I won&rsquo;t go into too much detail about steps 1 and 2 here and focus most on
+steps 3 and 4.</p><h2 id=scraping-apod>Scraping APOD</h2><p>It turns out getting images from APOD is easier than I expected. Our initial
+approach was to parse <a href=https://apod.nasa.gov/apod/archivepix.html>the archive</a>
+as a jumping off point. However, we quickly noticed that all the links had a
+standard form. To get the image from May 25th, 2022 you simply go to
+<code>https://apod.nasa.gov/apod/ap220525.html</code>. The URL is just <code>ap</code> followed by
+a two digit year code, a two digit month code, and a two digit day code. This
+is easily generated by a f-string in Python.</p><p>Once we got to a specific day&rsquo;s page, there&rsquo;s only one image on it. So, we
+can just search the HTML for the only <code>img</code> tag and get the link to the image
+resource. He only wanted to recreate deep space pictures, i.e. no panoramic Earth night sky or
+human creations should be in the pictures. We thought the easiest way to narrow
+down the images without manually inspecting them all was to restrict ourselves
+to images that had &ldquo;NGC&rdquo; in their page description. NGC stands for New General
+Catalogue of Nebulae and Clusters of Stars. It was created in 1888 and has
+thousands of nebulae, star clusters, and galaxies in it.</p><p>So, we got to writing code.</p><p>Altogether, this results in a nice, short script as shown below.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#f92672>import</span> requests
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> bs4 <span style=color:#f92672>import</span> BeautifulSoup
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> datetime <span style=color:#f92672>import</span> datetime, timedelta
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># set the time window you want to fetch images for</span>
+</span></span><span style=display:flex><span>start <span style=color:#f92672>=</span> datetime(<span style=color:#ae81ff>2015</span>, <span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span>end <span style=color:#f92672>=</span> datetime(<span style=color:#ae81ff>2022</span>, <span style=color:#ae81ff>5</span>, <span style=color:#ae81ff>26</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># these are the base links used</span>
+</span></span><span style=display:flex><span>link <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;https://apod.nasa.gov/apod/archivepix.html&#34;</span>
+</span></span><span style=display:flex><span>prefix <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;https://apod.nasa.gov/apod/&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>date_range</span>(start, end):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Truncate the hours, minutes, and seconds</span>
+</span></span><span style=display:flex><span>    sdate <span style=color:#f92672>=</span> datetime(start<span style=color:#f92672>.</span>year, start<span style=color:#f92672>.</span>month, start<span style=color:#f92672>.</span>day)
+</span></span><span style=display:flex><span>    edate <span style=color:#f92672>=</span> datetime(end<span style=color:#f92672>.</span>year, end<span style=color:#f92672>.</span>month, end<span style=color:#f92672>.</span>day)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># compute all dates in that difference</span>
+</span></span><span style=display:flex><span>    delta: timedelta <span style=color:#f92672>=</span> edate <span style=color:#f92672>-</span> sdate
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> [start <span style=color:#f92672>+</span> timedelta(days<span style=color:#f92672>=</span>i) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> range(delta<span style=color:#f92672>.</span>days <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> day <span style=color:#f92672>in</span> date_range(start,end):
+</span></span><span style=display:flex><span>    day_str <span style=color:#f92672>=</span> day<span style=color:#f92672>.</span>strftime(<span style=color:#e6db74>&#34;ap%y%m</span><span style=color:#e6db74>%d</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    day_link <span style=color:#f92672>=</span> prefix<span style=color:#f92672>+</span>day_str<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;.html&#34;</span>
+</span></span><span style=display:flex><span>    soup <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(day_link)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#e6db74>&#34;NGC&#34;</span> <span style=color:#f92672>in</span> soup<span style=color:#f92672>.</span>text):
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
+</span></span><span style=display:flex><span>            soupL1 <span style=color:#f92672>=</span> BeautifulSoup(soup<span style=color:#f92672>.</span>text, features<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;html.parser&#34;</span>)
+</span></span><span style=display:flex><span>            pic_suffix <span style=color:#f92672>=</span> soupL1<span style=color:#f92672>.</span>find(<span style=color:#e6db74>&#34;img&#34;</span>)[<span style=color:#e6db74>&#39;src&#39;</span>]
+</span></span><span style=display:flex><span>            full_link <span style=color:#f92672>=</span> prefix<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>+</span>pic_suffix
+</span></span><span style=display:flex><span>            pic_page <span style=color:#f92672>=</span> requests<span style=color:#f92672>.</span>get(full_link)
+</span></span><span style=display:flex><span>            file <span style=color:#f92672>=</span> open(day_str<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;.jpg&#34;</span>, <span style=color:#e6db74>&#39;wb&#39;</span>)
+</span></span><span style=display:flex><span>            file<span style=color:#f92672>.</span>write(bytes(pic_page<span style=color:#f92672>.</span>content))
+</span></span><span style=display:flex><span>            file<span style=color:#f92672>.</span>close()
+</span></span><span style=display:flex><span>            print(full_link)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span>:  <span style=color:#75715e># the page likely didn&#39;t have a jpg</span>
+</span></span><span style=display:flex><span>            print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;failed for </span><span style=color:#e6db74>{</span>day<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span></code></pre></div><p>Below you can see an example of images scraped from APOD. They&rsquo;re beautifully
+crisp and colorful images of just the deep space objects we were after. Remember
+this image for later so you can compare it to the results we achieved.</p><img src=real_512.jpg class=center><p>Altogether, we settled on using 454 images.</p><h2 id=machine-learning-time>Machine learning time</h2><p>Once we had our dataset of images, we were ready to do some machine learning. First,
+we needed to preprocess and standardize the images for the GAN. Then,
+we got to the actual training.</p><h3 id=pre-processing>Pre-processing</h3><p>I thought it would be easiest if all the images were small and the same size.
+Thus, we wrote the script below to first crop the images and then resize them
+to a standard size. Note all the training images have been placed in a directory
+called <code>raw</code>, and we write out the resized images to folders with names formatted
+<code>binned_{size}</code>, e.g. <code>binned_512</code> for images resized to 512x512 pixels.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-py data-lang=py><span style=display:flex><span><span style=color:#f92672>from</span> PIL <span style=color:#f92672>import</span> Image
+</span></span><span style=display:flex><span><span style=color:#f92672>from</span> glob <span style=color:#f92672>import</span> glob
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> os
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># for the specified resolutions</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> size <span style=color:#f92672>in</span> [<span style=color:#ae81ff>128</span>, <span style=color:#ae81ff>256</span>, <span style=color:#ae81ff>512</span>, <span style=color:#ae81ff>1024</span>]:
+</span></span><span style=display:flex><span>    os<span style=color:#f92672>.</span>mkdir(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;binned_</span><span style=color:#e6db74>{</span>size<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    fns <span style=color:#f92672>=</span> glob(<span style=color:#e6db74>&#34;raw/*.jpg&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> fn <span style=color:#f92672>in</span> fns:  <span style=color:#75715e># bin all the images</span>
+</span></span><span style=display:flex><span>        out_fn <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>join(<span style=color:#e6db74>&#34;binned_</span><span style=color:#e6db74>{size}</span><span style=color:#e6db74>&#34;</span>, os<span style=color:#f92672>.</span>path<span style=color:#f92672>.</span>basename(fn))
+</span></span><span style=display:flex><span>        img <span style=color:#f92672>=</span> Image<span style=color:#f92672>.</span>open(fn)<span style=color:#f92672>.</span>convert(<span style=color:#e6db74>&#34;RGB&#34;</span>)
+</span></span><span style=display:flex><span>        min_dimension <span style=color:#f92672>=</span> min(img<span style=color:#f92672>.</span>width, img<span style=color:#f92672>.</span>height)
+</span></span><span style=display:flex><span>        img<span style=color:#f92672>.</span>crop((<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, min_dimension, min_dimension))<span style=color:#f92672>.</span>resize((size, size))<span style=color:#f92672>.</span>save(out_fn)
+</span></span></code></pre></div><p>We cropped first to avoid squashing the images in weird ways that would distort
+the astronomical objects within them.</p><h3 id=training>Training</h3><p>There&rsquo;s a plethora of GAN architectures to choose from, but we had some special
+constraints: only 454 small images and limited compute power. We were originally
+going to use his PC, but ultimately ended up training it on Google Colab (more
+on this later).
+Thus, we tried using the &ldquo;lighteight GAN&rdquo; model by <a href=https://arxiv.org/abs/2101.04775>Liu eta al. 2021</a> because &ldquo;the model converges from scratch with just
+a few hours of training on a single RTX-2080 GPU, and has a consistent performance, even with less than 100 training samples.&rdquo;
+They have an official PyTorch implementation available <a href=https://github.com/odegeasslbc/FastGAN-pytorch>here on GitHub</a>,
+but we decided to go with <a href=https://github.com/lucidrains/lightweight-gan>this implementation</a> instead
+because it was easy to set up and get running. It&rsquo;s a very professional implementation; thank you to its author Phil Wang.</p><p>To run the code we simply fired up a GPU instance of Google Colab,
+ran <code>pip install lightweight-gan</code>, and then ran</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>lightweight_gan --data /content/drive/MyDrive/galaxygan/binned_512 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --results_dir /content/drive/MyDrive/galaxygan/ <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --models_dir /content/drive/MyDrive/galaxygan/ <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --name out_512 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --batch-size <span style=color:#ae81ff>16</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --gradient-accumulate-every <span style=color:#ae81ff>4</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --num-train-steps <span style=color:#ae81ff>10000</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --image-size <span style=color:#ae81ff>512</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --save-every <span style=color:#ae81ff>100</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  --evaluate-every <span style=color:#ae81ff>10</span>
+</span></span></code></pre></div><p>While the command is long, it was easy to construct and ran like a charm with
+background execution in Google Colab.</p><p>We waited for about 18 hours, and the run had finished! We could see intermediate
+results all along the way and had model checkpoints every 100 iterations in case anything failed.</p><h2 id=results>Results</h2><p>Now for the exciting part! Let&rsquo;s look at some results. They aren&rsquo;t as stunningly
+perfect as I&rsquo;d hoped, but they are impressive and show promise.
+We&rsquo;ll consider the fidelity of images, the diversity of the fakes, the ability to
+interpolate the latent space, and the &ldquo;average&rdquo;, fake APOD.</p><h3 id=training-1>Training</h3><p>The video below shows the progress training. It starts with crazy noise images
+and rapid evolution in the first epochs and results in the final model at the video&rsquo;s end.
+Feel free to adjust the speed in YouTube to get a slower or faster animation.</p><div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden><iframe src=https://www.youtube.com/embed/Ti7xKwgkgOk style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe></div><p>About a third of the way into the 10,000 trainings steps, we can already see images that are
+reminiscent of APOD pictures. I let it keep training though to see if we got improved
+images, which I believe we did.</p><h3 id=fidelity>Fidelity</h3><p>Take a look for yourself below at one of the fake images generated.</p><img src=fidelity.jpg class=center><p>It clearly resembles a nebula, but it exhibits extensive checkboard artifacts.
+You can see the convolution grid. If you want to read more about these kinds
+of artifacts and what can be done about them check out <a href="https://www.google.com/url?q=http://doi.org/10.23915/distill.00003&sa=D&source=editors&ust=1653946145635417&usg=AOvVaw2crVlgSbt4oYDbQep99KE9">this fantastic article by Odena et al. (2016)</a>
+and <a href=https://arxiv.org/ftp/arxiv/papers/1707/1707.02937.pdf>another by Aitken et al. (2017)</a>.</p><p>We are content with the current result as first step, and are interested in
+resolving this issue potentially in a future iteration.</p><h3 id=diversity>Diversity</h3><p>Do the images capture the diversity of astronomical objects in the source data?
+You can see below an array of fake examples.</p><img src=1000.jpg class=center><p>They do seem to cover the main categories we expect. I don&rsquo;t see anything that looks
+alien; most images seem realistic-ish.</p><h4 id=nebulas>Nebulas</h4><p>Here are three nebulas.</p><img src=faint-nebula.jpg class=center>
+<img src=red-nebula.jpg class=center>
+<img src=white-nebula.jpg class=center><p>We see a variety of color and structure in them.</p><h4 id=star-fields>Star fields</h4><p>The results include images that are pure starfields. I haven&rsquo;t done any official
+analysis, but it appears to me that the stars are much more regularly distributed
+in space than one might expect in space.</p><img src=star-field.jpg class=center><h4 id=galaxies>Galaxies</h4><p>I feel there&rsquo;s a shortage of galaxies, especially highly structure spiral galaxies
+in our results. I&rsquo;m not sure if that&rsquo;s just a bias from the APOD sample, if it&rsquo;s
+a consequence of the GAN, or if I&rsquo;m just crazy and there&rsquo;s no shortage.</p><img src=galaxy.jpg class=center><p>We also see interesting galaxy groups!
+<img src=galaxy-group.jpg class=center></p><h4 id=clusters>Clusters</h4><p>Globular clusters can be found in the fake results too.
+<img src=globular-cluster.jpg class=center></p><p>Thus, overall it seems to reconstruct all the categories, albeit with a potential bias.</p><h3 id=interpolation>Interpolation</h3><p>One very cool thing that this implementation of lightweight-gan does is create
+interpolation examples. In the image below, there are 8 images on the top row that we can
+think of as starting points and 8 images on the bottom row we can think of as ending points.
+Then, the code interpolates in the model&rsquo;s latent space to construct representative images
+between the start and end. I find the 6th column most fascinating in this example. We interpolate
+from a brilliant nebula to what appears to be a small galaxy.</p><img src=1000-interp.jpg class=center><p>It does seem that there are harsh transitions between the start and end point when
+they&rsquo;re dramatically different. I&rsquo;m not sure what this means about the model though.</p><h3 id=average>Average</h3><p>We can also explore the average fake image. We took a sample of 1000 images
+and merely averaged them together. You end up with the image below.</p><img src=average.jpg class=center><p>There&rsquo;s some nebulosity in the average; I might have expected it to be nearly black.</p><h2 id=using-google-colab>Using Google Colab</h2><p>Originally, we were going to train the model on the student&rsquo;s computer. However,
+we started running into errors and resolving those errors just resulted in more
+errors. Ultimately, there was some error about insufficient GPU memory. It might
+be resolvable, but we thought this might be a good chance to try out Google Colab.</p><p>I purchased a Pro+ subscription since I knew we&rsquo;d have a long-running training session.
+I believe background execution was necessary because when I tried training without it, the runtime timed out.
+It&rsquo;s possible I just did something wrong. Regardless, Colab Pro+ did the trick. We actually trained
+twice, once on a 128x128 sized images and then for the results shown here on 512x512 images.</p><p>Between the two training sessions, I found I had to wait because I&rsquo;d used up my
+GPU allotment. It&rsquo;s frustrating that Colab doesn&rsquo;t tell you how long you&rsquo;ll have to
+wait. I just tried several times in the next 24 hours, and it eventually let me
+start another GPU runtime. I&rsquo;ve heard that these wait times increase the more
+you use Colab. I hope not.</p><p>I was very happy with how Google Colab integrates with Google Drive. I could
+output the images and model checkpoints to a shared directory on Google Drive.
+We could both see the results. I woke up in the middle of the night during training
+some and was able to grab my phone from the night stand and look at intermediate results.
+I knew it was still training without even getting up. I also struggled to contain
+my excitement at the results and get back to sleep then.</p><p>I&rsquo;ll keep trying it out because there are more things I would like
+to train for work projects. Maybe I&rsquo;ll write a full post in a few months about
+my overall impression of Colab&rsquo;s paid tiers.</p><h2 id=future-work>Future work</h2><p>There are many avenues to explore:</p><ul><li>Simply train the model for longer</li><li>Remove the checkerboarding for higher fidelity images</li><li>Try other GAN architectures to compare performance</li><li>Analyze the distribution of image object types to answer the question: &ldquo;Do we capture a representative sample of APOD?&rdquo;</li><li>Your suggestions!</li></ul><h2 id=conclusion>Conclusion</h2><p>This was an exciting small project that has promising results! I hope my student
+had as much fun doing it as I did. We&rsquo;re open to suggestions from you, the reader, about what else we could do.</p></div><div class="row pl-3 pr-3"><div class="col-md-6 share-buttons"></div><div class="col-md-6 btn-improve-page"><a href=https://github.com/jmbhughes/jmbhughes.github.io/edit/source/content/posts/Assorted%20ML/galaxygan/index.md title="Improve this page" target=_blank rel=noopener><i class="fas fa-code-branch"></i>
+Improve this page</a></div></div><hr><div class="row next-prev-navigator"><div class="col-md-6 previous-article"><a href=/posts/coding/ulamwarburton/ title="Ulam–Warburton automaton inquiry" class="btn btn-outline-info"><div><i class="fas fa-chevron-circle-left"></i> Prev</div><div class=next-prev-text>Ulam–Warburton automaton inquiry</div></a></div><div class="col-md-6 next-article"><a href=/posts/assorted-ml/tss-vs-f1/ title="TSS versus f1-measure" class="btn btn-outline-info"><div>Next <i class="fas fa-chevron-circle-right"></i></div><div class=next-prev-text>TSS versus f1-measure</div></a></div></div><hr><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname=="localhost")return;var t,e=document.createElement("script");e.type="text/javascript",e.async=!0,t="jmbhughes-com",e.src="//"+t+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})()</script><noscript>Please enable JavaScript to view the
+<a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div><a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a></section><section class=toc-section id=toc-section><div class=toc-holder><h5 class="text-center pl-3">Table of Contents</h5><hr><div class=toc><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#scraping-apod>Scraping APOD</a></li><li><a href=#machine-learning-time>Machine learning time</a><ul><li><a href=#pre-processing>Pre-processing</a></li><li><a href=#training>Training</a></li></ul></li><li><a href=#results>Results</a><ul><li><a href=#training-1>Training</a></li><li><a href=#fidelity>Fidelity</a></li><li><a href=#diversity>Diversity</a><ul><li><a href=#nebulas>Nebulas</a></li><li><a href=#star-fields>Star fields</a></li><li><a href=#galaxies>Galaxies</a></li><li><a href=#clusters>Clusters</a></li></ul></li><li><a href=#interpolation>Interpolation</a></li><li><a href=#average>Average</a></li></ul></li><li><a href=#using-google-colab>Using Google Colab</a></li><li><a href=#future-work>Future work</a></li><li><a href=#conclusion>Conclusion</a></li></ul></nav></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-left"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://jmbhughes.github.io/#about>About</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Contact me:</h5><ul><li><a href=mailto:hughes.jmb@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>hughes.jmb@gmail.com</span></a></li><li><span><i class="fas fa-phone-alt"></i></span> <span>1-270-704-3055</span></li></ul></div></div></div><hr><div class=container><div class="row text-left"><div class=col-md-4><a id=theme href=https://github.com/hossainemruz/toha target=_blank rel=noopener><img src=/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png alt="Toha Theme Logo">
+Toha</a></div><div class="col-md-4 text-center">© 2022 Copyright James Marcus Hughes</div><div class="col-md-4 text-right"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script type=text/javascript src=/js/jquery-3.4.1.min.js></script>
+<script type=text/javascript src=/js/popper.min.js></script>
+<script type=text/javascript src=/js/bootstrap.min.js></script>
+<script type=text/javascript src=/js/navbar.js></script>
+<script type=text/javascript src=/js/plyr.js></script>
+<script type=text/javascript src=/js/main.js></script>
+<script type=text/javascript defer src=/js/katex.min.js></script>
+<script type=text/javascript defer src=/js/auto-render.min.js onload=renderMathInElement(document.body)></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script>
+<script src=/js/single.js></script>
+<script>hljs.initHighlightingOnLoad()</script></body></html>
