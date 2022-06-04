@@ -35,7 +35,10 @@ params:
   gitRepo: https://github.com/jmbhughes/jmbhughes.github.io
   gitBranch: source
   background: "images/eclipse2.jpg"
-
+  logo:
+    main: images/logo.png
+    inverted: images/logo.png
+    favicon: images/favicon-32x32.png
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
