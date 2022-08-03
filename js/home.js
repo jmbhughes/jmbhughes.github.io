@@ -1,6 +1,6 @@
 "use strict";
 
-var projectCards, publicationCards;
+var projectCards;
 
 (function ($) {
   jQuery(document).ready(function () {
@@ -79,22 +79,7 @@ var projectCards, publicationCards;
 
     var projectCardHolder = document.getElementById("project-card-holder");
     if (projectCardHolder != null && projectCardHolder.children.length != 0) {
-      projectCards = $(".filtr-projects").filterizr(
-        {
-          layout: 'sameWidth',
-          controlsSelector: '.project-filtr-control',
-        });
-    }
-
-    // ================== Publication cards =====================
-    var publicationCardHolder = document.getElementById("publication-card-holder");
-    if (publicationCardHolder != null && publicationCardHolder.children.length != 0) {
-      publicationCards = $(".filtr-publications").filterizr(
-        {
-          layout: 'sameWidth',
-          gridItemsSelector: '.pub-filtr-item',
-          controlsSelector: '.pub-filtr-control',
-        });
+      projectCards = $(".filtr-projects").filterizr({ layout: 'sameWidth' });
     }
 
     function showGithubStars() {
