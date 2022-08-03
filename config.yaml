@@ -34,7 +34,7 @@ params:
   # GitHub repo URL and branch of your site
   gitRepo: https://github.com/jmbhughes/jmbhughes.github.io
   gitBranch: source
-  background: "images/eclipse2_compressed.jpeg"
+  background: "images/eclipse2_compressed_small.jpeg"
   logo:
     main: images/logo.png
     inverted: images/logo.png
