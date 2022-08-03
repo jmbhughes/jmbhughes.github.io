@@ -2,6 +2,9 @@
 title: New Instagram
 date: 2022-02-16
 description: new instagram
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: New Instagram

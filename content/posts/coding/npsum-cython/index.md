@@ -2,6 +2,9 @@
 title: Comparison of speed of np.sum in Cython
 date: 2021-05-11
 description: comparing np.sum speeds
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: np.sum speeds in Cython

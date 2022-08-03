@@ -2,6 +2,9 @@
 title: "Sliding puzzles: my beginning"
 date: 2022-01-27
 description: sliding puzzles
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: sliding puzzles

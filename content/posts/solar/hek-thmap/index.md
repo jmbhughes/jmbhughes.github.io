@@ -9,6 +9,9 @@ menu:
     identifier: HEK thematic maps
     weight: 101
     parent: Solar
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 ---
 
 The below script will allow you to generate thematic maps from the valuable [Heliophysics Event Knowledgebase](https://www.lmsal.com/hek/) (HEK). I have written it to take a SUVI thematic map as input and output only [Spatial Possibilistic Clustering Algorithm](https://arxiv.org/abs/1208.1483) [(SPoCA)](https://arxiv.org/abs/1208.1483) coronal hole and bright region patches in HEK but would be willing to help assist others to modify the script as needed.  

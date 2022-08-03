@@ -2,6 +2,9 @@
 title: 'Efficient Inclusion Check'
 date: 2022-03-25
 description: efficient algorithm for inclusion checking
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: inclusion check

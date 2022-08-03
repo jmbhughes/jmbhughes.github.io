@@ -9,6 +9,9 @@ menu:
     identifier: State of Astro-informatics
     weight: 101
     parent: Paper Reading
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 ---
 
 I had a glance through ["Realizing the potential of astrostatistics and astroinformatics" by Eadie et al. (2019). ](https://arxiv.org/pdf/1909.11714.pdf)While I do not feel qualified or informed to comment on the suggestions, I can summarize them quickly. There are three problems:  

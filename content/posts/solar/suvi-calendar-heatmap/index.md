@@ -8,6 +8,9 @@ menu:
     identifier: SUVI calendar heatmap
     weight: 101
     parent: Solar
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 ---
 
 

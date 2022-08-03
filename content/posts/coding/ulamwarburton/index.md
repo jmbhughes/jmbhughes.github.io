@@ -2,6 +2,9 @@
 title: 'Ulam–Warburton automaton inquiry'
 date: 2019-04-24T11:28:00.000-07:00
 draft: false
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: Ulam Warburton

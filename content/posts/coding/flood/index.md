@@ -2,6 +2,9 @@
 title: 'Flood'
 date: 2019-09-16T06:02:00.000-07:00
 description: playing Flood game
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: flood

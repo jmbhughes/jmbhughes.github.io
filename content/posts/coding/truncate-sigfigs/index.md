@@ -2,6 +2,9 @@
 title: Truncate to specified number of significant figures
 date: 2021-05-10
 description: truncating numbers
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: truncating numbers

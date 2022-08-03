@@ -3,6 +3,9 @@ title: 'Training an autoencoder with mostly noise'
 date: 2019-09-17T10:22:00.000-07:00
 draft: false
 description: training an autoencdoer with mostly noise
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: Mostly noise training

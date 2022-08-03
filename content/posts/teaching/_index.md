@@ -5,4 +5,7 @@ menu:
     name: Teaching
     identifier: Teaching
     weight: 20
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 ---

@@ -3,6 +3,9 @@ title: 'Creating fake APOD pictures'
 date: 2022-05-30
 draft: false
 description: fake APOD picture generation using a GAN
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: fake APOD generation

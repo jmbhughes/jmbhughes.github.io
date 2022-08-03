@@ -2,6 +2,9 @@
 title: 'Training a denoising autoencoder with noisy data '
 date: 2019-03-27T09:21:00.001-07:00
 description: Training an autoencoder with noisy data
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: denoising autoencoder

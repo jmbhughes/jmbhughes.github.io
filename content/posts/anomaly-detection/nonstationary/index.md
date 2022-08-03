@@ -3,6 +3,9 @@ title: 'Goal of Anomaly Detection in Non-stationary Data'
 date: 2019-09-09T21:43:00.001-07:00
 draft: false
 description: goal of anomaly detection in non-stationary data
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: goal of nonstationary

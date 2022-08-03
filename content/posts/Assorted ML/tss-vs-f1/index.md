@@ -3,6 +3,9 @@ title: 'TSS versus f1-measure'
 date: 2019-03-27T08:57:00.000-07:00
 draft: false
 description: TSS versus f1-measure
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: TSS vs f1

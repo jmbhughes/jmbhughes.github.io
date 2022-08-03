@@ -3,6 +3,9 @@ title: 'Axis aligned artifacts'
 date: 2019-10-07T07:19:00.001-07:00
 draft: false
 description: axis aligned artifacts of isolation IsoForest
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: Axis-aligned RRCF artifacts

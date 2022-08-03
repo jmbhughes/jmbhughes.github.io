@@ -2,6 +2,9 @@
 title: "Mood tracking: first plots"
 date: 2022-02-06
 description: mood tracking
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: mood tracking

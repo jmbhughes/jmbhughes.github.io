@@ -11,6 +11,9 @@ menu:
 tags: ["Basic"]
 categories: ["Basic"]
 draft: false
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 ---
 
 This was my first first-author paper! It talks about doing semantic segmentation

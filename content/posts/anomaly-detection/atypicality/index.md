@@ -1,8 +1,11 @@
 ---
 title: 'Atypicality Presentation Recap'
-date: 2019-05-03T10:00:00.000-07:00
+date: 2019-05-03 10:00:00
 draft: false
 description: Recap of Atypicality Presentation
+sitemap:
+  priority: 0.5 
+  changefreq: yearly
 menu:
   sidebar:
     name: Atypicality
