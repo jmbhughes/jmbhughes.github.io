@@ -57,11 +57,11 @@ socialLinks:
 # currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
 - name: Leadership
-  percentage: 80
-  color: blue
+  percentage: 95
+  color: reen
 - name: Python Development
-  percentage: 90
-  color: yellow
+  percentage: 95
+  color: green
 - name: Solving hard problems
   percentage: 95
   color: green
