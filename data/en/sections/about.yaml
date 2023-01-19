@@ -52,6 +52,9 @@ socialLinks:
 - name: 500px
   icon: "fab fa-500px"
   url: "https://500px.com/p/hughesjmb?view=photos"
+- name: YouTube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/channel/UC-0h-iRmprs5JowcbrPPtIQ"
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
 # currently supported colors: blue, yellow, pink, green, sky, orange
