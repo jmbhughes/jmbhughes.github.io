@@ -1,5 +1,5 @@
 ---
-title: 'Automating solar SUVI YouTube'
+title: 'Automating SUVI YouTube'
 date: 2023-01-22
 description: creating youtube videos of the Sun
 menu:
