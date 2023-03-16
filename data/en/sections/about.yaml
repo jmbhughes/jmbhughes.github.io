@@ -23,7 +23,8 @@ I'm interested in software applications in solar physics, including machine lear
 Currently, I'm working on building the data reduction pipeline for
 [PUNCH](https://punch.space.swri.edu/). This will help scientists resolve
 mysteries about the solar corona and solar wind. In my spare time, I like photography,
-reading, sculpting with polymer clay, and many more things."
+reading, sculpting with polymer clay, and many more things. I'm growing a
+[digital garden](https://arbor.jmbhughes.com). Check it out to explore my second brain."
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -46,9 +47,6 @@ socialLinks:
 - name: ORCID
   icon: "fab fa-orcid"
   url: "https://orcid.org/0000-0003-3410-7650"
-- name: Instagram
-  icon: "fab fa-instagram"
-  url: "https://www.instagram.com/hughes.jmb/"
 - name: 500px
   icon: "fab fa-500px"
   url: "https://500px.com/p/hughesjmb?view=photos"
