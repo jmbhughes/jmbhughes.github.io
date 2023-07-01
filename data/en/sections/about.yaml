@@ -18,7 +18,7 @@ company:
 resume: "files/resume.pdf"
 
 # a summary about you
-summary: "I am a computer scientist with five years of working experience.
+summary: "I am a computer scientist with five years of experience.
 I'm interested in software applications in solar physics, including machine learning.
 Currently, I'm working on building the data reduction pipeline for
 [PUNCH](https://punch.space.swri.edu/). This will help scientists resolve
