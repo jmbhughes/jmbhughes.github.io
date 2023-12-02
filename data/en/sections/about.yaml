@@ -15,16 +15,15 @@ company:
   url: "https://www.boulder.swri.edu/"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "files/resume.pdf"
+# resume: "files/resume.pdf"
 
 # a summary about you
 summary: "I am a computer scientist with five years of experience.
 I'm interested in software applications in solar physics, including machine learning.
-Currently, I'm working on building the data reduction pipeline for
-[PUNCH](https://punch.space.swri.edu/). This will help scientists resolve
+Currently, I'm working on building the [data reduction pipeline for
+PUNCH](https://github.com/punch-mission). This will help scientists resolve
 mysteries about the solar corona and solar wind. In my spare time, I like photography,
-reading, sculpting with polymer clay, and many more things. I'm growing a
-[digital garden](https://arbor.jmbhughes.com). Check it out to explore my second brain."
+reading, sculpting with polymer clay, journaling, and many more things."
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
