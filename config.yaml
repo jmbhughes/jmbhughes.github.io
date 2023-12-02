@@ -65,3 +65,8 @@ params:
       startLevel: 2
       endLevel: 6
       ordered: false
+
+  darkMode:
+    enable: true
+    provider: darkreader
+    default: system
