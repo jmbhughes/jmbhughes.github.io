@@ -8,7 +8,7 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Research Computer Scientist
+designation: Senior Computer Scientist
 # your company information
 company:
   name: SwRI
@@ -18,7 +18,7 @@ company:
 # resume: "files/resume.pdf"
 
 # a summary about you
-summary: "I am a computer scientist with five years of experience.
+summary: "I am a computer scientist with 5+ years of experience.
 I'm interested in software applications in solar physics, including machine learning.
 Currently, I'm working on building the [data reduction pipeline for
 PUNCH](https://github.com/punch-mission). This will help scientists resolve
