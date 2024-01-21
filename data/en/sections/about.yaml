@@ -52,16 +52,47 @@ socialLinks:
 - name: YouTube
   icon: "fab fa-youtube"
   url: "https://www.youtube.com/channel/UC-0h-iRmprs5JowcbrPPtIQ"
-# your soft skills
-# give the percentage between 50 to 100 with 5 intervals.
-# currently supported colors: blue, yellow, pink, green, sky, orange
-softSkills:
-- name: Leadership
+# # your soft skills
+# # give the percentage between 50 to 100 with 5 intervals.
+# # currently supported colors: blue, yellow, pink, green, sky, orange
+# softSkills:
+# - name: Leadership
+#   percentage: 100
+#   color: green
+# - name: Software Development
+#   percentage: 100
+#   color: green
+# - name: Solving hard problems
+#   percentage: 100
+#   color: green
+
+badges:
+- type: certification
+  name: Prefect Associate
+  url: "https://www.credential.net/1a76f801-37d1-4025-b368-481a15b0770e#gs.3d7pnd"
+  badge: "https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/73881935"
+
+- type: certification
+  name: Open Science
+  url: "https://www.credly.com/badges/4d400179-8866-470d-b69a-867c92a71e53/public_url"
+  badge: "https://images.credly.com/images/d64b24d8-66f3-435a-bc76-2d70c26b0d67/image.png"
+
+- type: certification
+  name: DeepLearning.AI TensorFlow Developer
+  url: "https://www.coursera.org/account/accomplishments/professional-cert/89UAJAX6PUUB"
+  badge: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png?auto=format%2Ccompress&dpr=2&w=80&h=80"
+
+- type: soft-skill-indicator
+  name: Leadership
   percentage: 95
   color: green
-- name: Software Development
+
+- type: soft-skill-indicator
+  name: Software development
   percentage: 95
   color: green
-- name: Solving hard problems
+
+- type: soft-skill-indicator
+  name: Solving hard problems
   percentage: 95
   color: green
