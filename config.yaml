@@ -2,7 +2,6 @@ baseURL: https://jmbhughes.com/
 
 languageCode: en-us
 title: "J. Marcus Hughes"
-theme: "toha"
 
 # Manage languages
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
@@ -44,12 +43,16 @@ params:
   enableBlogPost: true
 
   # specify whether you want to show Table of Contents in reading page
-  enableTOC: true
+  toc:
+    enable: true
   features:
     comment:
       enable: true
-      disqus:
-        shortName: jmbhughes-com
+      services:
+        disqus:
+          shortName: jmbhughes-com
+    darkMode:
+      enable: true
   # Provide newsletter configuration.
   # This feature has been implemented for Mailchimp only for now.
   # You can also hide it from the footer.
@@ -66,7 +69,15 @@ params:
       endLevel: 6
       ordered: false
 
-  darkMode:
-    enable: true
-    provider: darkreader
-    default: system
+module:
+  imports:
+  - path: github.com/hugo-toha/toha/v4
+  mounts:
+  - source: static/files
+    target: static/files
+  - source: ./node_modules/flag-icon-css/flags
+    target: static/flags
+  - source: ./node_modules/@fontsource/mulish/files
+    target: static/files
+  - source: ./node_modules/katex/dist/fonts
+    target: static/fonts
