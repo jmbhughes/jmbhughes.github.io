@@ -43,9 +43,9 @@ params:
   enableBlogPost: true
 
   # specify whether you want to show Table of Contents in reading page
-  toc:
-    enable: true
   features:
+    toc:
+      enable: true
     comment:
       enable: true
       services:
@@ -53,6 +53,25 @@ params:
           shortName: jmbhughes-com
     darkMode:
       enable: true
+    # Enable this to create mathematic expressions using `$$` blocks
+    math:
+      enable: true
+      services:
+        # https://katex.org/docs/autorender.html#api for more configurations
+        katex:
+          delimiters:
+            - left: $$
+              right: $$
+              display: true
+            - left: \\[
+              right: \\]
+              display: true
+            - left: $
+              right: $
+              display: false
+            - left: \\(
+              right: \\)
+              display: false
   # Provide newsletter configuration.
   # This feature has been implemented for Mailchimp only for now.
   # You can also hide it from the footer.
