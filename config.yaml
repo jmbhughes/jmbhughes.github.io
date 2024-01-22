@@ -35,9 +35,9 @@ params:
   gitBranch: source
   background: "images/eclipse2_compressed_small.jpeg"
   logo:
-    main: images/logo.png
-    inverted: images/logo.png
-    favicon: images/favicon-32x32.png
+    main: images/example7.png
+    inverted: images/example7.png
+    favicon: images/favicon-32x32.jpg
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
