@@ -2,6 +2,7 @@
 title = 'Truncate to specified number of significant figures'
 date = 2021-05-10
 draft = false
+toc = false
 +++
 
 It's a simple request. You have a number, e.g. 1.25, and want to truncate it to say 2 significant figures. You specifically need to truncate instead of rounding, i.e. you need to get 1.2 instead of 1.3. How do you do that quickly in Python? Check out this code snippet:

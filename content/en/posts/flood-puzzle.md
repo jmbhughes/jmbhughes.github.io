@@ -2,6 +2,7 @@
 title = 'Flood puzzle'
 date = 2019-09-16
 draft = false
+toc = false
 +++
 
 I stumbled upon a game called Flood. It's a simple enough game. You start with a grid of random colors. Then, you change the color of contiguous region formed from the upper left corner until you have flooded the entire grid with one color. I wrote some [code](https://github.com/jmbhughes/flood) and have been tinkering around some.

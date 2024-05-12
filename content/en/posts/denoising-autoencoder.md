@@ -2,6 +2,7 @@
 title = 'Training a denoising autoencoder with noisy data'
 date = 2019-03-27
 draft = false
+toc = false
 +++
 
 ![denoising example](denoising.png)

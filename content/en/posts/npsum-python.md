@@ -2,6 +2,7 @@
 title = 'Comparison of speed of np.sum in Cython'
 date = 2021-05-11
 draft = false
+toc = false
 +++
 
 I was curious how much the overhead of `np.sum` impacted Cython code.

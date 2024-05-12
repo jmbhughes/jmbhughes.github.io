@@ -2,6 +2,7 @@
 title = 'Ulam–Warburton automaton inquiry'
 date = 2019-04-24
 draft = false
+toc = false
 +++
 
 The Ulam-Warburton automaton is a simple growing pattern. See [Wikipedia](https://en.wikipedia.org/wiki/Ulam%E2%80%93Warburton_automaton) or this g[reat Numberphile video](https://youtu.be/_UtCli1SgjI) for more information. For the more technical see [this paper](https://arxiv.org/abs/1004.3036) too.  

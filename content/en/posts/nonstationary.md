@@ -2,6 +2,7 @@
 title = 'Goal of Anomaly Detection in Non-stationary Data'
 date = 2019-09-09
 draft = false
+toc = false
 +++
 
 {{< youtube YOrf3zcF4oM >}}
