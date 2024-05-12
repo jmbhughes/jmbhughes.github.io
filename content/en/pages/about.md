@@ -19,3 +19,5 @@ I am certified in:
 
 In my spare time, I like photography,
 reading, sculpting with polymer clay, journaling, and many more things.
+
+You can reach me at [hughes.jmb@gmail.com](mailto:hughes.jmb@gmail.com) or check out my work [on GitHub](https://github.com/jmbhughes). 
