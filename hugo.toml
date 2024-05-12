@@ -24,7 +24,7 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
 # To enable Disqus comments, provide Disqus Shortname below.
 # To disable Disqus comments, simply leave the field empty or remove the next two lines
   [services.disqus]
-    shortname = 'disqus_TWq5oFj75f'
+    shortname = 'jmbhughes-com'
 
 # set markup.highlight.noClasses=false to enable code highlight
 [markup]
