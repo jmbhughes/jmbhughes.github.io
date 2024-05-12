@@ -1,4 +1,4 @@
-module gihub.com/jmbhughes/jmbhughes.github.io
+module github.com/jmbhughes/jmbhughes.github.io
 
 go 1.22.2
 
