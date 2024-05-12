@@ -91,7 +91,7 @@ ignoreErrors = ["additional-script-loading-error"] # ignore error of loading add
   # Note: image is not rendered if the resource(avatar image) is not found. No error is displayed.
   intro = "J. Marcus Hughes"
   name = "J. Marcus Hughes"
-  description = "Computer scientist studying the Sun at the Southwest Research Institute."
+  description = "Computer scientist studying the Sun and ML at the Southwest Research Institute."
 
 # Allow to override webmanifest options
 [Languages.en-us.params.webmanifest]
