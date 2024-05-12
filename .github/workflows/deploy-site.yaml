@@ -29,7 +29,6 @@ jobs:
 
     - name: Install node modules
       run: |
-        hugo mod get -u github.com/jmbhughes/jmbhughes.github.io
         hugo mod npm pack
         npm install        
 
