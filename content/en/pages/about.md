@@ -22,6 +22,6 @@ I am certified in:
 In my spare time, I like
 reading, sculpting with polymer clay, journaling, and many more things.
 
-I also have an interest in developing open source software. Check out [barnsley](https://jmbhughes.com/barnsley_gui/), my tool for rendering iterated function systems. I'm currently developing a new note taking application (with an undecided name) in Rust.
+I also have an interest in developing open source software. Check out [barnsley](https://jmbhughes.com/barnsley_gui/), my tool for rendering iterated function systems. I'm currently developing a new note taking application called Compass in Rust.
 
 You can reach me at [hughes.jmb@gmail.com](mailto:hughes.jmb@gmail.com) or check out my work [on GitHub](https://github.com/jmbhughes). You can also find me on [Google Scholar](https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en).
