@@ -290,8 +290,8 @@ img, stars = simulate_star_image(
     shape, 
     fwhm=3, 
     dimmest_magnitude=12, 
-    noise_mean=None, 
-    noise_std=None)
+    noise_mean=10, 
+    noise_std=5)
 ```
 
 And visualize it.
@@ -301,7 +301,7 @@ fig, ax = plt.subplots()
 ax.imshow(
     img, 
     vmin=0, 
-    vmax=50, 
+    vmax=100, 
     cmap='Greys_r'
     )
 ax.set_axis_off()
