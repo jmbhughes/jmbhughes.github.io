@@ -18,12 +18,17 @@ But for now, we'll stick with Gaussian stars.
 
 ### Imports and packages
 
-We only need a few packages for this work.
+We only need a few packages for this work: `pandas`, `numpy`, `maptlotlib`, `astropy`, and `photutils`. 
 
 ```py
 import pandas as pd
 import numpy as np
-from astropy.wcs import WCS
+import matplotlib.pyplot as plt
+from astropy.wcs import WCS, NoConvergence
+from astropy.coordinates import SkyCoord
+from astropy.table import QTable
+import astropy.units as u
+from photutils.datasets import make_gaussian_sources_image, make_noise_image
 ```
 
 ### Getting a catalog
@@ -245,7 +250,7 @@ def simulate_star_image(wcs,
                         dimmest_magnitude=8):
     sigma = fwhm / 2.355
 
-    catalog = load_hipparcos_catalog()
+    catalog = load_raw_hipparcos_catalog()
     filtered_catalog = filter_for_visible_stars(catalog,
                                                 dimmest_magnitude=dimmest_magnitude)
     stars = find_catalog_in_image(filtered_catalog,
@@ -272,7 +277,6 @@ def simulate_star_image(wcs,
 So let's run it!
 
 ```py
-
 m = 1
 shape = (1024*m, 1024*m)
 w = WCS(naxis=2)
@@ -289,6 +293,8 @@ img, stars = simulate_star_image(
     noise_mean=None, 
     noise_std=None)
 ```
+
+And visualize it.
 
 ```py
 fig, ax = plt.subplots()
