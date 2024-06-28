@@ -7,15 +7,28 @@ toc = true
 
 ## Why make stars?
 
+I want to test software I'm developing to determine pointing and disortion information.
+This requires a realistic star field where the pointing and distortion are known.
+The only way to get this is to make the star field yourself.
+
 ## Making the first version
+
+There will be a follow up to this article about adding a point-spread function (PSF) to the star field.
+But for now, we'll stick with Gaussian stars.
 
 ### Imports and packages
 
+We only need a few packages for this work.
+
 ```py
 import pandas as pd
+import numpy as np
+from astropy.wcs import WCS
 ```
 
 ### Getting a catalog
+
+To make stars in real positions, we need a catalog. We'll use the Hipparcos catalog.
 
 ```py
 HIPPARCOS_URL = "https://cdsarc.cds.unistra.fr/ftp/cats/I/239/hip_main.dat"
@@ -127,7 +140,12 @@ def load_raw_hipparcos_catalog(
     return df.iloc[np.argsort(df["Vmag"])]
 ```
 
+I recommend saving this as a CSV file and then opening it as needed instead of downloading it every time.
+
 ### Filtering for relevant stars
+
+There are a lot of stars in this catalog. We may only want to show up to a certain magnitude.
+Filtering on Pandas dataframes is easy though.
 
 ```py
 def filter_for_visible_stars(
@@ -151,6 +169,10 @@ def filter_for_visible_stars(
     """
     return catalog[catalog["Vmag"] < dimmest_magnitude]
 ```
+
+In addition, not all the stars will be visible in our image.
+A world coordinate system or WCS describes where an image is in the sky.
+We'll use it to determine the pixel coordinates of each star and then throw away those outside the frame.
 
 ```py
 def find_catalog_in_image(
@@ -197,6 +219,20 @@ def find_catalog_in_image(
 
 ### Making the actual star image
 
+Finally, we can write a straightforward function to make a star field.
+It'll use all our other work until now.
+We provide it with a `wcs`, the dimensions of an image (`img_shape`), and the full-width-half-maximum (`fwhm`) of our Gaussian PSF for stars.
+
+There are a few other helpful parameters here too.
+For example, `mag_set` and `flux_set` work together to scale the star brightnesses.
+If `mag_set=0` and `flux_set=500_000` then stars with magnitude 0 in the catalo will have a flux value of `500_000`.
+All other magnitude stars are scaled accordingly.
+
+We also sometimes want to add noise. We can currently add a Gaussian noise with mean of `noise_mean` and standard deviation of `noise_std`.
+If these parameters are set to None, then no noise is added.
+
+Finally, we can control the `dimmest_magnitude` to limit what magnitude stars are shown. The more stars you show, the slower the code is.
+
 ```py
 def simulate_star_image(wcs, 
                         img_shape, 
@@ -232,6 +268,8 @@ def simulate_star_image(wcs,
 
     return fake_image, sources
 ```
+
+So let's run it!
 
 ```py
 
@@ -269,10 +307,11 @@ fig.savefig(
 
 ![first star image](first.png)
 
-## Applying a non-uniform point-spread function
+Note that our WCS here is rather simple, but we could have added a distortion model too and that would've been applied.
+Be careful to set `wcs_mode=all` in that case.
 
-![zoomed in star iamge](zoom.png)
+## Conlusions
 
+This makes a rather convincing initial star field. But it lacks shot noise, a complex PSF, and other effects that we may want to simulate.
 
-
-## Complete script
+In the follow up to this article, we'll add those.
