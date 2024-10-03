@@ -3,6 +3,9 @@ title = 'Axis Aligned Artifacts for Robust Random Cut Forests'
 date = 2019-10-07
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["anomaly"]
 +++
 
 There are artifacts created by choosing axis aligned cuts in robust random cut forests, [similar to what was noted with IsoForest.](https://arxiv.org/abs/1811.02141).

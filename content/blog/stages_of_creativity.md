@@ -2,6 +2,12 @@
 title = 'Harnessing the stages of creativity for better work'
 date = 2024-05-13T00:15:37-06:00
 draft = false
+
+[taxonomies]
+tags = ["meta"]
+
+[extra]
+toc = true
 +++
 
 ## Context

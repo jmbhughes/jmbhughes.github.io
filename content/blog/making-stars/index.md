@@ -2,6 +2,11 @@
 title = 'Making stars'
 date = 2024-06-28
 draft = false
+
+[taxonomies]
+tags = ["programming", "python", "astronomy"]
+
+[extra]
 toc = true
 +++
 

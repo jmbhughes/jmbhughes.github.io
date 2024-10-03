@@ -2,6 +2,9 @@
 title = 'EUI Artifact Analysis'
 date = 2022-04-01
 draft = false
+
+[taxonomies]
+tags = ["solar", "programming", "python"]
 +++
 
 ## Introduction

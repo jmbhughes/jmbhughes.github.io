@@ -2,6 +2,12 @@
 title = 'Creating fake APOD pictures'
 date = 2022-05-30
 draft = false
+
+[taxonomies]
+tags = ["programming", "python", "machine learning"]
+
+[extra]
+toc = true
 +++
 
 ## Introduction

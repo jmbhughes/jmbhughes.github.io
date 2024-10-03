@@ -3,6 +3,9 @@ title = 'The Value of a Peer-Reviewed Activity'
 date = 2019-06-14
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["teaching"]
 +++
 
 This week, we have been talking about proof writing in the discrete mathematics course I'm teaching. Yesterday, I started class by having students answer how confident they are about their proof writing skills on a scale of 1 to 10, 1 being "clueless and not sure where to start", 5 being "Okay and ready for homework," and 10 being "I can do most any proof you throw at me with ease." I then had them individually complete three proofs in 15 minutes.  

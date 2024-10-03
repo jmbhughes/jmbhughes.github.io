@@ -2,6 +2,9 @@
 title = 'Adding codespell as a pre-commit and CI'
 date = 2024-06-15
 draft = false
+
+[taxonomies]
+tags = ["programming", "python"]
 +++
 
 I have some repos for work on GitHub that are private and were accumulating spelling errors in both the documentation and the code.

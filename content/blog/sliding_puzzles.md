@@ -3,6 +3,12 @@ title = 'Sliding puzzles'
 date = 2019-04-24
 draft = false
 math = true
+
+[extra]
+katex = true
+
+[taxonomies]
+tags = ["math", "programming", "python"]
 +++
 
 I recently have become interested in sliding puzzles. You can read all about them

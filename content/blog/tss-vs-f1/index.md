@@ -3,6 +3,9 @@ title = 'TSS measure versus f1 measure'
 date = 2019-03-27
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["machine learning"]
 +++
 
 ![animation](animate.gif)

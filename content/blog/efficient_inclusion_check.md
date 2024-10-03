@@ -3,6 +3,12 @@ title = 'Efficient Inclusion Check'
 date = 2022-03-25
 draft = false
 math = true
+
+[extra]
+katex = true
+
+[taxonomies]
+tags = ["math"]
 +++
 
 ## Problem Statement

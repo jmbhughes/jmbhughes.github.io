@@ -2,6 +2,12 @@
 title = 'SUVI calendar heatmap'
 date = 2022-05-20
 draft = false
+
+[taxonomies]
+tags = ["programming", "python", "solar"]
+
+[extra]
+toc = true
 +++
 
 ## Introduction

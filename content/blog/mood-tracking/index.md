@@ -3,6 +3,9 @@ title = 'Mood tracking: first plots'
 date = 2022-02-26
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["personal"]
 +++
 
 For some time now, I've been using the app [Daylio](https://daylio.net/) to track my mood. It allows me to rate

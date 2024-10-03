@@ -4,6 +4,9 @@ date = 2022-06-03
 draft = false
 math = false
 toc = false
+
+[taxonomies]
+tags = ["solar", "python", "programming"]
 +++
 
 

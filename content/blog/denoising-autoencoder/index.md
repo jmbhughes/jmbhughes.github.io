@@ -3,6 +3,9 @@ title = 'Training a denoising autoencoder with noisy data'
 date = 2019-03-27
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["machine learning"]
 +++
 
 ![denoising example](denoising.png)

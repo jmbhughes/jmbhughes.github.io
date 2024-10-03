@@ -3,6 +3,9 @@ title = 'Atypicality Presentation Recap'
 date = 2019-05-13
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["anomaly"]
 +++
 
 Yesterday, I gave a presentation introducing the ideas of atypicality to the Monteleoni research group. These are the [slides](https://drive.google.com/open?id=1ZuS7SouTQkhWekoCaeU9SS-jrAN_AFp5) and [handwritten notes.](https://drive.google.com/open?id=1HHjwAtoR2jiGyYyewbUbqyi3EBqP0CZF) I plan to explore this idea further and write up better LaTeX notes, which I will then share as well. For now, the idea of atypicality centers around using two coders: one trained to perform best on typical data and one that is universal and not data specific. A sequence is atypical if its code length using the typical coder is longer than the universal coder, i.e. it is not favored by the typical coder indicating the information is somehow unique.

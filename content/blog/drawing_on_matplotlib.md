@@ -3,6 +3,9 @@ title = 'Drawing on a Matplotlib Plot'
 date = 2024-06-26
 draft = false
 toc = false
+
+[taxonomies]
+tags = ["programming", "python"]
 +++
 
 It's easy to draw on a Matplotlib plot and capture the coordinates of the points by using a `LassoSelector`. Here's an example script:

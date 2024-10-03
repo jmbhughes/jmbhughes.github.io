@@ -2,6 +2,12 @@
 title = 'Converting helioprojective to equatorial'
 date = 2024-08-15
 draft = false
+
+[taxonomies]
+tags = ["solar", "programming", "python"]
+
+[extra]
+toc = true
 +++
 
 ## Introduction

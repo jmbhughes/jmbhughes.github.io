@@ -2,7 +2,13 @@
 title = 'Automating SUVI YouTube'
 date = 2023-01-22
 draft = false
-math = true
+
+[extra]
+katex = true
+toc = true
+
+[taxonomies]
+tags = ["solar", "python", "programming"]
 +++
 
 ## Intro

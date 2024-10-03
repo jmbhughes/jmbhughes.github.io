@@ -5,6 +5,10 @@ draft = false
 
 [extra]
 katex = true
+toc = true
+
+[taxonomies]
+tags = ["fractal", "math", "programming", "rust"]
 +++
 
 [Barnsley](https://jmbhughes.com/barnsley_gui) is a tool I've created to visualize iterated function systems, like the one shown above. You can access it via [the website](https://jmbhughes.com/barnsley_gui) or by building it yourself from source. You can find the source code [for the library](https://github.com/jmbhughes/barnsley) and [for the graphical user interface](https://github.com/jmbhughes/barnsley_gui)(GUI) on GitHub. The GUI is currently implemented using Rust's [egui](https://github.com/emilk/egui). Let's back up a bit though.
