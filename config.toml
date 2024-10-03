@@ -50,7 +50,7 @@ copyright = "© $CURRENT_YEAR J. Marcus Hughes $SEPARATOR Unless otherwise noted
 favicon = "icons/favicon.ico"
 
 [extra.giscus]
-enabled_for_all_posts = false
+enabled_for_all_posts = true
 automatic_loading = true  # If set to false, a "Load comments" button will be shown.
 repo = "welpo/tabi-comments"
 repo_id = "R_kgDOG3bviQ"  # Find this value in https://giscus.app/
