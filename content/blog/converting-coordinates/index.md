@@ -1,7 +1,7 @@
 +++
 title = 'Converting helioprojective to equatorial'
 date = 2024-08-15
-draft = false
+description = "Change between world coordinate systems using Astropy and SunPy"
 
 [taxonomies]
 tags = ["solar", "programming", "python"]

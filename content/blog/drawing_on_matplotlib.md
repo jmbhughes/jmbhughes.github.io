@@ -3,6 +3,7 @@ title = 'Drawing on a Matplotlib Plot'
 date = 2024-06-26
 draft = false
 toc = false
+description = "A handy trick to draw or select regions in a Matplotlib plot"
 
 [taxonomies]
 tags = ["programming", "python"]

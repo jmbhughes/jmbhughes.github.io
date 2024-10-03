@@ -1,7 +1,7 @@
 +++
 title = 'Making stars'
 date = 2024-06-28
-draft = false
+description = "Create realistic looking star images using Python"
 
 [taxonomies]
 tags = ["programming", "python", "astronomy"]
