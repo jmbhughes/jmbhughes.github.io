@@ -38,7 +38,6 @@ copy_button = true
 
 socials = [
     { name = "github", url = "https://github.com/jmbhughes", icon = "github" },
-    { name = "github", url = "https://www.linkedin.com/in/jmbhughes/", icon = "linkedin" },
     { name = "google-scholar", url = "https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en", icon = "google-scholar"},
     { name = "email", url = "mailto:hughes.jmb@gmail.com", icon = "email"}
 ]
