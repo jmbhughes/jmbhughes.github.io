@@ -195,7 +195,7 @@ The video below shows the progress training. It starts with crazy noise images
 and rapid evolution in the first epochs and results in the final model at the video's end.
 Feel free to adjust the speed in YouTube to get a slower or faster animation.
 
-{{< youtube Ti7xKwgkgOk >}}
+{{ youtube(id="Ti7xKwgkgOk") }}
 
 About a third of the way into the 10,000 trainings steps, we can already see images that are
 reminiscent of APOD pictures. I let it keep training though to see if we got improved
