@@ -1,6 +1,7 @@
 +++
 title = 'DASH 2024'
 date = 2024-10-14
+description = "Slides for the 2024 meeting of Data, Analysis, and Software in Heliophysics conference"
 
 [taxonomies]
 tags = ["solar", "conference"]
