@@ -4,13 +4,21 @@ base_url = "https://jmbhughes.com/"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
-
 theme = "tabi"
 title = "jmbhughes"
 
 taxonomies = [{name = "tags", feed = true}]
+
+# Whether to build a search index to be used later on by a JavaScript library
+default_language = "en"
+build_search_index = true
+
+[search]
+index_format = "elasticlunr_json" # Or the less efficient "elasticlunr_javascript".
+include_title = true
+include_description = true
+include_path = true
+include_content = true
 
 
 [markdown]
@@ -26,11 +34,14 @@ remote_repository_branch = "main"
 show_remote_changes = true
 show_remote_source = true
 
+skin = "mint"
+
 
 menu = [
     { name = "blog", url = "archive", trailing_slash = true },
     { name = "tags", url = "tags", trailing_slash = true },
     { name = "about", url = "about", trailing_slash = true },
+    { name = "news", url = "news", trailing_slash = true},
 ]
 
 quick_navigation_buttons = true
