@@ -1,0 +1,8 @@
+{#- Set paths based on whether the src is remote or local -#}
+{%- set colocated_path = page.colocated_path | default(value="") -%}
+{%- set relative_path = colocated_path ~ src -%}
+{%- set pdf_url = get_url(path=relative_path) -%}
+
+<div class="full-width">
+    <iframe class="pdf" src={{pdf_url}}></iframe>
+</div> 

@@ -59,6 +59,14 @@ copyright = "© $CURRENT_YEAR J. Marcus Hughes $SEPARATOR Unless otherwise noted
 
 favicon = "icons/favicon.ico"
 
+allowed_domains = [
+    { directive = "font-src", domains = ["'self'", "data:"] },
+    { directive = "img-src", domains = ["'self'", "https://*", "data:"] },
+    { directive = "script-src", domains = ["'self'"] },
+    { directive = "style-src", domains = ["'self'"] },
+    { directive = "frame-src", domains = ["https://www.youtube-nocookie.com", "'self'"] },
+]
+
 [extra.giscus]
 enabled_for_all_posts = true
 automatic_loading = true  # If set to false, a "Load comments" button will be shown.
