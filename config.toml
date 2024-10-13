@@ -1,5 +1,6 @@
 # The URL the site will be built for
 base_url = "https://jmbhughes.com/"
+generate_feeds = true
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -35,7 +36,6 @@ show_remote_changes = true
 show_remote_source = true
 
 skin = "mint"
-
 
 menu = [
     { name = "blog", url = "archive", trailing_slash = true },
