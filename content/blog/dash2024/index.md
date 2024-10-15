@@ -10,3 +10,5 @@ tags = ["solar", "conference"]
 Below are my DASH 2024 slides:
 
 {{ pdf(src="DASH2024.pdf") }}
+
+Also available through Zenodo: [https://zenodo.org/records/13925458](https://zenodo.org/records/13925458)
