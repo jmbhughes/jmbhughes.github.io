@@ -1,5 +1,5 @@
 +++
-title = 'Best understimate cubic fitting'
+title = 'Best underestimate cubic fitting'
 date = 2024-10-21
 description = "Use quadratic programming to fit a cubic polynomial below a curve"
 
