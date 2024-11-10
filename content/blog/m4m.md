@@ -168,3 +168,12 @@ This sounds wonderful but I don't see how it's feasible with my current work loa
 > "The most powerful effect of the rule, though, might be the way in which it limits the possiblity of hurry. It pushes back against the ubiquitous modern urge to get as much done as possible as fast as possible."
 
 Slow and steady work is often better quality than rushed.
+
+# Day 14
+
+> It would be nice to be able to skip the scariest or most overwhelming problems. But to face no problems at all would leave you with nothing worth doing.
+> So you might even say that coming up against your limitations, and figuring out how to respond, is precisely what makes a life meaningful and satisfying.\
+
+# Day 15
+
+How can I live in "easy world?" Are there things I'm making more difficult than they really need to be?
