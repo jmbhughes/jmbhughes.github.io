@@ -10,13 +10,22 @@ tags = ["personal", "reading"]
 
 # Day 1
 
-__Meditations for Mortals__ is a new book by Oliver Burkeman. It arrived at my door last night. (I've recently started buying physical copies of books from small book stores instead of relying on Amazon or Kindle. I want to feel the physical and not feed the beast.) I read __Four Thousand Weeks__ also by Burkeman and enjoyed his perspective on productivity and living a meaningful life.
+__Meditations for Mortals__ is a new book by Oliver Burkeman.
+It arrived at my door last night.
+(I've recently started buying physical copies of books from small book stores instead of relying on Amazon or Kindle.
+I want to feel the physical and not feed the beast.)
+I read __Four Thousand Weeks__ also by Burkeman and enjoyed his perspective on productivity and living a meaningful life.
 
-This new book is a "four-week retreat of the mind" to reflect on ways to make our time on Earth count the way we want. I'm planning to take it day by day and write some notes as a reflection. I will take these all with "M4M."
+This new book is a "four-week retreat of the mind" to reflect on ways to make our time on Earth count the way we want.
+I'm planning to take it day by day and write some notes as a reflection.
 
-Diving into today, the theme is to accept that we are finite with finite time. We can never live a "perfect life" or do everything we want. There's something beautiful about that though. We have the opportunity to declare what is important to us by spending our time on it. Burkeman writes the following:
+Diving into today, the theme is to accept that we are finite with finite time.
+We can never live a "perfect life" or do everything we want. There's something beautiful about that though.
+We have the opportunity to declare what is important to us by spending our time on it. Burkeman writes the following:
 
-> You can take action not in the tense hope that your actions might be leading you towards some future utopia of perfect productivity, but simply because they're worth doing.... It's precisely *because* you'll never produce perfect work that you might as well get on with doing the best work you can.
+> You can take action not in the tense hope that your actions might be leading you towards some future utopia of perfect productivity,
+> but simply because they're worth doing.... It's precisely *because* you'll never produce perfect
+> work that you might as well get on with doing the best work you can.
 
 It's important for me to remember that doesn't mean work all the time though because work isn't the total meaning of my life.
 
@@ -177,3 +186,26 @@ Slow and steady work is often better quality than rushed.
 # Day 15
 
 How can I live in "easy world?" Are there things I'm making more difficult than they really need to be?
+
+# Day 16
+
+> Facing up to reality -- as finite humans must -- means facing up to the reality
+> of your moods, desires, and interests, too.
+> This is why it takes courage to ask yourself the question that I suspect
+> all those gurus promoting the `warrior mindset` and `mental toughness` are too frightened to ask themselves:
+> How woudl you like to spend your time today?
+
+# Day 17
+
+> You needn't try to transform yourself into someone who feels more love for humanity,
+> and it's probably impossible anyway. You just need to find where you already feel warm or tenderness,
+> then go from there.
+
+> Act on a generous impulse the moment it arises.
+
+# Day 18
+
+> Taken at face value, the news that somebody is upset because you're not behaving ast they wanted you to
+> behave is just that: a report on the state of their emotional weather.
+> You might or might not choose to act on such a report, but that's an entirely separate matter.
+> Every decision is a question of trade-offs.
