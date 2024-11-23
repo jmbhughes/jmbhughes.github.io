@@ -1,7 +1,7 @@
 +++
 title = 'Meditations for Mortals'
-date = 2024-11-10
-toc = false
+date = 2024-11-22
+toc = true
 description = "Thoughts on Oliver Burkeman's Book"
 
 [taxonomies]
@@ -209,3 +209,7 @@ How can I live in "easy world?" Are there things I'm making more difficult than 
 > behave is just that: a report on the state of their emotional weather.
 > You might or might not choose to act on such a report, but that's an entirely separate matter.
 > Every decision is a question of trade-offs.
+
+# Day 19
+
+The unpredictability and uncontrollable nature of life is what makes it worth living. 
