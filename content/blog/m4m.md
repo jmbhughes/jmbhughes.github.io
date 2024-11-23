@@ -213,3 +213,7 @@ How can I live in "easy world?" Are there things I'm making more difficult than 
 # Day 19
 
 The unpredictability and uncontrollable nature of life is what makes it worth living. 
+
+# Day 20
+
+Freewriting for a set block of time can be a great way to open the mind and get thoughts flowing. 
