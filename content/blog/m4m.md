@@ -1,6 +1,6 @@
 +++
 title = 'Meditations for Mortals'
-date = 2024-11-22
+date = 2024-11-24
 toc = true
 description = "Thoughts on Oliver Burkeman's Book"
 
@@ -69,11 +69,10 @@ acknowledge the length of the "done" list. I'm going to test out writing three a
 There's too much information to read or consume it all. We have to make tradeoffs. Burkeman suggests three principles:
 
 1. "Treat your to-read pile like a river, not a bucket." You don't have to empty the container, just pick something that seems appealing as it floats past.
-2. "Resist the urge to stockpile knowledge." You don't have to take extensive notes or remember everything you've read. You'll still get impacted by it.
-3. "Consuming information is a present-moment activity." Enjoy it for now, not for some future benefit.
+1. "Resist the urge to stockpile knowledge." You don't have to take extensive notes or remember everything you've read. You'll still get impacted by it.
+1. "Consuming information is a present-moment activity." Enjoy it for now, not for some future benefit.
 
 I wonder if these posts are my stockpiling knowledge instinct.
-
 
 # Day 6
 
@@ -109,7 +108,7 @@ According to Burkeman, there are two rules to decision making:
 
 1. "A decision doesn't get to count as a decision until you've done something about it in reality, so as to put some of the discarded alternatives beyond reach." You cannot just decide it in your mind. That's not a real decision because there's no consequence. Decisions become real with action.
 
-2. A decision can be as tiny as you like. "Baby steps are fine; they just have to be real ones." You don't have to radically transform everything with a decision. You can take tiny steps. He compares this to a scenario to quit your job. You don't have to march into your boss's office, announce all your complaints, and quit to have made a decision. You can instead decide to have a trusted friend over and discuss your feelings.
+1. A decision can be as tiny as you like. "Baby steps are fine; they just have to be real ones." You don't have to radically transform everything with a decision. You can take tiny steps. He compares this to a scenario to quit your job. You don't have to march into your boss's office, announce all your complaints, and quit to have made a decision. You can instead decide to have a trusted friend over and discuss your feelings.
 
 Decisions come with an uncertainty. Making one decisions necessarily precludes you from making a different decision. We cannot know which is the best decision in the moment.
 
@@ -133,7 +132,6 @@ Just a lovely sentiment.
 
 # Day 10
 
-
 This chapter is all about 'What is your current life task?'. Burkeman writes, "a life task is something *your*life is asking of you; so while it might coinceide with your parents' expectations, or your scienty's ideals, it also very easily might not." I don't feel very confident in my understanding of life tasks so I can neither definitively disagree with the concept nor embrace it.
 
 It seems like a misappropriation of a sense of purpose or meaning in a task. How can my life ask anything of me? It's an experience, an amalgamation of moments, not some deciding force. Is it not enough to say that this feels important or significant to me and thus I choose to do it on my own accord instead of doing it to meet life's demands?
@@ -143,7 +141,6 @@ Again, I don't fully grasp what he means and thus may be missing the mark. What 
 > "It is never the case that there's no next step to take. On some level, I think we always already know when we're hiding out in some domain of life, flinching from a challenge reality has placed before us. The purpose of a question like 'What's the life task here?' is just to haul that knowledge up into the daylight of consciousness, whe we can finally do something about it."
 
 That makese sense. It encourages me to stop frequently and reflect on life instead of just staying still in a comfort zone. There's a step to take. Reflecting helps me see what it is.
-
 
 # Day 11
 
@@ -167,7 +164,6 @@ Even a rule as simple as marking an 'x' on the calendar each day we complete a g
 
 Rules and practices are tools to help reach our goals, not to solve everything.
 
-
 # Day 13
 
 > "If you're a 'knowledge worker' [...] then you'll make the most progress, and cover the most ground, if you limit yourself to about three or four hours of intense mental focus each day."
@@ -181,7 +177,7 @@ Slow and steady work is often better quality than rushed.
 # Day 14
 
 > It would be nice to be able to skip the scariest or most overwhelming problems. But to face no problems at all would leave you with nothing worth doing.
-> So you might even say that coming up against your limitations, and figuring out how to respond, is precisely what makes a life meaningful and satisfying.\
+> So you might even say that coming up against your limitations, and figuring out how to respond, is precisely what makes a life meaningful and satisfying.
 
 # Day 15
 
@@ -212,8 +208,22 @@ How can I live in "easy world?" Are there things I'm making more difficult than 
 
 # Day 19
 
-The unpredictability and uncontrollable nature of life is what makes it worth living. 
+The unpredictability and uncontrollable nature of life is what makes it worth living.
 
 # Day 20
 
-Freewriting for a set block of time can be a great way to open the mind and get thoughts flowing. 
+Freewriting for a set block of time can be a great way to open the mind and get thoughts flowing.
+
+# Day 21
+
+Distractions are a part of life. Without an omniscient view of life, you cannot tell if the distraction is "good" or not.
+Welcome distractions as opportunities to be flexible and connect with reality.
+
+# Day 22
+
+> "It might be time to spend an hour today enjyoing yourself -- cashing in some of the investments you previously made in your future self,
+> you might say, and splashing out on the present one."
+
+# Day 23
+
+> Treat your to-do list as a menu... a list of tasks to pick from, rather than to get through.
