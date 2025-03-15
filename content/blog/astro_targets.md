@@ -19,7 +19,7 @@ is discontinued.
 I should determine what season each of them is best for as well.
 
 - List based on [this YouTube video](https://www.youtube.com/watch?v=cudYGE1ac58&list=WL&index=26&t=6s)
-- Written list at: https://www.galactic-hunter.com/post/best-135mm-astrophotography-targets
+- Written list at [this link](https://www.galactic-hunter.com/post/best-135mm-astrophotography-targets)
 
 1. Rho Ophiuchi
 2. M31: Andromeda Galaxy
