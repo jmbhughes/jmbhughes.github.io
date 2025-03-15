@@ -12,11 +12,6 @@ This is an incomplete view of my accomplishments and work history.
 {% timeline() %}
 [
     {
-        "title":"Presented at DASH 2024",
-        "body":"Presented about the PUNCH SOC at the DASH 2024 meeting",
-        "date":"Oct-2024"
-    },
-    {
         "title":"Promoted to Senior Computer Scientist",
         "body":"I was promoted to Senior Computer Scientist at SwRI and given the official title of PUNCH Science Operations Center Manager.",
         "date":"Dec-2023"
