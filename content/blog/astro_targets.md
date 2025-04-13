@@ -3,7 +3,7 @@ title = 'Astronomical targets for a 135mm lens'
 date = 2025-03-15
 draft = false
 toc = false
-description = "Some astronomical things I'd like to try photographing."
+description = "Some astronomical objects I'd like to try photographing."
 
 [taxonomies]
 tags = ["photography", "astronomy"]
