@@ -13,7 +13,7 @@ This is an incomplete view of my accomplishments and work history.
 [
     {
         "title":"Promoted to Senior Computer Scientist",
-        "body":"I was promoted to Senior Computer Scientist at SwRI and given the official title of PUNCH Science Operations Center Manager.",
+        "body":"I was promoted to Senior Computer Scientist at SwRI and became the PUNCH Science Operations Center Manager.",
         "date":"Dec-2023"
     },
     {

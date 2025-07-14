@@ -4,9 +4,9 @@ template = "info-page.html"
 path = "about"
 +++
 
-![my picture](me_small.jpeg)
+![my picture](me_chimney_rock_small.jpg)
 
-I am a computer scientist with 5+ years of experience.
+I am a computer scientist with 7+ years of experience.
 I have a bachelors in computer science and astronomy from Williams College.
 I'm interested in software applications in solar physics, including machine learning.
 Currently, I'm working on building the
