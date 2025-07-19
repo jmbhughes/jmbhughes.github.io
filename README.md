@@ -6,3 +6,5 @@ When starting by cloning from GitHub, you'll need to initialize the theme by run
 `git submodule update --recursive`.
 
 Run the website locally with `zola serve`.
+
+Simply pushing a change to this repo will lead to the website rebuilding and deploying.
