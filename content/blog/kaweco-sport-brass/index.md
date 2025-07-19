@@ -1,5 +1,5 @@
 +++
-title = 'My Kaweco Pen Inspires Me to Write'
+title = 'My Kaweco pen inspires me to write'
 date = 2025-07-19
 draft = false
 toc = false
