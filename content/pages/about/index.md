@@ -23,4 +23,4 @@ reading, sculpting with polymer clay, journaling, and many more things.
 
 I also have an interest in developing open source software. Check out [barnsley](https://jmbhughes.com/barnsley_gui/), my tool for rendering iterated function systems.
 
-You can reach me at [hughes.jmb@gmail.com](mailto:hughes.jmb@gmail.com) or check out my work [on GitHub](https://github.com/jmbhughes). You can also find me on [Google Scholar](https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en).
+You can reach me at [marcus@jmbhughes.com](mailto:marcus@jmbhughes.com) or check out my work [on GitHub](https://github.com/jmbhughes). You can also find me on [Google Scholar](https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en).
