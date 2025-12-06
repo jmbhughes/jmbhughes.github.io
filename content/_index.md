@@ -8,4 +8,4 @@ section_path = "blog/_index.md"
 max_posts = 3
 +++
 
-I'm a computer scientist working at the Southwest Research Institute to understand the Sun better.
+I'm a computer scientist working at the Southwest Research Institute to better understand the Sun and heliosphere.
