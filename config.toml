@@ -21,12 +21,18 @@ include_description = true
 include_path = true
 include_content = true
 
-
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-highlight_theme = "css"
+bottom_footnotes = true
+smart_punctuation = true
+# Set to 'external' to add an indicator next to external links.
+external_links_class = "external"
+
+[markdown.highlighting]
+theme = "catppuccin-frappe"
+light_theme = "github-light"                                                                                     
+dark_theme = "github-dark"
+style = "class"
+error_on_missing_language = true
 
 [extra]
 remote_repository_url = "https://github.com/jmbhughes/jmbhughes.github.io"
