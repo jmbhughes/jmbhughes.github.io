@@ -1,5 +1,5 @@
 +++
-title = 'Starting Birding with an AudioMoth'
+title = 'Birding with an AudioMoth: Setup and First Results'
 date = 2026-02-03
 description = "I bought an AudioMoth microphone and have started identifying the birds by sound on my property."
 
@@ -12,13 +12,13 @@ toc = true
 
 ## What is an AudioMoth?
 
+A while back I watched [this video from Benn Jordan](https://www.youtube.com/watch?v=hCQCP-5g5bo) about recording a PNG to a bird. It's as wild and fun as it sounds. I'd recommend watching it. At the same time, I was in the process of buying a house in a wooded area. I was captivated by the hummingbirds when I toured the house the first time. The gears turned in my mind linking the video and the house, and I knew I wanted to try understanding the birds around my new house. In the video Benn Jordan describes various set ups, and I decided the fastest route to get going was this AudioMoth setup. So what is an AudioMoth?
+
 Ripped straight from the OpenAcoustics website:
 
 > AudioMoth is a low-cost, full-spectrum acoustic logger, based on the Gecko processor range from Silicon Labs. Just like its namesake the moth, AudioMoth can listen at audible frequencies, well into ultrasonic frequencies. It is capable of recording uncompressed audio to microSD card at rates from 8,000 to 384,000 samples per second and can be converted into a full-spectrum USB microphone.
 
 ![Picture of the AudioMoth device](moth.png)
-
-A while back I watched [this video from Benn Jordan](https://www.youtube.com/watch?v=hCQCP-5g5bo) about recording a PNG to a bird. It's as wild and fun as it sounds. I'd recommend watching it. At the same time, I was in the process of buying a house in a wooded area. I was captivated by the hummingbirds when I toured the house the first time. The gears turned in my mind linking the video and the house, and I knew I wanted to try understanding the birds around my new house. In the video Benn Jordan describes various set ups, and I decided the fastest route to get going was this AudioMoth setup.
 
 ## How I set up my system? 
 
@@ -154,7 +154,6 @@ fig.autofmt_xdate()
 plt.savefig("heatmap.png", dpi=300, bbox_inches='tight')
 ```
 
-
 ![Heatmap of birds](heatmap.png)
 
 It's a bit easier to digest than the line graph because they don't overlap as much. Darker lines indicate when there were more of that bird call.
@@ -203,7 +202,11 @@ So where am I headed with this project? I'd like to understand and answer many m
 - Is bird behavior correlated with the weather in a given season? When it's rainy or cold are birds quieter? 
 - So many more questions!
 
-Hopefully this is just the first of many bird posts! I plan to organize and open source all my code eventually.
+I might be able to Google the answer to some of these questions, but where is the fun in that? 
+
+Hopefully this is just the first of many bird posts! It's such a rewarding hobby. 
+
+I plan to organize and open source all my code eventually. For now, enjoy this Pygmy Nuthatch photo. 
 
 ![image of a nuthatch](nuthatch.JPG)
 
