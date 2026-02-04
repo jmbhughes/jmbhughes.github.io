@@ -5,7 +5,7 @@ draft = false
 description = "I created a GitHub workflow to automatically build documentation and upload the PDF on pull requests in GitHub."
 
 [taxonomies]
-tags = ["programming", "python"]
+tags = ["programming"]
 +++
 
 I have a project at work where I need to automatically build the PDF version of Sphinx documentation. 
