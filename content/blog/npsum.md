@@ -12,7 +12,7 @@ I was curious how much the overhead of `np.sum` impacted Cython code.
 That is, should you write your own sum method that loops or use `np.sum`?
 So, I wrote up a little test definition of the two approaches, as shown below:
 
-```cython
+```
 import numpy as np
 cimport numpy as np
 
