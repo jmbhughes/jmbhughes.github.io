@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://jmbhughes.com/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;jmbhughes.com&#x2F;</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>programming</tabi:current_section>
+    </tabi:metadata><link rel="extra-stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" /><title>jmbhughes - programming</title>
+    <link href="https://jmbhughes.com/tags/programming/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://jmbhughes.com/tags/programming/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-02-03T00:00:00+00:00</updated><id>https://jmbhughes.com/tags/programming/atom.xml</id><entry xml:lang="en">
+        <title>Birding with an AudioMoth: Setup and First Results</title>
+        <published>2026-02-03T00:00:00+00:00</published>
+        <updated>2026-02-03T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/bird1/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/bird1/</id>
+        <summary type="html">I bought an AudioMoth microphone and have started identifying the birds by sound on my property.</summary>
+        </entry><entry xml:lang="en">
+        <title>Automatically building Sphinx PDF in a GitHub Action</title>
+        <published>2026-01-13T00:00:00+00:00</published>
+        <updated>2026-01-13T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/auto-sphinx-pdf/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/auto-sphinx-pdf/</id>
+        <summary type="html">I created a GitHub workflow to automatically build documentation and upload the PDF on pull requests in GitHub.</summary>
+        </entry><entry xml:lang="en">
+        <title>Towncrier is a cleaner changelog utility</title>
+        <published>2025-07-25T00:00:00+00:00</published>
+        <updated>2025-07-25T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/towncrier/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/towncrier/</id>
+        <summary type="html">Gone are the days of persistent merge conflicts with each changelog update. Now you can combined your changelog entries automatically!</summary>
+        </entry><entry xml:lang="en">
+        <title>Crash Course in Rust</title>
+        <published>2025-02-03T00:00:00+00:00</published>
+        <updated>2025-02-03T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/crash-course-in-rust/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/crash-course-in-rust/</id>
+        <summary type="html">Slides I gave about getting started in Rust.</summary>
+        </entry><entry xml:lang="en">
+        <title>Scraping Solar Demon</title>
+        <published>2025-01-29T00:00:00+00:00</published>
+        <updated>2025-01-29T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/solar-demon/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/solar-demon/</id>
+        <summary type="html">Retrieve a list of flares from Solar Demon as a CSV file.</summary>
+        </entry><entry xml:lang="en">
+        <title>Best underestimate cubic fitting</title>
+        <published>2024-10-21T00:00:00+00:00</published>
+        <updated>2024-10-21T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/fit-cubic/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/fit-cubic/</id>
+        <summary type="html">Use quadratic programming to fit a cubic polynomial below a curve</summary>
+        </entry><entry xml:lang="en">
+        <title>Converting helioprojective to equatorial</title>
+        <published>2024-08-15T00:00:00+00:00</published>
+        <updated>2024-08-15T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/converting-coordinates/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/converting-coordinates/</id>
+        <summary type="html">Change between world coordinate systems using Astropy and SunPy</summary>
+        </entry><entry xml:lang="en">
+        <title>Making stars</title>
+        <published>2024-06-28T00:00:00+00:00</published>
+        <updated>2024-06-28T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/making-stars/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/making-stars/</id>
+        <summary type="html">Create realistic looking star images using Python</summary>
+        </entry><entry xml:lang="en">
+        <title>Drawing on a Matplotlib Plot</title>
+        <published>2024-06-26T00:00:00+00:00</published>
+        <updated>2024-06-26T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/drawing-on-matplotlib/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/drawing-on-matplotlib/</id>
+        <summary type="html">A handy trick to draw or select regions in a Matplotlib plot</summary>
+        </entry><entry xml:lang="en">
+        <title>Adding codespell as a pre-commit and CI</title>
+        <published>2024-06-15T00:00:00+00:00</published>
+        <updated>2024-06-15T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/adding-codespell/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/adding-codespell/</id>
+        </entry><entry xml:lang="en">
+        <title>Barnsley</title>
+        <published>2024-01-21T00:00:00+00:00</published>
+        <updated>2024-01-21T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/barnsley/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/barnsley/</id>
+        </entry><entry xml:lang="en">
+        <title>Automating SUVI YouTube</title>
+        <published>2023-01-22T00:00:00+00:00</published>
+        <updated>2023-01-22T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/automatic-suvi-youtube/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/automatic-suvi-youtube/</id>
+        </entry><entry xml:lang="en">
+        <title>AIA Temporal Coloring</title>
+        <published>2022-06-03T00:00:00+00:00</published>
+        <updated>2022-06-03T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/aia-temporal-coloring/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/aia-temporal-coloring/</id>
+        </entry><entry xml:lang="en">
+        <title>Creating fake APOD pictures</title>
+        <published>2022-05-30T00:00:00+00:00</published>
+        <updated>2022-05-30T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/galaxy-gan/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/galaxy-gan/</id>
+        </entry><entry xml:lang="en">
+        <title>SUVI calendar heatmap</title>
+        <published>2022-05-20T00:00:00+00:00</published>
+        <updated>2022-05-20T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/suvi-calendar-heatmap/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/suvi-calendar-heatmap/</id>
+        </entry><entry xml:lang="en">
+        <title>EUI Artifact Analysis</title>
+        <published>2022-04-01T00:00:00+00:00</published>
+        <updated>2022-04-01T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/eui-artifact/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/eui-artifact/</id>
+        </entry><entry xml:lang="en">
+        <title>Comparison of speed of np.sum in Cython</title>
+        <published>2021-05-11T00:00:00+00:00</published>
+        <updated>2021-05-11T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/npsum/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/npsum/</id>
+        </entry><entry xml:lang="en">
+        <title>Truncate to specified number of significant figures</title>
+        <published>2021-05-10T00:00:00+00:00</published>
+        <updated>2021-05-10T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/truncate-sigfigs/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/truncate-sigfigs/</id>
+        </entry><entry xml:lang="en">
+        <title>Sliding puzzles</title>
+        <published>2019-04-24T00:00:00+00:00</published>
+        <updated>2019-04-24T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/sliding-puzzles/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/sliding-puzzles/</id>
+        </entry><entry xml:lang="en">
+        <title>Generate Thematic Maps from Heliophysics Event Knowledgebase</title>
+        <published>2019-02-25T00:00:00+00:00</published>
+        <updated>2019-02-25T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/hek-thmap/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/hek-thmap/</id>
+        </entry>
+</feed>

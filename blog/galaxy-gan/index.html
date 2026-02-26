@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;style-src 'self';frame-src https://www.youtube-nocookie.com 'self' giscus.app;connect-src 'self' jmbhughes-stats.goatcounter.com/count;script-src 'self' gc.zgo.at  giscus.app 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://jmbhughes.com/">
+
+    
+    <title>
+jmbhughes • Creating fake APOD pictures</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://jmbhughes.com/icons/favicon.ico"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="jmbhughes - Atom Feed" href="https://jmbhughes.com/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://jmbhughes.com/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://jmbhughes.com/main.css?h=045c365e19a4d50a64bb" />
+        <link rel="stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="" />
+        <meta property="og:description" content="" />
+
+    
+
+    <meta property="og:title" content="Creating fake APOD pictures" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;jmbhughes.com&#x2F;blog&#x2F;galaxy-gan&#x2F;" /><meta property="og:site_name" content="jmbhughes">
+        <noscript><link rel="stylesheet" href="https://jmbhughes.com/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://jmbhughes.com/js/initializeTheme.min.js"></script>
+        <script defer src="https://jmbhughes.com/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+    <script async
+    
+        data-goatcounter="https://jmbhughes-stats.goatcounter.com/count"
+        src="https://gc.zgo.at/count.js"
+        
+    ></script>
+    
+
+
+
+        <script defer src="https://jmbhughes.com/js/searchElasticlunr.min.js?h=69d4be9bc2f0a8301299"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://jmbhughes.com/">jmbhughes</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/archive/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/about/">about
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/news/">news
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Creating fake APOD pictures
+        </h1>
+        <a class="u-url u-uid" href="https://jmbhughes.com/blog/galaxy-gan/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;jmbhughes.com&#x2F;" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2022-05-30">30th May 2022</time></li><li title="1921 words"><span class='separator' aria-hidden='true'>•</span>10 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/programming/">programming</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/python/">python</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/machine-learning/">machine learning</a></li>
+        </ul>
+            
+
+<div class="toc-container">
+    
+        <h3>Table of Contents</h3>
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#introduction">Introduction</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#scraping-apod">Scraping APOD</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#machine-learning-time">Machine learning time</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#pre-processing">Pre-processing</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#training">Training</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#results">Results</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#training-process">Training process</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#fidelity">Fidelity</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#diversity">Diversity</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#nebulas">Nebulas</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#star-fields">Star fields</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#galaxies">Galaxies</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#clusters">Clusters</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#interpolation">Interpolation</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#average">Average</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#using-google-colab">Using Google Colab</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#future-work">Future work</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#conclusion">Conclusion</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+        <section class="e-content body"><h2 id="introduction"><a class="header-anchor no-hover-padding" href="#introduction" aria-label="Anchor link for: introduction"><span class="link-icon" aria-hidden="true"></span></a>
+Introduction</h2>
+<p>I volunteer to teach programming to two high school students through a non-profit
+called <a class="external" rel="external" href="https://the-cs.org/">The Coding School</a>, specifically the
+<a class="external" rel="external" href="https://codeconnects.org/">CodeConnects</a> program. One of my students is taking
+AP Computer Science at the same time. His teacher requires all the students to
+complete a final project of their choosing; they have complete freedom in
+picking the project except it has to be approved by the teacher. (That sounds
+like an awesome teacher by the way, encouraging students to learn on their own
+by pursuing their own passion projects. That’s how you really learn.)</p>
+<p>I’ve been teaching machine learning to this particular student, so we started
+brainstorming ML projects. Ultimately, he wanted to use a generative adversarial
+network (GAN) to generate fake space pictures. We were inspired by
+<a class="external" rel="external" href="https://arxiv.org/pdf/2111.11578.pdf">several</a>
+<a class="external" rel="external" href="https://arxiv.org/pdf/1904.10286v1.pdf">other</a>
+<a class="external" rel="external" href="https://arxiv.org/pdf/1811.03081.pdf">projects</a> conducted by professional
+astronomers and computer scientists and reported in the academic literature.
+I was excited by this project because it unites two of my passions: machine learning
+and astronomy.</p>
+<p>We decided the project would use images from <a class="external" rel="external" href="https://apod.nasa.gov/apod/astropix.html">NASA’s Astronomy Picture of the Day</a> (APOD).
+They are, after all, some of the best images of our universe!</p>
+<p>We outlined the project in a few steps:</p>
+<ol>
+<li>Teach him about how GANs work</li>
+<li>Implement a basic GAN on a common dataset like MNIST</li>
+<li>Scrape APOD for all pictures that meet our criteria</li>
+<li>Train a sophisticated GAN to fake APOD!</li>
+</ol>
+<p>I won’t go into too much detail about steps 1 and 2 here and focus most on
+steps 3 and 4.</p>
+<h2 id="scraping-apod"><a class="header-anchor no-hover-padding" href="#scraping-apod" aria-label="Anchor link for: scraping-apod"><span class="link-icon" aria-hidden="true"></span></a>
+Scraping APOD</h2>
+<p>It turns out getting images from APOD is easier than I expected. Our initial
+approach was to parse <a class="external" rel="external" href="https://apod.nasa.gov/apod/archivepix.html">the archive</a>
+as a jumping off point. However, we quickly noticed that all the links had a
+standard form. To get the image from May 25th, 2022 you simply go to
+<code>https://apod.nasa.gov/apod/ap220525.html</code>. The URL is just <code>ap</code> followed by
+a two digit year code, a two digit month code, and a two digit day code. This
+is easily generated by a f-string in Python.</p>
+<p>Once we got to a specific day’s page, there’s only one image on it. So, we
+can just search the HTML for the only <code>img</code> tag and get the link to the image
+resource. He only wanted to recreate deep space pictures, i.e. no panoramic Earth night sky or
+human creations should be in the pictures. We thought the easiest way to narrow
+down the images without manually inspecting them all was to restrict ourselves
+to images that had “NGC” in their page description. NGC stands for New General
+Catalogue of Nebulae and Clusters of Stars. It was created in 1888 and has
+thousands of nebulae, star clusters, and galaxies in it.</p>
+<p>So, we got to writing code.</p>
+<p>Altogether, this results in a nice, short script as shown below.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> requests</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> bs4</span><span class="z-keyword"> import</span><span class="z-source"> BeautifulSoup</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> datetime</span><span class="z-keyword"> import</span><span class="z-source"> datetime</span><span class="z-punctuation">,</span><span class="z-source"> timedelta</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># set the time window you want to fetch images for</span></span>
+<span class="giallo-l"><span class="z-source">start</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> datetime</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">2015</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">end</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> datetime</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">2022</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 5</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 26</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># these are the base links used</span></span>
+<span class="giallo-l"><span class="z-source">link</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;https://apod.nasa.gov/apod/archivepix.html&quot;</span></span>
+<span class="giallo-l"><span class="z-source">prefix</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;https://apod.nasa.gov/apod/&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> date_range</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">start</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> end</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # Truncate the hours, minutes, and seconds</span></span>
+<span class="giallo-l"><span class="z-source">    sdate</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> datetime</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">start</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">year</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> start</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">month</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> start</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">day</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    edate</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> datetime</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">end</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">year</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> end</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">month</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> end</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">day</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # compute all dates in that difference</span></span>
+<span class="giallo-l"><span class="z-source">    delta</span><span class="z-punctuation">:</span><span class="z-source"> timedelta</span><span class="z-keyword z-operator"> =</span><span class="z-source"> edate</span><span class="z-keyword z-operator"> -</span><span class="z-source"> sdate</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-punctuation"> [</span><span class="z-source">start</span><span class="z-keyword z-operator"> +</span><span class="z-meta z-function-call z-python"> timedelta</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">days</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">i</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">delta</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">days</span><span class="z-keyword z-operator"> +</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">for</span><span class="z-source"> day</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-meta z-function-call z-python"> date_range</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">start</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python">end</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">    day_str</span><span class="z-keyword z-operator"> =</span><span class="z-source"> day</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">strftime</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;ap%y%m</span><span class="z-constant z-character z-format z-placeholder z-other z-python">%d</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    day_link</span><span class="z-keyword z-operator"> =</span><span class="z-source"> prefix</span><span class="z-keyword z-operator">+</span><span class="z-source">day_str</span><span class="z-keyword z-operator">+</span><span class="z-punctuation z-definition z-string z-string">&quot;.html&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    soup</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">day_link</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-punctuation"> (</span><span class="z-punctuation z-definition z-string z-string">&quot;NGC&quot;</span><span class="z-keyword z-operator z-logical z-python"> in</span><span class="z-source"> soup</span><span class="z-punctuation">.</span><span class="z-source">text</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        try</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            soupL1</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> BeautifulSoup</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">soup</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">text</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> features</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&quot;html.parser&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">            pic_suffix</span><span class="z-keyword z-operator"> =</span><span class="z-source"> soupL1</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">find</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;img&quot;</span><span class="z-punctuation">)[</span><span class="z-punctuation z-definition z-string z-string">&#39;src&#39;</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-source">            full_link</span><span class="z-keyword z-operator"> =</span><span class="z-source"> prefix</span><span class="z-keyword z-operator">+</span><span class="z-punctuation z-definition z-string z-string">&quot;/&quot;</span><span class="z-keyword z-operator">+</span><span class="z-source">pic_suffix</span></span>
+<span class="giallo-l"><span class="z-source">            pic_page</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">full_link</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">            file</span><span class="z-keyword z-operator"> =</span><span class="z-support z-function z-builtin z-python"> open</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">day_str</span><span class="z-keyword z-operator">+</span><span class="z-punctuation z-definition z-string z-string">&quot;.jpg&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;wb&#39;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">            file</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">write</span><span class="z-punctuation">(</span><span class="z-support z-type z-python">bytes</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">pic_page</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">content</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">            file</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">close</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">            print</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">full_link</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        except</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-comment z-comment">  # the page likely didn&#39;t have a jpg</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">            print</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;failed for </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">day</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">)</span></span></code></pre>
+<p>Below you can see an example of images scraped from APOD. They’re beautifully
+crisp and colorful images of just the deep space objects we were after. Remember
+this image for later so you can compare it to the results we achieved.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/real_512.jpg" alt="real images" /></p>
+<p>Altogether, we settled on using 454 images.</p>
+<h2 id="machine-learning-time"><a class="header-anchor no-hover-padding" href="#machine-learning-time" aria-label="Anchor link for: machine-learning-time"><span class="link-icon" aria-hidden="true"></span></a>
+Machine learning time</h2>
+<p>Once we had our dataset of images, we were ready to do some machine learning. First,
+we needed to preprocess and standardize the images for the GAN. Then,
+we got to the actual training.</p>
+<h3 id="pre-processing"><a class="header-anchor no-hover-padding" href="#pre-processing" aria-label="Anchor link for: pre-processing"><span class="link-icon" aria-hidden="true"></span></a>
+Pre-processing</h3>
+<p>I thought it would be easiest if all the images were small and the same size.
+Thus, we wrote the script below to first crop the images and then resize them
+to a standard size. Note all the training images have been placed in a directory
+called <code>raw</code>, and we write out the resized images to folders with names formatted
+<code>binned_{size}</code>, e.g. <code>binned_512</code> for images resized to 512x512 pixels.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> PIL</span><span class="z-keyword"> import</span><span class="z-source"> Image</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> glob</span><span class="z-keyword"> import</span><span class="z-source"> glob</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> os</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># for the specified resolutions</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">for</span><span class="z-source"> size</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-punctuation"> [</span><span class="z-constant z-numeric">128</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 256</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 512</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 1024</span><span class="z-punctuation">]:</span></span>
+<span class="giallo-l"><span class="z-source">    os</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">mkdir</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;binned_</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">size</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    fns</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> glob</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;raw/*.jpg&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> fn</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> fns</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-comment z-comment">  # bin all the images</span></span>
+<span class="giallo-l"><span class="z-source">        out_fn</span><span class="z-keyword z-operator"> =</span><span class="z-source"> os</span><span class="z-punctuation">.</span><span class="z-source">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">join</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;binned_</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{size}</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> os</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">basename</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">fn</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">        img</span><span class="z-keyword z-operator"> =</span><span class="z-source"> Image</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">open</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">fn</span><span class="z-punctuation">).</span><span class="z-meta z-function-call z-python">convert</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;RGB&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        min_dimension</span><span class="z-keyword z-operator"> =</span><span class="z-support z-function z-builtin z-python"> min</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">img</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">width</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> img</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">height</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        img</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">crop</span><span class="z-punctuation">((</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> min_dimension</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> min_dimension</span><span class="z-punctuation">)).</span><span class="z-meta z-function-call z-python">resize</span><span class="z-punctuation">((</span><span class="z-meta z-function-call z-arguments z-python">size</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> size</span><span class="z-punctuation">)).</span><span class="z-meta z-function-call z-python">save</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">out_fn</span><span class="z-punctuation">)</span></span></code></pre>
+<p>We cropped first to avoid squashing the images in weird ways that would distort
+the astronomical objects within them.</p>
+<h3 id="training"><a class="header-anchor no-hover-padding" href="#training" aria-label="Anchor link for: training"><span class="link-icon" aria-hidden="true"></span></a>
+Training</h3>
+<p>There’s a plethora of GAN architectures to choose from, but we had some special
+constraints: only 454 small images and limited compute power. We were originally
+going to use his PC, but ultimately ended up training it on Google Colab (more
+on this later).
+Thus, we tried using the “lighteight GAN” model by <a class="external" rel="external" href="https://arxiv.org/abs/2101.04775">Liu eta al. 2021</a> because “the model converges from scratch with just
+a few hours of training on a single RTX-2080 GPU, and has a consistent performance, even with less than 100 training samples.”
+They have an official PyTorch implementation available <a class="external" rel="external" href="https://github.com/odegeasslbc/FastGAN-pytorch">here on GitHub</a>,
+but we decided to go with <a class="external" rel="external" href="https://github.com/lucidrains/lightweight-gan">this implementation</a> instead
+because it was easy to set up and get running. It’s a very professional implementation; thank you to its author Phil Wang.</p>
+<p>To run the code we simply fired up a GPU instance of Google Colab,
+ran <code>pip install lightweight-gan</code>, and then ran</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">lightweight_gan</span><span class="z-string"> --data /content/drive/MyDrive/galaxygan/binned_512</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --results_dir /content/drive/MyDrive/galaxygan/</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --models_dir /content/drive/MyDrive/galaxygan/</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --name out_512</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --batch-size</span><span class="z-constant z-numeric"> 16</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --gradient-accumulate-every</span><span class="z-constant z-numeric"> 4</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --num-train-steps</span><span class="z-constant z-numeric"> 10000</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --image-size</span><span class="z-constant z-numeric"> 512</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --save-every</span><span class="z-constant z-numeric"> 100</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  --evaluate-every</span><span class="z-constant z-numeric"> 10</span></span></code></pre>
+<p>While the command is long, it was easy to construct and ran like a charm with
+background execution in Google Colab.</p>
+<p>We waited for about 18 hours, and the run had finished! We could see intermediate
+results all along the way and had model checkpoints every 100 iterations in case anything failed.</p>
+<h2 id="results"><a class="header-anchor no-hover-padding" href="#results" aria-label="Anchor link for: results"><span class="link-icon" aria-hidden="true"></span></a>
+Results</h2>
+<p>Now for the exciting part! Let’s look at some results. They aren’t as stunningly
+perfect as I’d hoped, but they are impressive and show promise.
+We’ll consider the fidelity of images, the diversity of the fakes, the ability to
+interpolate the latent space, and the “average”, fake APOD.</p>
+<h3 id="training-process"><a class="header-anchor no-hover-padding" href="#training-process" aria-label="Anchor link for: training-process"><span class="link-icon" aria-hidden="true"></span></a>
+Training process</h3>
+<p>The video below shows the progress training. It starts with crazy noise images
+and rapid evolution in the first epochs and results in the final model at the video’s end.
+Feel free to adjust the speed in YouTube to get a slower or faster animation.</p>
+<iframe
+  width="100%"
+  height="400"
+  src="https://www.youtube-nocookie.com/embed/Ti7xKwgkgOk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>
+<p>About a third of the way into the 10,000 trainings steps, we can already see images that are
+reminiscent of APOD pictures. I let it keep training though to see if we got improved
+images, which I believe we did.</p>
+<h3 id="fidelity"><a class="header-anchor no-hover-padding" href="#fidelity" aria-label="Anchor link for: fidelity"><span class="link-icon" aria-hidden="true"></span></a>
+Fidelity</h3>
+<p>Take a look for yourself below at one of the fake images generated.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/fidelity.jpg" alt="fidelity comparison" /></p>
+<p>It clearly resembles a nebula, but it exhibits extensive checkboard artifacts.
+You can see the convolution grid. If you want to read more about these kinds
+of artifacts and what can be done about them check out <a class="external" rel="external" href="https://www.google.com/url?q=http://doi.org/10.23915/distill.00003&amp;sa=D&amp;source=editors&amp;ust=1653946145635417&amp;usg=AOvVaw2crVlgSbt4oYDbQep99KE9">this fantastic article by Odena et al. (2016)</a>
+and <a class="external" rel="external" href="https://arxiv.org/ftp/arxiv/papers/1707/1707.02937.pdf">another by Aitken et al. (2017)</a>.</p>
+<p>We are content with the current result as first step, and are interested in
+resolving this issue potentially in a future iteration.</p>
+<h3 id="diversity"><a class="header-anchor no-hover-padding" href="#diversity" aria-label="Anchor link for: diversity"><span class="link-icon" aria-hidden="true"></span></a>
+Diversity</h3>
+<p>Do the images capture the diversity of astronomical objects in the source data?
+You can see below an array of fake examples.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/1000.jpg" alt="fake examples" /></p>
+<p>They do seem to cover the main categories we expect. I don’t see anything that looks
+alien; most images seem realistic-ish.</p>
+<h4 id="nebulas"><a class="header-anchor no-hover-padding" href="#nebulas" aria-label="Anchor link for: nebulas"><span class="link-icon" aria-hidden="true"></span></a>
+Nebulas</h4>
+<p>Here are three nebulas.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/faint-nebula.jpg" alt="faint nebula" /></p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/red-nebula.jpg" alt="red nebula" /></p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/white-nebula.jpg" alt="white nebula" /></p>
+<p>We see a variety of color and structure in them.</p>
+<h4 id="star-fields"><a class="header-anchor no-hover-padding" href="#star-fields" aria-label="Anchor link for: star-fields"><span class="link-icon" aria-hidden="true"></span></a>
+Star fields</h4>
+<p>The results include images that are pure starfields. I haven’t done any official
+analysis, but it appears to me that the stars are much more regularly distributed
+in space than one might expect in space.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/star-field.jpg" alt="star field" /></p>
+<h4 id="galaxies"><a class="header-anchor no-hover-padding" href="#galaxies" aria-label="Anchor link for: galaxies"><span class="link-icon" aria-hidden="true"></span></a>
+Galaxies</h4>
+<p>I feel there’s a shortage of galaxies, especially highly structure spiral galaxies
+in our results. I’m not sure if that’s just a bias from the APOD sample, if it’s
+a consequence of the GAN, or if I’m just crazy and there’s no shortage.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/galaxy.jpg" alt="galaxy" /></p>
+<p>We also see interesting galaxy groups!</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/galaxy-group.jpg" alt="galaxy group" /></p>
+<h4 id="clusters"><a class="header-anchor no-hover-padding" href="#clusters" aria-label="Anchor link for: clusters"><span class="link-icon" aria-hidden="true"></span></a>
+Clusters</h4>
+<p>Globular clusters can be found in the fake results too.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/globular-cluster.jpg" alt="globular clusters" /></p>
+<p>Thus, overall it seems to reconstruct all the categories, albeit with a potential bias.</p>
+<h3 id="interpolation"><a class="header-anchor no-hover-padding" href="#interpolation" aria-label="Anchor link for: interpolation"><span class="link-icon" aria-hidden="true"></span></a>
+Interpolation</h3>
+<p>One very cool thing that this implementation of lightweight-gan does is create
+interpolation examples. In the image below, there are 8 images on the top row that we can
+think of as starting points and 8 images on the bottom row we can think of as ending points.
+Then, the code interpolates in the model’s latent space to construct representative images
+between the start and end. I find the 6th column most fascinating in this example. We interpolate
+from a brilliant nebula to what appears to be a small galaxy.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/1000-interp.jpg" alt="interpolating images" /></p>
+<p>It does seem that there are harsh transitions between the start and end point when
+they’re dramatically different. I’m not sure what this means about the model though.</p>
+<h3 id="average"><a class="header-anchor no-hover-padding" href="#average" aria-label="Anchor link for: average"><span class="link-icon" aria-hidden="true"></span></a>
+Average</h3>
+<p>We can also explore the average fake image. We took a sample of 1000 images
+and merely averaged them together. You end up with the image below.</p>
+<p><img src="https://jmbhughes.com/blog/galaxy-gan/average.jpg" alt="average image" /></p>
+<p>There’s some nebulosity in the average; I might have expected it to be nearly black.</p>
+<h2 id="using-google-colab"><a class="header-anchor no-hover-padding" href="#using-google-colab" aria-label="Anchor link for: using-google-colab"><span class="link-icon" aria-hidden="true"></span></a>
+Using Google Colab</h2>
+<p>Originally, we were going to train the model on the student’s computer. However,
+we started running into errors and resolving those errors just resulted in more
+errors. Ultimately, there was some error about insufficient GPU memory. It might
+be resolvable, but we thought this might be a good chance to try out Google Colab.</p>
+<p>I purchased a Pro+ subscription since I knew we’d have a long-running training session.
+I believe background execution was necessary because when I tried training without it, the runtime timed out.
+It’s possible I just did something wrong. Regardless, Colab Pro+ did the trick. We actually trained
+twice, once on a 128x128 sized images and then for the results shown here on 512x512 images.</p>
+<p>Between the two training sessions, I found I had to wait because I’d used up my
+GPU allotment. It’s frustrating that Colab doesn’t tell you how long you’ll have to
+wait. I just tried several times in the next 24 hours, and it eventually let me
+start another GPU runtime. I’ve heard that these wait times increase the more
+you use Colab. I hope not.</p>
+<p>I was very happy with how Google Colab integrates with Google Drive. I could
+output the images and model checkpoints to a shared directory on Google Drive.
+We could both see the results. I woke up in the middle of the night during training
+some and was able to grab my phone from the night stand and look at intermediate results.
+I knew it was still training without even getting up. I also struggled to contain
+my excitement at the results and get back to sleep then.</p>
+<p>I’ll keep trying it out because there are more things I would like
+to train for work projects. Maybe I’ll write a full post in a few months about
+my overall impression of Colab’s paid tiers.</p>
+<h2 id="future-work"><a class="header-anchor no-hover-padding" href="#future-work" aria-label="Anchor link for: future-work"><span class="link-icon" aria-hidden="true"></span></a>
+Future work</h2>
+<p>There are many avenues to explore:</p>
+<ul>
+<li>Simply train the model for longer</li>
+<li>Remove the checkerboarding for higher fidelity images</li>
+<li>Try other GAN architectures to compare performance</li>
+<li>Analyze the distribution of image object types to answer the question: “Do we capture a representative sample of APOD?”</li>
+<li>Your suggestions!</li>
+</ul>
+<h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
+Conclusion</h2>
+<p>This was an exciting small project that has promising results! I hope my student
+had as much fun doing it as I did. We’re open to suggestions from you, the reader, about what else we could do.</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="welpo&#x2F;tabi-comments"
+    data-repo-id="R_kgDOG3bviQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOG3bvic4CjCSq"
+    
+        data-mapping="specific"
+        data-term="galaxy-gan"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="bottom"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://jmbhughes.com/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#introduction">Introduction</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#scraping-apod">Scraping APOD</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#machine-learning-time">Machine learning time</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#pre-processing">Pre-processing</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#training">Training</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#results">Results</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#training-process">Training process</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#fidelity">Fidelity</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#diversity">Diversity</a>
+                                        
+                                            <ul>
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#nebulas">Nebulas</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#star-fields">Star fields</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#galaxies">Galaxies</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                                    
+                                                        <li><a href="https://jmbhughes.com/blog/galaxy-gan/#clusters">Clusters</a>
+                                                            
+                                                        </li>
+                                                    
+                                                
+                                            </ul>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#interpolation">Interpolation</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/galaxy-gan/#average">Average</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#using-google-colab">Using Google Colab</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#future-work">Future work</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/galaxy-gan/#conclusion">Conclusion</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://jmbhughes.com/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://jmbhughes.com/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://jmbhughes.com/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://github.com/jmbhughes">
+                                    <img loading="lazy" alt="github" title="github" src="https://jmbhughes.com/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en">
+                                    <img loading="lazy" alt="google-scholar" title="google-scholar" src="https://jmbhughes.com/social_icons/google-scholar.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="mailto:marcus@jmbhughes.com">
+                                    <img loading="lazy" alt="email" title="email" src="https://jmbhughes.com/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 2026 J. Marcus Hughes • Unless otherwise noted, the content in this website is available under the <a class="external" rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;jmbhughes&#x2F;jmbhughes.github.io">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

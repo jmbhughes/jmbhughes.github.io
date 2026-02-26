@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;style-src 'self';frame-src https://www.youtube-nocookie.com 'self' giscus.app;connect-src 'self' jmbhughes-stats.goatcounter.com/count;script-src 'self' gc.zgo.at  giscus.app 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://jmbhughes.com/">
+
+    
+    <title>
+jmbhughes • Efficient Inclusion Check</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://jmbhughes.com/icons/favicon.ico"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="jmbhughes - Atom Feed" href="https://jmbhughes.com/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://jmbhughes.com/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://jmbhughes.com/main.css?h=045c365e19a4d50a64bb" />
+        <link rel="stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="" />
+        <meta property="og:description" content="" />
+
+    
+
+    <meta property="og:title" content="Efficient Inclusion Check" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;jmbhughes.com&#x2F;blog&#x2F;efficient-inclusion-check&#x2F;" /><meta property="og:site_name" content="jmbhughes">
+        <noscript><link rel="stylesheet" href="https://jmbhughes.com/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://jmbhughes.com/js/initializeTheme.min.js"></script>
+        <script defer src="https://jmbhughes.com/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+    <script async
+    
+        data-goatcounter="https://jmbhughes-stats.goatcounter.com/count"
+        src="https://gc.zgo.at/count.js"
+        
+    ></script>
+    
+
+
+
+        <script defer src="https://jmbhughes.com/js/searchElasticlunr.min.js?h=69d4be9bc2f0a8301299"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://jmbhughes.com/">jmbhughes</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/archive/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/about/">about
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/news/">news
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Efficient Inclusion Check
+        </h1>
+        <a class="u-url u-uid" href="https://jmbhughes.com/blog/efficient-inclusion-check/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;jmbhughes.com&#x2F;" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2022-03-25">25th Mar 2022</time></li><li title="348 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/math/">math</a></li>
+        </ul><section class="e-content body"><h2 id="problem-statement"><a class="header-anchor no-hover-padding" href="#problem-statement" aria-label="Anchor link for: problem-statement"><span class="link-icon" aria-hidden="true"></span></a>
+Problem Statement</h2>
+<p>I recently stumbled upon a cute problem where you have three sets of numbers
+$$A, B, C \subseteq \lbrace 0, \dots, n \rbrace.$$ You want to answer if there exists $$a \in A, b \in B \text{ such that } c = a + b \in C.$$ It’s a conceptually simple problem: are there two numbers from the first two sets that sum to a number in the third set? The hard part is we want to solve in it O(n log n) time.</p>
+<h2 id="brute-force-search"><a class="header-anchor no-hover-padding" href="#brute-force-search" aria-label="Anchor link for: brute-force-search"><span class="link-icon" aria-hidden="true"></span></a>
+Brute force search</h2>
+<p>The simplest solution is to define the C set as a set in Python so that we can do constant time inclusion checking.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword z-control z-flow z-python">for</span><span class="z-source"> a</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> A</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">  for</span><span class="z-source"> b</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> B</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> a</span><span class="z-keyword z-operator">+</span><span class="z-source">b</span><span class="z-keyword z-operator z-logical z-python"> in</span><span class="z-source"> C</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">      return</span><span class="z-constant z-language z-python"> True</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">return</span><span class="z-constant z-language z-python"> False</span></span></code></pre>
+<p>Thus the above code is O(n²), not our goal yet. (Or if we don’t have efficient checking of inclusion in C, it’s O(n³).)</p>
+<h2 id="clever-search"><a class="header-anchor no-hover-padding" href="#clever-search" aria-label="Anchor link for: clever-search"><span class="link-icon" aria-hidden="true"></span></a>
+Clever search</h2>
+<p>We can do better! The observation that we can represent the sets as polynomials is critical.
+Thus let, $$A = \lbrace a_1, a_2, a_3, \dots, a_n \rbrace$$ be represented as $$p_A(x) = x^{a_1} + x^{a_2} + \dots + x^{a_n}.$$
+Do the same for B and C. Then, consider $$p_A(x) \times p_B(x).$$</p>
+<p>Let’s run a little example to see why this matters.
+$$ A = \lbrace 1, 4, 9 \rbrace, B = \lbrace 2, 10 \rbrace, C = \lbrace 12, 1000 \rbrace$$
+Then, $$p_A(x) = x + x^4 + x^9$$ and $$p_B(x) = x^2 + x^{10}$$ and $$p_C(x) = x^{12} + x^{1000}.$$
+Notice though that $$p_A(x) \times p_B(x) = x^3 + x^6 + 2 x^{11} + x^{14} + x^{19}.$$
+We only have cofficients greater than zero for terms that are the sums of elements in A and B!
+Thus, if we can efficiently calculate the polynomial product, we can just compare the coefficient list to C.</p>
+<h3 id="efficient-polynomial-multiplication"><a class="header-anchor no-hover-padding" href="#efficient-polynomial-multiplication" aria-label="Anchor link for: efficient-polynomial-multiplication"><span class="link-icon" aria-hidden="true"></span></a>
+Efficient polynomial multiplication</h3>
+<p>It turns out multiplying polynomials in O(n log n) time is possible if we do it in Fourier space.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> numpy</span><span class="z-punctuation">.</span><span class="z-source">fft</span><span class="z-keyword"> import</span><span class="z-source"> fft</span><span class="z-punctuation">,</span><span class="z-source"> ifft</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> numpy</span><span class="z-keyword"> import</span><span class="z-source"> real</span><span class="z-punctuation">,</span><span class="z-source"> imag</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> polynomial_multiply</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">a_coeff_list</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> b_coeff_list</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">  &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">  Return the coefficient list of the multiplication</span></span>
+<span class="giallo-l"><span class="z-string">  of the two polynomials</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">  &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    n</span><span class="z-punctuation">,</span><span class="z-source"> m</span><span class="z-keyword z-operator"> =</span><span class="z-support z-function z-builtin z-python"> len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">a_coeff_list</span><span class="z-punctuation">),</span><span class="z-support z-function z-builtin z-python"> len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">b_coeff_list</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # we pad with zeros since c is size m + n - 2</span></span>
+<span class="giallo-l"><span class="z-source">    a_fft_coeffs</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> fft</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">a_coeff_list</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation"> [</span><span class="z-constant z-numeric">0.0</span><span class="z-punctuation">]</span><span class="z-keyword z-operator">*</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">m</span><span class="z-keyword z-operator"> -</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">    b_fft_coeffs</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> fft</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">b_coeff_list</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation"> [</span><span class="z-constant z-numeric">0.0</span><span class="z-punctuation">]</span><span class="z-keyword z-operator">*</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">n</span><span class="z-keyword z-operator"> -</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    c_fft_coeffs</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-source">a</span><span class="z-keyword z-operator">*</span><span class="z-source">b</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> a</span><span class="z-punctuation">,</span><span class="z-source"> b</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> zip</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">a_fft_coeffs</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> b_fft_coeffs</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-source">    c</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-meta z-function-call z-python">real</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">v</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> v</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-meta z-function-call z-python"> ifft</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">c_fft_coeffs</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> c</span></span></code></pre><h3 id="the-final-solution"><a class="header-anchor no-hover-padding" href="#the-final-solution" aria-label="Anchor link for: the-final-solution"><span class="link-icon" aria-hidden="true"></span></a>
+The final solution</h3>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> check_sum_exists</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">a</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> b</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> c</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> n</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">  &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">  Inputs:</span></span>
+<span class="giallo-l"><span class="z-string">  sets a, b, c</span></span>
+<span class="giallo-l"><span class="z-string">  n is the maximum number in a, b, c together</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">  &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">  # set up the polynomial coefficients</span></span>
+<span class="giallo-l"><span class="z-source">  a_coeffs</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">]</span><span class="z-keyword z-operator">*</span><span class="z-source">n</span></span>
+<span class="giallo-l"><span class="z-source">  b_coeffs</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">]</span><span class="z-keyword z-operator">*</span><span class="z-source">n</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">  for</span><span class="z-source"> aa</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> a</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">    a_coeffs</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">aa</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-numeric"> 1</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">  for</span><span class="z-source"> bb</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> b</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">    b_coeffs</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">bb</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-numeric"> 1</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">  # multiply them together</span></span>
+<span class="giallo-l"><span class="z-source">  c_coeffs</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> polynomial_multiply</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">a_coeffs</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> b_coeffs</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">  # Make sure the coefficients are integers without floating point errors</span></span>
+<span class="giallo-l"><span class="z-source">  coeffs_copy</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> []</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">  for</span><span class="z-source"> num</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> c_coeffs</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-punctuation">(</span><span class="z-support z-function z-builtin z-python">abs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">num</span><span class="z-keyword z-operator">-</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> &lt;</span><span class="z-support z-function z-builtin z-python"> abs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">num</span><span class="z-keyword z-operator">-</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)):</span></span>
+<span class="giallo-l"><span class="z-source">      coeffs_copy</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">append</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    elif</span><span class="z-punctuation">(</span><span class="z-support z-function z-builtin z-python">abs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">num</span><span class="z-keyword z-operator">-</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> &lt;</span><span class="z-support z-function z-builtin z-python"> abs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">num</span><span class="z-keyword z-operator">-</span><span class="z-constant z-numeric">2</span><span class="z-punctuation">)):</span></span>
+<span class="giallo-l"><span class="z-source">      coeffs_copy</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">append</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    else</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">      coeffs_copy</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">append</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">2</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">  return</span><span class="z-support z-function z-builtin z-python"> any</span><span class="z-punctuation">([</span><span class="z-meta z-indexed-name z-python">coeffs_copy</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">cc</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> &gt;=</span><span class="z-constant z-numeric"> 1</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-meta z-function-call z-arguments z-python"> cc</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-meta z-function-call z-arguments z-python"> c</span><span class="z-punctuation">])</span></span></code></pre><h2 id="conclusion"><a class="header-anchor no-hover-padding" href="#conclusion" aria-label="Anchor link for: conclusion"><span class="link-icon" aria-hidden="true"></span></a>
+Conclusion</h2>
+<p>This cute solution is an approach that I wouldn’t arrived at initially.
+Just because you don’t see a more efficient solution doesn’t mean there isn’t one.</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="welpo&#x2F;tabi-comments"
+    data-repo-id="R_kgDOG3bviQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOG3bvic4CjCSq"
+    
+        data-mapping="specific"
+        data-term="efficient-inclusion-check"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="bottom"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://jmbhughes.com/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/efficient-inclusion-check/#problem-statement">Problem Statement</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/efficient-inclusion-check/#brute-force-search">Brute force search</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/efficient-inclusion-check/#clever-search">Clever search</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/efficient-inclusion-check/#efficient-polynomial-multiplication">Efficient polynomial multiplication</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/efficient-inclusion-check/#the-final-solution">The final solution</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/efficient-inclusion-check/#conclusion">Conclusion</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<link rel="stylesheet" href="https://jmbhughes.com/katex.min.css">
+    <script defer src="https://jmbhughes.com/js/katex.min.js"></script>
+    <span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://jmbhughes.com/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://jmbhughes.com/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://jmbhughes.com/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://github.com/jmbhughes">
+                                    <img loading="lazy" alt="github" title="github" src="https://jmbhughes.com/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en">
+                                    <img loading="lazy" alt="google-scholar" title="google-scholar" src="https://jmbhughes.com/social_icons/google-scholar.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="mailto:marcus@jmbhughes.com">
+                                    <img loading="lazy" alt="email" title="email" src="https://jmbhughes.com/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 2026 J. Marcus Hughes • Unless otherwise noted, the content in this website is available under the <a class="external" rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;jmbhughes&#x2F;jmbhughes.github.io">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
