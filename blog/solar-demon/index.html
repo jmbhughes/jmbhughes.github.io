@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;style-src 'self';frame-src https://www.youtube-nocookie.com 'self' giscus.app;connect-src 'self' jmbhughes-stats.goatcounter.com/count;script-src 'self' gc.zgo.at  giscus.app 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://jmbhughes.com/">
+
+    
+    <title>
+jmbhughes • Scraping Solar Demon</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://jmbhughes.com/icons/favicon.ico"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="jmbhughes - Atom Feed" href="https://jmbhughes.com/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://jmbhughes.com/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://jmbhughes.com/main.css?h=045c365e19a4d50a64bb" />
+        <link rel="stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Retrieve a list of flares from Solar Demon as a CSV file." />
+        <meta property="og:description" content="Retrieve a list of flares from Solar Demon as a CSV file." />
+
+    
+
+    <meta property="og:title" content="Scraping Solar Demon" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;jmbhughes.com&#x2F;blog&#x2F;solar-demon&#x2F;" /><meta property="og:site_name" content="jmbhughes">
+        <noscript><link rel="stylesheet" href="https://jmbhughes.com/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://jmbhughes.com/js/initializeTheme.min.js"></script>
+        <script defer src="https://jmbhughes.com/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+    <script async
+    
+        data-goatcounter="https://jmbhughes-stats.goatcounter.com/count"
+        src="https://gc.zgo.at/count.js"
+        
+    ></script>
+    
+
+
+
+        <script defer src="https://jmbhughes.com/js/searchElasticlunr.min.js?h=69d4be9bc2f0a8301299"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://jmbhughes.com/">jmbhughes</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/archive/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/about/">about
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/news/">news
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Scraping Solar Demon
+        </h1>
+        <a class="u-url u-uid" href="https://jmbhughes.com/blog/solar-demon/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;jmbhughes.com&#x2F;" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2025-01-29">29th Jan 2025</time></li><li title="81 words"><span class='separator' aria-hidden='true'>•</span>1 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/solar/">solar</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/data/">data</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/programming/">programming</a></li>
+        </ul>
+            <p class="p-summary" hidden>Retrieve a list of flares from Solar Demon as a CSV file.</p><section class="e-content body"><h2 id="what-is-it"><a class="header-anchor no-hover-padding" href="#what-is-it" aria-label="Anchor link for: what-is-it"><span class="link-icon" aria-hidden="true"></span></a>
+What is it?</h2>
+<p>Solar Demon is a tool to detect flares, dimmings, and EUV waves in SDO/AIA images.</p>
+<p><a class="external" rel="external" href="https://www.sidc.be/solardemon/">This is the main website</a>.</p>
+<p>The associated paper is <a class="external" rel="external" href="https://doi.org/10.1051/swsc/2015019">‘Solar Demon - an approach to detecting flares, dimmings, and EUV waves on SDO AIA images’ by Kraaikamp and Verbeeck(2015)</a>.</p>
+<h2 id="scraping-the-data"><a class="header-anchor no-hover-padding" href="#scraping-the-data" aria-label="Anchor link for: scraping-the-data"><span class="link-icon" aria-hidden="true"></span></a>
+Scraping the data</h2>
+<p>I wanted a way of converting all the data to a Pandas dataframe to export as a CSV. Here’s the code:</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> pandas</span><span class="z-keyword"> as</span><span class="z-source"> pd</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> bs4</span><span class="z-keyword"> import</span><span class="z-source"> BeautifulSoup</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> requests</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> dateutil</span><span class="z-punctuation">.</span><span class="z-source">parser</span><span class="z-keyword"> import</span><span class="z-source"> parse</span><span class="z-keyword"> as</span><span class="z-source"> parse_datetime_str</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> find_month_breaks</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">rows</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">    breaks</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> []</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> i</span><span class="z-punctuation">,</span><span class="z-source"> row</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> enumerate</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">rows</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        if</span><span class="z-source"> i</span><span class="z-keyword z-operator"> &gt;=</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            first_td</span><span class="z-keyword z-operator"> =</span><span class="z-source"> row</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">find</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;td&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">            if</span><span class="z-source"> first_td</span><span class="z-keyword z-operator z-logical z-python"> and</span><span class="z-source"> first_td</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">has_attr</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;colspan&quot;</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">                breaks</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">append</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">i</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> breaks</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> parse_row</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">rows</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> index</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-punctuation"> [</span><span class="z-source">e</span><span class="z-punctuation">.</span><span class="z-source">text</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> e</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-meta z-indexed-name z-python"> rows</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">index</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">find_all</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;td&quot;</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">if</span><span class="z-support z-variable z-magic z-python"> __name__</span><span class="z-keyword z-operator"> ==</span><span class="z-punctuation z-definition z-string z-string"> &quot;__main__&quot;</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">    url</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;https://www.sidc.be/solardemon/science/flares.php?min_seq=1&amp;min_flux_est=0.000000001&amp;days=0&amp;science=1&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    page</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url</span><span class="z-punctuation">)</span><span class="z-punctuation z-definition z-comment z-comment">  # this takes a few minutes to run</span></span>
+<span class="giallo-l"><span class="z-source">    soup</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> BeautifulSoup</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">page</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">text</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;html.parser&#39;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    rows</span><span class="z-keyword z-operator"> =</span><span class="z-source"> soup</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">find_all</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;tr&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    column_headers</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-punctuation z-definition z-string z-string">&quot;day of month&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;est. class&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;start&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;peak&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;end&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;#&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;lat&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;lon&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;dist. R☉&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;AR&quot;</span><span class="z-punctuation"> ,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;est. flux&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;GOES flux&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;GOES peak time&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;extra time&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;COMESEP&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;# det.&quot;</span><span class="z-punctuation">,</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                        &quot;dimming&quot;</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-source">                    </span></span>
+<span class="giallo-l"><span class="z-source">    month_frames</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> []</span></span>
+<span class="giallo-l"><span class="z-source">    month_breaks</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> find_month_breaks</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">rows</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation"> [</span><span class="z-support z-function z-builtin z-python">len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">rows</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-support z-function z-builtin z-python">len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">month_breaks</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">-</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">        month_yr_str</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> rows</span><span class="z-punctuation">[</span><span class="z-meta z-indexed-name z-python">month_breaks</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">i</span><span class="z-punctuation">]].</span><span class="z-source">text</span></span>
+<span class="giallo-l"><span class="z-source">        this_month_frame</span><span class="z-keyword z-operator"> =</span><span class="z-source"> pd</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">DataFrame</span><span class="z-punctuation">([</span><span class="z-meta z-function-call z-python">parse_row</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">rows</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> i</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-meta z-function-call z-arguments z-python"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">month_breaks</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">i</span><span class="z-punctuation">]</span><span class="z-keyword z-operator">+</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-meta z-indexed-name z-python"> month_breaks</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">i</span><span class="z-keyword z-operator">+</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">])],</span><span class="z-variable z-parameter"> columns</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">column_headers</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        this_month_frame</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">month</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> =</span><span class="z-source"> month_yr_str</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">split</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;,&quot;</span><span class="z-punctuation">)[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        this_month_frame</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">year</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> =</span><span class="z-support z-type z-python"> int</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">month_yr_str</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">split</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;,&quot;</span><span class="z-punctuation">)[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">])</span></span>
+<span class="giallo-l"><span class="z-source">        month_frames</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">append</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">this_month_frame</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        </span></span>
+<span class="giallo-l"><span class="z-source">    df</span><span class="z-keyword z-operator"> =</span><span class="z-source"> pd</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">concat</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">month_frames</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> ignore_index</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # convert the month, day of month, and year columns into one date column</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">    df</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">date</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> (</span><span class="z-meta z-indexed-name z-python">df</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">month</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation z-definition z-string"> &quot; &quot;</span><span class="z-keyword z-operator"> +</span><span class="z-meta z-indexed-name z-python"> df</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">day of month</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation z-definition z-string z-string"> &quot;, &quot;</span><span class="z-keyword z-operator"> +</span><span class="z-meta z-indexed-name z-python"> df</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">year</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">astype</span><span class="z-punctuation">(</span><span class="z-support z-type z-python">str</span><span class="z-punctuation">)).</span><span class="z-meta z-function-call z-python">map</span><span class="z-punctuation">(</span><span class="z-storage z-type">lambda</span><span class="z-variable z-parameter"> r</span><span class="z-punctuation">:</span><span class="z-meta z-function-call z-python"> parse_datetime_str</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;&amp;nbsp&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span><span class="z-punctuation">)))</span></span>
+<span class="giallo-l"><span class="z-source">    df</span><span class="z-keyword z-operator"> =</span><span class="z-source"> df</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">drop</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">columns</span><span class="z-keyword z-operator">=</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string z-string">&quot;month&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;day of month&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;year&quot;</span><span class="z-punctuation">])</span><span class="z-punctuation z-definition z-comment z-comment">  # drop the old columns</span></span>
+<span class="giallo-l"><span class="z-source">    new_columns</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-punctuation z-definition z-string z-string">&#39;date&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;est. class&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;start&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;peak&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;end&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;#&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;lat&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;lon&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;dist. R☉&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &#39;AR&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;est. flux&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;GOES flux&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;GOES peak time&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;extra time&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &#39;COMESEP&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;# det.&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;dimming&#39;</span><span class="z-punctuation">]</span><span class="z-source"> </span></span>
+<span class="giallo-l"><span class="z-source">    df</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> df</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">new_columns</span><span class="z-punctuation">]</span><span class="z-punctuation z-definition z-comment z-comment">  # reorder the columns</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # do whatever you want with the pandas dataframe now, e.g. write it to CSV</span></span>
+<span class="giallo-l"><span class="z-source">    df</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">to_csv</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;solar_demon_data.csv&quot;</span><span class="z-punctuation">)</span></span></code></pre>
+<p>Enjoy!</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="welpo&#x2F;tabi-comments"
+    data-repo-id="R_kgDOG3bviQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOG3bvic4CjCSq"
+    
+        data-mapping="specific"
+        data-term="solar-demon"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="bottom"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://jmbhughes.com/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/solar-demon/#what-is-it">What is it?</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/solar-demon/#scraping-the-data">Scraping the data</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://jmbhughes.com/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://jmbhughes.com/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://jmbhughes.com/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://github.com/jmbhughes">
+                                    <img loading="lazy" alt="github" title="github" src="https://jmbhughes.com/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en">
+                                    <img loading="lazy" alt="google-scholar" title="google-scholar" src="https://jmbhughes.com/social_icons/google-scholar.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="mailto:marcus@jmbhughes.com">
+                                    <img loading="lazy" alt="email" title="email" src="https://jmbhughes.com/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 2026 J. Marcus Hughes • Unless otherwise noted, the content in this website is available under the <a class="external" rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;jmbhughes&#x2F;jmbhughes.github.io">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

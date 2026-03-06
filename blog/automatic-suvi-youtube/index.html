@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;style-src 'self';frame-src https://www.youtube-nocookie.com 'self' giscus.app;connect-src 'self' jmbhughes-stats.goatcounter.com/count;script-src 'self' gc.zgo.at  giscus.app 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://jmbhughes.com/">
+
+    
+    <title>
+jmbhughes • Automating SUVI YouTube</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://jmbhughes.com/icons/favicon.ico"/>
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="jmbhughes - Atom Feed" href="https://jmbhughes.com/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://jmbhughes.com/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://jmbhughes.com/main.css?h=045c365e19a4d50a64bb" />
+        <link rel="stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="" />
+        <meta property="og:description" content="" />
+
+    
+
+    <meta property="og:title" content="Automating SUVI YouTube" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;jmbhughes.com&#x2F;blog&#x2F;automatic-suvi-youtube&#x2F;" /><meta property="og:site_name" content="jmbhughes">
+        <noscript><link rel="stylesheet" href="https://jmbhughes.com/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://jmbhughes.com/js/initializeTheme.min.js"></script>
+        <script defer src="https://jmbhughes.com/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+    <script async
+    
+        data-goatcounter="https://jmbhughes-stats.goatcounter.com/count"
+        src="https://gc.zgo.at/count.js"
+        
+    ></script>
+    
+
+
+
+        <script defer src="https://jmbhughes.com/js/searchElasticlunr.min.js?h=69d4be9bc2f0a8301299"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://jmbhughes.com/">jmbhughes</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/archive/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/about/">about
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/news/">news
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Automating SUVI YouTube
+        </h1>
+        <a class="u-url u-uid" href="https://jmbhughes.com/blog/automatic-suvi-youtube/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;jmbhughes.com&#x2F;" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2023-01-22">22nd Jan 2023</time></li><li title="751 words"><span class='separator' aria-hidden='true'>•</span>4 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/solar/">solar</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/python/">python</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/programming/">programming</a></li>
+        </ul>
+            
+
+<div class="toc-container">
+    
+        <h3>Table of Contents</h3>
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#intro">Intro</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#core-code">Core Code</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#walkthrough">Walkthrough</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#automating-the-youtube-upload">Automating the YouTube upload</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#extending-with-thematic-maps">Extending with thematic maps</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#code-for-thematic-maps">Code for thematic maps</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#results-and-future-improvements">Results and future improvements</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+        <section class="e-content body"><h2 id="intro"><a class="header-anchor no-hover-padding" href="#intro" aria-label="Anchor link for: intro"><span class="link-icon" aria-hidden="true"></span></a>
+Intro</h2>
+<p>The Sun is changing all the time. In order to identify interesting new events to study, a solar physicist
+must monitor data streams observing the Sun on a regular basis. I thought it might be neat to make a
+tool that would automatically download extreme ultraviolet images of the Sun from the GOES-R SUVI instrument
+and then upload them as a movie to YouTube for easy monitoring. My goal was to use <a class="external" rel="external" href="https://www.prefect.io/">Prefect</a>
+to run the entire process on a schedule. However, it appears YouTube has <a class="external" rel="external" href="https://github.com/jonnekaunisto/simple-youtube-api/issues/22">special restrictions on who can upload
+using scripts</a>. For now, I can have the video creation
+automated but have to manually upload the video each day.</p>
+<h2 id="core-code"><a class="header-anchor no-hover-padding" href="#core-code" aria-label="Anchor link for: core-code"><span class="link-icon" aria-hidden="true"></span></a>
+Core Code</h2>
+<p>Below is the core of the code that makes this happen.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> datetime</span><span class="z-keyword"> import</span><span class="z-source"> datetime</span><span class="z-punctuation">,</span><span class="z-source"> timedelta</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> tempfile</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> glob</span><span class="z-keyword"> import</span><span class="z-source"> glob</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> os</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> shutil</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> dateutil</span><span class="z-punctuation">.</span><span class="z-source">parser</span><span class="z-keyword"> import</span><span class="z-source"> parse</span><span class="z-keyword"> as</span><span class="z-source"> parse_datetime</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> typing</span><span class="z-keyword"> import</span><span class="z-source"> Optional</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> prefect</span><span class="z-keyword"> import</span><span class="z-source"> task</span><span class="z-punctuation">,</span><span class="z-source"> flow</span><span class="z-punctuation">,</span><span class="z-source"> get_run_logger</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> goessolarretriever</span><span class="z-keyword"> import</span><span class="z-source"> Retriever</span><span class="z-punctuation">,</span><span class="z-source"> Satellite</span><span class="z-punctuation">,</span><span class="z-source"> Product</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> astropy</span><span class="z-punctuation">.</span><span class="z-source">io</span><span class="z-keyword"> import</span><span class="z-source"> fits</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> moviepy</span><span class="z-punctuation">.</span><span class="z-source">editor</span><span class="z-keyword"> import</span><span class="z-source"> VideoClip</span><span class="z-punctuation">,</span><span class="z-source"> ImageClip</span><span class="z-punctuation">,</span><span class="z-source"> concatenate_videoclips</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> moviepy</span><span class="z-punctuation">.</span><span class="z-source">video</span><span class="z-punctuation">.</span><span class="z-source">io</span><span class="z-punctuation">.</span><span class="z-source">bindings</span><span class="z-keyword"> import</span><span class="z-source"> mplfig_to_npimage</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> matplotlib</span><span class="z-punctuation">.</span><span class="z-source">pyplot</span><span class="z-keyword"> as</span><span class="z-source"> plt</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> numpy</span><span class="z-keyword"> as</span><span class="z-source"> np</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-decorator z-python z-entity z-name z-function z-decorator z-python">@task</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> download_suvi_data</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">start_date</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> datetime</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> end_date</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> datetime</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                       satellite</span><span class="z-punctuation"> :</span><span class="z-meta z-function z-parameters"> Satellite</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function z-parameters"> Satellite</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">GOES16</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                       product</span><span class="z-punctuation"> :</span><span class="z-meta z-function z-parameters"> Product</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function z-parameters"> Product</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">suvi_l2_thmap</span><span class="z-punctuation">) -&gt;</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">    &quot;&quot;&quot; Downloads SUVI data as specified to a temporary directory and returns that directory path&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> get_run_logger</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    r</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> Retriever</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    results</span><span class="z-keyword z-operator"> =</span><span class="z-source"> r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">search</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">satellite</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> product</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> start_date</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> end_date</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;Found </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-support z-function z-builtin z-python">len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">results</span><span class="z-punctuation">)</span><span class="z-constant z-character z-format z-placeholder z-other z-python">} {</span><span class="z-meta z-function-call z-arguments z-python">product</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string"> images. Now will download to a temp dir.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    temp_directory</span><span class="z-keyword z-operator"> =</span><span class="z-source"> tempfile</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">mkdtemp</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">retrieve</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">results</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> temp_directory</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;Downloaded </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">product</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string"> images to </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">temp_directory</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> temp_directory</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-decorator z-python z-entity z-name z-function z-decorator z-python">@task</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> render_suvi_channel_movie</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">channel_filenames</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> duration</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">0.25</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                      channel_power</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">0.25</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> channel_min</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> channel_max</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">3</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">    &quot;&quot;&quot; Renders a movie for one SUVI channel where each frame gets the specified duration. </span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-string">    Since the SUVI images have a high dynamic range, we raise the brightneses to the `channel_power`</span></span>
+<span class="giallo-l"><span class="z-string">    and scale the output plot between `channel_min` and `channel_max`. </span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    fig</span><span class="z-punctuation">,</span><span class="z-source"> ax</span><span class="z-keyword z-operator"> =</span><span class="z-source"> plt</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">subplots</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">figsize</span><span class="z-keyword z-operator">=</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">10</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 10</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">    fig</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">tight_layout</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">    def</span><span class="z-entity z-name z-function"> make_frame</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">t</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        with</span><span class="z-source"> fits</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">open</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">channel_filenames</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">t</span><span class="z-punctuation">])</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> hdul</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            channel_head</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> hdul</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-source">header</span></span>
+<span class="giallo-l"><span class="z-source">            channel_data</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> hdul</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-source">data</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">        ax</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">clear</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">        ax</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_title</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-python">parse_datetime</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">channel_head</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">DATE-OBS</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]).</span><span class="z-meta z-function-call z-python">strftime</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;%Y-%m-</span><span class="z-constant z-character z-format z-placeholder z-other z-python">%d</span><span class="z-string z-punctuation z-definition z-string"> %H:%M&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">        ax</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">imshow</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">np</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">sign</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">channel_data</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> *</span><span class="z-meta z-function-call z-arguments z-python"> np</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">power</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">np</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">abs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">channel_data</span><span class="z-punctuation">),</span><span class="z-meta z-function-call z-arguments z-python"> channel_power</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                      vmin</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">channel_min</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> vmax</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">channel_max</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        ax</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_axis_off</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        return</span><span class="z-meta z-function-call z-python"> ImageClip</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-python">mplfig_to_npimage</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">fig</span><span class="z-punctuation">)).</span><span class="z-meta z-function-call z-python">set_duration</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">duration</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    frames</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-meta z-function-call z-python">make_frame</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">i</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-support z-function z-builtin z-python">len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">channel_filenames</span><span class="z-punctuation">))]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-meta z-function-call z-python"> concatenate_videoclips</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">frames</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-decorator z-python z-entity z-name z-function z-decorator z-python">@flow</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> make_suvi_channel_movie</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">out_filename</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> start_date</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> datetime</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> end_date</span><span class="z-punctuation">:</span><span class="z-meta z-indexed-name z-python"> Optional</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">datetime</span><span class="z-punctuation">],</span><span class="z-variable z-parameter"> channel</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function z-parameters">Product</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">suvi_l2_ci195</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> get_run_logger</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    temp_channel_directory</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> download_suvi_data</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">start_date</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> end_date</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> product</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">channel</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    channel_filenames</span><span class="z-keyword z-operator"> =</span><span class="z-support z-function z-builtin z-python"> sorted</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-python">glob</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">os</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">join</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">temp_channel_directory</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;*.fits&quot;</span><span class="z-punctuation">)))</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Beginning to render movie.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    thmap_animation</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> render_suvi_channel_movie</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">channel_filenames</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;Beginning to write movie to </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">out_filename</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    thmap_animation</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">write_videofile</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">out_filename</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> fps</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">24</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;Deleting </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">temp_channel_directory</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string"> as a clean up step.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    shutil</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">rmtree</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">temp_channel_directory</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">if</span><span class="z-support z-variable z-magic z-python"> __name__</span><span class="z-keyword z-operator"> ==</span><span class="z-punctuation z-definition z-string z-string"> &quot;__main__&quot;</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">    now</span><span class="z-keyword z-operator"> =</span><span class="z-source"> datetime</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">now</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    three_days_ago</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> datetime</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">now</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">year</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> now</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">month</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> now</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">day</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -</span><span class="z-meta z-function-call z-python"> timedelta</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">days</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">3</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-meta z-function-call z-python">    make_suvi_channel_movie</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;suvi_195_</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">three_days_ago</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">strftime</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&#39;%Y%m</span><span class="z-constant z-character z-format z-placeholder z-other z-python">%d</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">)</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.mp4&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> three_days_ago</span><span class="z-punctuation">,</span><span class="z-constant z-language z-python"> None</span><span class="z-punctuation">)</span></span></code></pre><h2 id="walkthrough"><a class="header-anchor no-hover-padding" href="#walkthrough" aria-label="Anchor link for: walkthrough"><span class="link-icon" aria-hidden="true"></span></a>
+Walkthrough</h2>
+<p>It’s easiest to read this code from bottom to top. You’ll see that the script when executed starts by calling <code>make_suvi_channel_movie</code>.
+This Prefect flow handles the main logic. (If you’ve never used Prefect I’d recommend checking out <a class="external" rel="external" href="https://docs.prefect.io/">their docs</a>. I find them quite helpful.])</p>
+<p>First, we use a Python package I made a while back called <a class="external" rel="external" href="https://github.com/jmbhughes/goes_solar_retriever">goes-solar-retriever</a>
+to download the SUVI images for a given day. We download them all to one temporary directory. We’ll open them one-by-one in the
+<code>render_suvi_channel_movie</code> function to avoid overloading our memory with too many images. We can make one frame at a time.
+(You may still have trouble with this approach if you tried a long period of data because of how I used <code>ImageClip</code> from <code>MoviePy</code>.
+I’m not sure how much memory each clip consumes. Another approach is to write a <code>.png</code> file for each frame and then use a tool like <code>ffmpeg</code>
+to generate a movie.)</p>
+<p>In the internal <code>make_frame</code> function, we do some fancy scaling of the images so that they look better. We also set each frame to show for
+0.25 seconds. With 360 images per day from SUVI’s Level 2 products, we can make a 1.5 minute video. YouTube converts any videos shorter than
+a minute to the shorts format. That would be undesirable for us because it means you cannot scrobble through the video; you’re stuck watching it from
+beginning to end.</p>
+<h2 id="automating-the-youtube-upload"><a class="header-anchor no-hover-padding" href="#automating-the-youtube-upload" aria-label="Anchor link for: automating-the-youtube-upload"><span class="link-icon" aria-hidden="true"></span></a>
+Automating the YouTube upload</h2>
+<p>As I mentioned in the intro, due to restrictions from YouTube you cannot upload from a script and make the video public automatically it seems.
+Everytime I tried my video got locked for review. I believe they’re worried that spammers/scammers could upload many videos using scripts. It seems
+there is a way around this, but it takes a special review that I didn’t apply for.</p>
+<p>However, if you had permissions to upload public videos there is a nice Python package called <code>simple-youtube-api</code> that simplifies interfacing with YouTube.
+If you read <a class="external" rel="external" href="https://github.com/jonnekaunisto/simple-youtube-api">its GitHub</a> or just Googling around you can find instructions on setting up the needed credentials.</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-punctuation z-definition z-decorator z-python z-entity z-name z-function z-decorator z-python">@task</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> upload_to_youtube</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">filename</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> start_date</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # log in into the channel</span></span>
+<span class="giallo-l"><span class="z-source">    channel</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> Channel</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    channel</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">login</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;client_secret.json&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;credentials.storage&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # setting up the video that is going to be uploaded</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> LocalVideo</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">file_path</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">filename</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # setting snippet</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_title</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;SUVI on </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">start_date</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">strftime</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&#39;%Y-%m-</span><span class="z-constant z-character z-format z-placeholder z-other z-python">%d</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">)</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_description</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;This is a description&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_category</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;science&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_default_language</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;en-US&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # setting status</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_embeddable</span><span class="z-punctuation">(</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_license</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;creativeCommon&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_privacy_status</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;private&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_public_stats_viewable</span><span class="z-punctuation">(</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set_made_for_kids</span><span class="z-punctuation">(</span><span class="z-constant z-language z-python">False</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # uploading video and printing the results</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-keyword z-operator"> =</span><span class="z-source"> channel</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">upload_video</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">video</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">    print</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">id</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">    print</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">video</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # liking video</span></span>
+<span class="giallo-l"><span class="z-source">    video</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">like</span><span class="z-punctuation">()</span></span></code></pre>
+<p>By injecting that task at the end of your flow, you could upload the videos automatically.</p>
+<h2 id="extending-with-thematic-maps"><a class="header-anchor no-hover-padding" href="#extending-with-thematic-maps" aria-label="Anchor link for: extending-with-thematic-maps"><span class="link-icon" aria-hidden="true"></span></a>
+Extending with thematic maps</h2>
+<p>We can extend the code above to generate thematic map movies from SUVI as well. The thematic map product identifies what different phenomena are present on the Sun,
+e.g. bright regions, coronal holes, filaments. You can read more about my thematic map work in <a class="external" rel="external" href="https://www.ncei.noaa.gov/news/solar-classification">this press release</a>
+or in <a class="external" rel="external" href="https://www.swsc-journal.org/articles/swsc/full_html/2019/01/swsc180074/swsc180074.html">this paper</a>. The image below shows a three-color composite of SUVI images
+on the left and a thematic map on the right. Yellow, for example, are bright regions while green are coronal holes.</p>
+<p><img src="https://jmbhughes.com/blog/automatic-suvi-youtube/thematic.gif" alt="thematic map gif" /></p>
+<p>The code gets a bit more complicated because the thematic maps neede to be rendered with a specific color table.
+I added a utility <code>build_thmap_cmap</code> to help with this process.</p>
+<h3 id="code-for-thematic-maps"><a class="header-anchor no-hover-padding" href="#code-for-thematic-maps" aria-label="Anchor link for: code-for-thematic-maps"><span class="link-icon" aria-hidden="true"></span></a>
+Code for thematic maps</h3>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> matplotlib</span><span class="z-punctuation">.</span><span class="z-source">colors</span><span class="z-keyword"> import</span><span class="z-source"> ListedColormap</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> matplotlib</span><span class="z-punctuation">.</span><span class="z-source">patches</span><span class="z-keyword"> import</span><span class="z-source"> Patch</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">THEMATIC_MAP_COLORS</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> {</span><span class="z-punctuation z-definition z-string z-string">&quot;unlabeled&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;white&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;outer_space&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;black&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;bright_region&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#F0E442&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;filament&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#D55E00&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;prominence&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#E69F00&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;coronal_hole&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#009E73&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;quiet_sun&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#0072B2&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;limb&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#56B4E9&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">                       &quot;flare&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;#CC79A7&quot;</span><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">THEME_MAPPING</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> {</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;outer_space&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 3</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;bright_region&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 4</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;filament&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 5</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;prominence&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 6</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;coronal_hole&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 7</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;quiet_sun&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 8</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;limb&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-constant z-numeric">                 9</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;flare&#39;</span><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> build_thmap_cmap</span><span class="z-punctuation">():</span></span>
+<span class="giallo-l"><span class="z-source">    colortable</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-meta z-item-access z-python">THEMATIC_MAP_COLORS</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">THEME_MAPPING</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">i</span><span class="z-punctuation">]]</span><span class="z-keyword z-control z-flow z-python"> if</span><span class="z-source"> i</span><span class="z-keyword z-operator z-logical z-python"> in</span><span class="z-source"> THEME_MAPPING</span><span class="z-keyword z-control z-flow z-python"> else</span><span class="z-punctuation z-definition z-string z-string"> &#39;black&#39;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">                  for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-support z-function z-builtin z-python">max</span><span class="z-punctuation">(</span><span class="z-support z-type z-python">list</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">THEME_MAPPING</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">keys</span><span class="z-punctuation">()))</span><span class="z-keyword z-operator"> +</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">)]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-meta z-function-call z-python"> ListedColormap</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">colortable</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-decorator z-python z-entity z-name z-function z-decorator z-python">@task</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> render_suvi_double_movie</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">thmap_filenames</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> channel_filenames</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> duration</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">0.1</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                      channel_power</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">0.25</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> channel_min</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> channel_max</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">3</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">    fig</span><span class="z-punctuation">,</span><span class="z-source"> axs</span><span class="z-keyword z-operator"> =</span><span class="z-source"> plt</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">subplots</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">ncols</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">2</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> figsize</span><span class="z-keyword z-operator">=</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">20</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 10</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">    fig</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">tight_layout</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    thmap_cmap</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> build_thmap_cmap</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">    def</span><span class="z-entity z-name z-function"> make_frame</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">t</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        with</span><span class="z-source"> fits</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">open</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">thmap_filenames</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">t</span><span class="z-punctuation">])</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> hdul</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            thmap_head</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> hdul</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-source">header</span></span>
+<span class="giallo-l"><span class="z-source">            thmap_data</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> hdul</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-source">data</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        with</span><span class="z-source"> fits</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">open</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">channel_filenames</span><span class="z-punctuation">[</span><span class="z-meta z-item-access z-python">t</span><span class="z-punctuation">])</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> hdul</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            channel_head</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> hdul</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-source">header</span></span>
+<span class="giallo-l"><span class="z-source">            channel_data</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> hdul</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-source">data</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        # plot thmap</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">clear</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">set_title</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-python">parse_datetime</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">thmap_head</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">DATE-OBS</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]).</span><span class="z-meta z-function-call z-python">strftime</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;%Y-%m-</span><span class="z-constant z-character z-format z-placeholder z-other z-python">%d</span><span class="z-string z-punctuation z-definition z-string"> %H:%M&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">imshow</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">thmap_data</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> cmap</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">thmap_cmap</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> vmin</span><span class="z-keyword z-operator">=-</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> vmax</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">10</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> interpolation</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&#39;none&#39;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">set_axis_off</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">        legend_elements</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-meta z-function-call z-python">Patch</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">facecolor</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">color</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> edgecolor</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&quot;black&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> label</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">label</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;_&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string"> &quot; &quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">                           for</span><span class="z-source"> label</span><span class="z-punctuation">,</span><span class="z-source"> color</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> THEMATIC_MAP_COLORS</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">items</span><span class="z-punctuation">()]</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">legend</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">handles</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">legend_elements</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> loc</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&#39;upper center&#39;</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> bbox_to_anchor</span><span class="z-keyword z-operator">=</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">0.5</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0.95</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                      ncol</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">3</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> fancybox</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> shadow</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        # plot channel image</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">clear</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">set_title</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;195&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">imshow</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">np</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">sign</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">channel_data</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> *</span><span class="z-meta z-function-call z-arguments z-python"> np</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">power</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">np</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">abs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">channel_data</span><span class="z-punctuation">),</span><span class="z-meta z-function-call z-arguments z-python"> channel_power</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                      vmin</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">channel_min</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> vmax</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">channel_max</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-meta z-indexed-name z-python">        axs</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">set_axis_off</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        return</span><span class="z-meta z-function-call z-python"> ImageClip</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-python">mplfig_to_npimage</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">fig</span><span class="z-punctuation">)).</span><span class="z-meta z-function-call z-python">set_duration</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">duration</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    frames</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> [</span><span class="z-meta z-function-call z-python">make_frame</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">i</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-support z-function z-builtin z-python">len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">thmap_filenames</span><span class="z-punctuation">))]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-meta z-function-call z-python"> concatenate_videoclips</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">frames</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-decorator z-python z-entity z-name z-function z-decorator z-python">@flow</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> make_suvi_double_movie</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">out_filename</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> start_date</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> datetime</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> end_date</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> datetime</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> channel</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function z-parameters">Product</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">suvi_l2_ci195</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> get_run_logger</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    temp_channel_directory</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> download_suvi_data</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">start_date</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> end_date</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> product</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">channel</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    temp_thmap_directory</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> download_suvi_data</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">start_date</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> end_date</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    thmap_filenames</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> glob</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">os</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">join</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">temp_thmap_directory</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;*.fits&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">    channel_filenames</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> glob</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">os</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">join</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">temp_channel_directory</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;*.fits&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Beginning to render movie.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    thmap_animation</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> render_suvi_double_movie</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">thmap_filenames</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> channel_filenames</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;Beginning to write movie to </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">out_filename</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    thmap_animation</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">write_videofile</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">out_filename</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> fps</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">24</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    logger</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">info</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;Deleting </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">temp_thmap_directory</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string"> as a clean up step.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    shutil</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">rmtree</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">temp_thmap_directory</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    shutil</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">rmtree</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">temp_channel_directory</span><span class="z-punctuation">)</span></span></code></pre><h2 id="results-and-future-improvements"><a class="header-anchor no-hover-padding" href="#results-and-future-improvements" aria-label="Anchor link for: results-and-future-improvements"><span class="link-icon" aria-hidden="true"></span></a>
+Results and future improvements</h2>
+<p>You can see the first such movie I created <a class="external" rel="external" href="https://youtu.be/T4FXE5ZAjSs">at this YouTube video</a>. The colormap could be
+changed to match the standard SUVI colormaps. It also doesn’t have high enough contrast in my opinion. But it’s a first step.</p>
+<p>I would like to continue this line of automated visualization and include other detection algorithms. For example, it would be cool
+to be able to identify all the bright points on the Sun over the course of a day, analyze their properties, and output a result chart.</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="welpo&#x2F;tabi-comments"
+    data-repo-id="R_kgDOG3bviQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOG3bvic4CjCSq"
+    
+        data-mapping="specific"
+        data-term="automatic-suvi-youtube"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="bottom"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://jmbhughes.com/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#intro">Intro</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#core-code">Core Code</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#walkthrough">Walkthrough</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#automating-the-youtube-upload">Automating the YouTube upload</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#extending-with-thematic-maps">Extending with thematic maps</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#code-for-thematic-maps">Code for thematic maps</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/automatic-suvi-youtube/#results-and-future-improvements">Results and future improvements</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<link rel="stylesheet" href="https://jmbhughes.com/katex.min.css">
+    <script defer src="https://jmbhughes.com/js/katex.min.js"></script>
+    <span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://jmbhughes.com/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://jmbhughes.com/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://jmbhughes.com/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://github.com/jmbhughes">
+                                    <img loading="lazy" alt="github" title="github" src="https://jmbhughes.com/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en">
+                                    <img loading="lazy" alt="google-scholar" title="google-scholar" src="https://jmbhughes.com/social_icons/google-scholar.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me" 
+
+ href="mailto:marcus@jmbhughes.com">
+                                    <img loading="lazy" alt="email" title="email" src="https://jmbhughes.com/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 2026 J. Marcus Hughes • Unless otherwise noted, the content in this website is available under the <a class="external" rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel="" 
+
+ href="https:&#x2F;&#x2F;github.com&#x2F;jmbhughes&#x2F;jmbhughes.github.io">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
