@@ -1,5 +1,5 @@
 +++
-title = 'Jettison: Part 1'
+title = 'Jettison'
 date = 2026-07-25
 draft = false
 toc = false
