@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="https://jmbhughes.com/feed_style.xsl" type="text/xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
+        <tabi:base_url>https:&#x2F;&#x2F;jmbhughes.com&#x2F;</tabi:base_url>
+        <tabi:separator>
+            •
+        </tabi:separator>
+        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
+        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
+        <tabi:recent_posts>Recent posts</tabi:recent_posts>
+        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
+        <tabi:default_theme></tabi:default_theme>
+        <tabi:post_listing_date>date</tabi:post_listing_date>
+        <tabi:current_section>solar</tabi:current_section>
+    </tabi:metadata><link rel="extra-stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" /><title>jmbhughes - solar</title>
+    <link href="https://jmbhughes.com/tags/solar/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://jmbhughes.com/tags/solar/" rel="alternate" type="text/html"/>
+    <generator uri="https://www.getzola.org/">Zola</generator><updated>2025-12-17T00:00:00+00:00</updated><id>https://jmbhughes.com/tags/solar/atom.xml</id><entry xml:lang="en">
+        <title>I presented at AGU 2025</title>
+        <published>2025-12-17T00:00:00+00:00</published>
+        <updated>2025-12-17T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/agu2025/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/agu2025/</id>
+        <summary type="html">PUNCH was very present at AGU. We showed off an amazing new video.</summary>
+        </entry><entry xml:lang="en">
+        <title>Scraping Solar Demon</title>
+        <published>2025-01-29T00:00:00+00:00</published>
+        <updated>2025-01-29T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/solar-demon/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/solar-demon/</id>
+        <summary type="html">Retrieve a list of flares from Solar Demon as a CSV file.</summary>
+        </entry><entry xml:lang="en">
+        <title>DASH 2024</title>
+        <published>2024-10-14T00:00:00+00:00</published>
+        <updated>2024-10-14T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/dash2024/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/dash2024/</id>
+        <summary type="html">Slides for the 2024 meeting of Data, Analysis, and Software in Heliophysics conference</summary>
+        </entry><entry xml:lang="en">
+        <title>Converting helioprojective to equatorial</title>
+        <published>2024-08-15T00:00:00+00:00</published>
+        <updated>2024-08-15T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/converting-coordinates/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/converting-coordinates/</id>
+        <summary type="html">Change between world coordinate systems using Astropy and SunPy</summary>
+        </entry><entry xml:lang="en">
+        <title>Automating SUVI YouTube</title>
+        <published>2023-01-22T00:00:00+00:00</published>
+        <updated>2023-01-22T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/automatic-suvi-youtube/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/automatic-suvi-youtube/</id>
+        </entry><entry xml:lang="en">
+        <title>AIA Temporal Coloring</title>
+        <published>2022-06-03T00:00:00+00:00</published>
+        <updated>2022-06-03T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/aia-temporal-coloring/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/aia-temporal-coloring/</id>
+        </entry><entry xml:lang="en">
+        <title>SUVI calendar heatmap</title>
+        <published>2022-05-20T00:00:00+00:00</published>
+        <updated>2022-05-20T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/suvi-calendar-heatmap/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/suvi-calendar-heatmap/</id>
+        </entry><entry xml:lang="en">
+        <title>EUI Artifact Analysis</title>
+        <published>2022-04-01T00:00:00+00:00</published>
+        <updated>2022-04-01T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/eui-artifact/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/eui-artifact/</id>
+        </entry><entry xml:lang="en">
+        <title>Generate Thematic Maps from Heliophysics Event Knowledgebase</title>
+        <published>2019-02-25T00:00:00+00:00</published>
+        <updated>2019-02-25T00:00:00+00:00</updated>
+        <author>
+            <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://jmbhughes.com/blog/hek-thmap/" type="text/html"/>
+        <id>https://jmbhughes.com/blog/hek-thmap/</id>
+        </entry>
+</feed>
