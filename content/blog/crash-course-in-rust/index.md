@@ -9,4 +9,4 @@ tags = ["programming", "talk", "rust"]
 
 These slides are from a while back, but I didn't want to lose them.
 
-{{ pdf(src="crash_course_in_rust_slides.pdf") }}
+{{ <pdf src="crash_course_in_rust_slides.pdf"/> }}

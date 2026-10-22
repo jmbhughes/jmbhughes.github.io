@@ -113,13 +113,13 @@ You can also generate known fractals, like the Sierpinski Triangle:
 
 One thing that isn't in the tool yet is generating animations. I've started playing around with it though. See some examples:
 
-{{ youtube(id="GqB1ZqFCJ5o") }}
+{{ <youtube id="GqB1ZqFCJ5o" /> }}
 
-{{ youtube(id="CbLH_mDPWsI") }}
+{{ <youtube id="CbLH_mDPWsI" /> }}
 
-{{ youtube(id="Y2CU80XbNPc") }}
+{{ <youtube id="Y2CU80XbNPc" /> }}
 
-{{ youtube(id="ITHzAZbiw4o") }}
+{{ <youtube id="ITHzAZbiw4o" /> }}
 
 ## Future plans
 

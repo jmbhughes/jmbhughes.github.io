@@ -6,7 +6,7 @@ toc = false
 description = "The beginning of a story based on the board game Vantage"
 
 [taxonomies]
-tags = ["writing", "fiction"]
+tags = ["fiction"]
 +++
 
 A shriek pierced the air awakening her. Despite her many years aboard the Orvlod, Emilia had never heard this sound. She’d responded to many battle stations claxons for skirmishes. Its constant middle-toned ping and flashing red lights were essentially a friend now. But this? This was new. She opened her eyes. Her quarter were hazy and dim, like the fog that rolled over the lake on a spring morning by her now distant home. She missed it and thought longingly of retirement, but…

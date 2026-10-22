@@ -31,7 +31,7 @@ to download data of your own, check out [this SunPy example](https://docs.sunpy.
 image cutouts instead of the full images.
 
 
-{{ youtube(id="uC3y9Vxyu_o") }}
+{{ <youtube id="uC3y9Vxyu_o" /> }}
 
 It's pretty, but I don't know that it has much scientific value. Just a little
 artsy representation of some amazing scientific data.

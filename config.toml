@@ -15,7 +15,7 @@ default_language = "en"
 build_search_index = true
 
 [search]
-index_format = "elasticlunr_json" # Or the less efficient "elasticlunr_javascript".
+# index_format = "elasticlunr_json" # Or the less efficient "elasticlunr_javascript".
 include_title = true
 include_description = true
 include_path = true
@@ -28,7 +28,7 @@ smart_punctuation = true
 external_links_class = "external"
 
 [markdown.highlighting]
-theme = "catppuccin-frappe"
+# theme = "catppuccin-frappe"
 light_theme = "github-light"                                                                                     
 dark_theme = "github-dark"
 style = "class"
@@ -47,7 +47,6 @@ menu = [
     { name = "blog", url = "archive", trailing_slash = true },
     { name = "tags", url = "tags", trailing_slash = true },
     { name = "about", url = "about", trailing_slash = true },
-    { name = "news", url = "news", trailing_slash = true},
 ]
 
 quick_navigation_buttons = true

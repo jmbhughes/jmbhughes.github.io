@@ -32,7 +32,7 @@ I selected a tree farther from the house and strapped it to a low limb. I left i
 
 I had 2,543 recordings after that first session. Here's the recording for one moment with some Pygmy Nuthatches:
 
-{{ audio(src="sample.WAV") }}
+{{ <audio src="sample.WAV"/> }}
 
 
 It's hanging out on the tree as I type now, so I'm getting thousands of more recordings. That's too much audio to manually comb through. Enter machine learning and [BirdNET](https://birdnet.cornell.edu/)! BirdNET is a machine learning model from the Cornell Lab of Ornithology that detects birds just by audio. 
@@ -129,7 +129,7 @@ It's a bit of an ugly plot. We'll solve that later, but for now let's bask in th
 
 I haven't shown it on the plot here, but BirdNET also labeled some clips as coyote sounds. They're eerie to hear. Here's a clip:
 
-{{ audio(src="coyote.mp3") }}
+{{ <audio src="coyote.mp3"/> }}
 
 There were lots of other birds that got excluded by my 0.8 confidence and >10 count filtering. It's possible some of them are real, but for now I'm looking for the obvious and clean signal. Later, I want to dive into the possible rare signals and see if I can distinguish them from mislabeling.
 

@@ -8,7 +8,7 @@ toc = false
 tags = ["anomaly", "machine learning"]
 +++
 
-{{ youtube(id="YOrf3zcF4oM") }}
+{{ <youtube id="YOrf3zcF4oM"/> }}
 
 
 I was explaining anomaly detection in non-stationary data to someone and threw together this crude example figure. The blue points are nominal and represent 90% of the points. The red are anomalous and represent 10% of the points. In this example, the red data is stationary while the blue passes through it. Thus, it would be very difficult to differentiate the red and blue points when they overlap. However, even if we only had a few frames of this video, we would like to be able to realize there are two dynamics going on.  

@@ -10,10 +10,10 @@ tags = ["conference", "solar"]
 
 I presented a poster about the PUNCH Science Operations Center. 
 
-{{ pdf(src="hughes_agu2025_poster.pdf") }}
+{{ <pdf src="hughes_agu2025_poster.pdf"/> }}
 
 We released this amazing video of our newest processing of data. 
 
-{{ youtube(id="6Kk05oIEeJ0") }}
+{{ <youtube id="6Kk05oIEeJ0"/> }}
 
 We also had some [great discussion at the PUNCH Community Briefing](https://punch.space.swri.edu/punch-community-briefing.php).

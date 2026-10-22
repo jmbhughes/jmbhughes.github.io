@@ -4,7 +4,7 @@ date = 2025-01-29
 description = "Retrieve a list of flares from Solar Demon as a CSV file."
 
 [taxonomies]
-tags = ["solar", "data", "programming"]
+tags = ["solar", "programming"]
 
 [extra]
 toc = false
