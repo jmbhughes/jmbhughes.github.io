@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;style-src 'self';frame-src https://www.youtube-nocookie.com 'self' giscus.app;connect-src &#39;self&#39; jmbhughes-stats.goatcounter.com/count;script-src &#39;self&#39; gc.zgo.at  giscus.app &#39;self&#39;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://jmbhughes.com/">
+
+    
+    <title>jmbhughes • Generate Thematic Maps from Heliophysics Event Knowledgebase</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://jmbhughes.com/icons/favicon.ico"/>
+    
+    
+
+    
+    
+        
+            
+                <link rel="alternate" type="application/atom+xml" title="jmbhughes - Atom Feed" href="https://jmbhughes.com/atom.xml">
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://jmbhughes.com/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://jmbhughes.com/giallo-light.css?h=78ebec1353a529799e64" />
+        <link rel="stylesheet" href="https://jmbhughes.com/giallo-dark.css?h=536598ee42e9e9a795bc" />
+        <link rel="stylesheet" href="https://jmbhughes.com/main.css?h=a0529235e6b8ecc8389e" />
+        <link rel="stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="" />
+        <meta property="og:description" content="" />
+
+    
+
+    <meta property="og:title" content="Generate Thematic Maps from Heliophysics Event Knowledgebase" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https://jmbhughes.com/blog/hek-thmap/" /><meta property="og:site_name" content="jmbhughes">
+        <noscript><link rel="stylesheet" href="https://jmbhughes.com/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://jmbhughes.com/js/initializeTheme.min.js"></script>
+        <script defer src="https://jmbhughes.com/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+    <script async
+    
+        data-goatcounter="https://jmbhughes-stats.goatcounter.com/count"
+        src="https://gc.zgo.at/count.js"
+        
+    ></script>
+    
+
+
+<script defer src="https://jmbhughes.com/search_index.en.js?h=780b48b6958366e9cc58"></script>
+        <script defer src="https://jmbhughes.com/js/searchElasticlunr.min.js?h=28faa8abcfc2ce7469eb"></script>
+
+        
+    
+</head>
+
+
+<body dir="ltr">
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://jmbhughes.com/">jmbhughes</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/archive/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/about/">about
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark/light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Generate Thematic Maps from Heliophysics Event Knowledgebase
+        </h1>
+        <a class="u-url u-uid" href="https://jmbhughes.com/blog/hek-thmap/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https://jmbhughes.com/" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2019-02-25">25th Feb 2019</time></li><li title="102 words"><span class='separator' aria-hidden='true'>•</span>1 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/solar/">solar</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/programming/">programming</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/python/">python</a></li>
+        </ul><section class="e-content body"><p>The below script will allow you to generate thematic maps from the valuable <a class="external" rel="external" href="https://www.lmsal.com/hek/">Heliophysics Event Knowledgebase</a> (HEK). I have written it to take a SUVI thematic map as input and output only <a class="external" rel="external" href="https://arxiv.org/abs/1208.1483">Spatial Possibilistic Clustering Algorithm</a> <a class="external" rel="external" href="https://arxiv.org/abs/1208.1483">(SPoCA)</a> coronal hole and bright region patches in HEK but would be willing to help assist others to modify the script as needed.</p>
+<p><img src="https://jmbhughes.com/blog/hek-thmap/expert.png" alt="expert labeling" /></p>
+<p>Expert labeled map</p>
+<p><img src="https://jmbhughes.com/blog/hek-thmap/hek.png" alt="hek labels" /></p>
+<p>SPoCA map from HEK</p>
+<p>The script can be found below and bundled with <a class="external" rel="external" href="https://github.com/jmbhughes/smachy">smachy</a>, my solar image segmentation toolkit.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span class="z-l-2 z-d-6">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">Given a thematic map from SUVI this script queries HEK and creates a similar SPoCA thematic map with only</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">coronal holes and active regions.</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> datetime</span><span class="z-l-8 z-d-10"> import</span><span> timedelta</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> numpy</span><span class="z-l-8 z-d-10"> as</span><span> np</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> argparse</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> astropy</span><span>.</span><span>units</span><span class="z-l-8 z-d-10"> as</span><span> u</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> astropy</span><span>.</span><span>coordinates</span><span class="z-l-8 z-d-10"> import</span><span> SkyCoord</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> astropy</span><span>.</span><span>io</span><span class="z-l-8 z-d-10"> import</span><span> fits</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> sunpy</span><span>.</span><span>map</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> sunpy</span><span>.</span><span>net</span><span class="z-l-8 z-d-10"> import</span><span> hek</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> sunpy</span><span>.</span><span>time</span><span class="z-l-8 z-d-10"> import</span><span> parse_time</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> skimage</span><span>.</span><span>draw</span><span class="z-l-8 z-d-10"> import</span><span> polygon</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> get_args</span><span>(</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span><span class="z-l-2 z-d-6"> process the script arguments </span><span class="z-l-2 z-d-6">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span>    ap</span><span class="z-l-8 z-d-10"> =</span><span> argparse</span><span>.</span><span>ArgumentParser</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>    ap</span><span>.</span><span>add_argument</span><span>(</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">image</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-9 z-d-12"> help</span><span class="z-l-8 z-d-10">=</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">suvi thematic map to fetch hek data for</span><span class="z-l-2 z-d-6">&quot;</span><span>)</span></span>
+<span class="giallo-l"><span>    ap</span><span>.</span><span>add_argument</span><span>(</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">-v</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">--verbose</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-9 z-d-12"> action</span><span class="z-l-8 z-d-10">=</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">store_true</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">                    help</span><span class="z-l-8 z-d-10">=</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">prints detailed status information</span><span class="z-l-2 z-d-6">&quot;</span><span>)</span></span>
+<span class="giallo-l"><span>    args</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> vars</span><span>(</span><span>ap</span><span>.</span><span>parse_args</span><span>(</span><span>)</span><span>)</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> args</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> query_hek</span><span>(</span><span>query_time</span><span>,</span><span> delta</span><span class="z-l-8 z-d-10">=</span><span>timedelta</span><span>(</span><span class="z-l-9 z-d-12">minutes</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">5</span><span>)</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span><span class="z-l-2 z-d-6"> query hek client for features around the time of the image </span><span class="z-l-2 z-d-6">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span>    hek_client</span><span class="z-l-8 z-d-10"> =</span><span> hek</span><span>.</span><span>HEKClient</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>    start_time</span><span class="z-l-8 z-d-10"> =</span><span> query_time</span><span class="z-l-8 z-d-10"> -</span><span> delta</span></span>
+<span class="giallo-l"><span>    end_time</span><span class="z-l-8 z-d-10"> =</span><span> query_time</span><span class="z-l-8 z-d-10"> +</span><span> delta</span></span>
+<span class="giallo-l"><span>    responses</span><span class="z-l-8 z-d-10"> =</span><span> hek_client</span><span>.</span><span>search</span><span>(</span><span>hek</span><span>.</span><span>attrs</span><span>.</span><span>Time</span><span>(</span><span>start_time</span><span>,</span><span> end_time</span><span>)</span><span>)</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> responses</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> generate_pixels</span><span>(</span><span>response</span><span>,</span><span> image_map</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span><span class="z-l-2 z-d-6"> determines pixels for coronal hole feature </span><span class="z-l-2 z-d-6">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span>    p1</span><span class="z-l-8 z-d-10"> =</span><span> response</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">hpc_boundcc</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span>[</span><span class="z-l-1 z-d-4">9</span><span>:</span><span class="z-l-8 z-d-10">-</span><span class="z-l-1 z-d-4">2</span><span>]</span></span>
+<span class="giallo-l"><span>    p2</span><span class="z-l-8 z-d-10"> =</span><span> p1</span><span>.</span><span>split</span><span>(</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">,</span><span class="z-l-2 z-d-6">&#39;</span><span>)</span></span>
+<span class="giallo-l"><span>    p3</span><span class="z-l-8 z-d-10"> =</span><span> [</span><span>v</span><span>.</span><span>split</span><span>(</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6"> &quot;</span><span>)</span><span class="z-l-8 z-d-10"> for</span><span> v</span><span class="z-l-8 z-d-10"> in</span><span> p2</span><span>]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    coords</span><span class="z-l-8 z-d-10"> =</span><span> SkyCoord</span><span>(</span></span>
+<span class="giallo-l"><span>        [</span><span>(</span><span class="z-l-1 z-d-4">float</span><span>(</span><span>v</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span><span>)</span><span>,</span><span class="z-l-1 z-d-4"> float</span><span>(</span><span>v</span><span>[</span><span class="z-l-1 z-d-4">1</span><span>]</span><span>)</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> u</span><span>.</span><span>arcsec</span><span class="z-l-8 z-d-10"> for</span><span> v</span><span class="z-l-8 z-d-10"> in</span><span> p3</span><span>]</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">        frame</span><span class="z-l-8 z-d-10">=</span><span>image_map</span><span>.</span><span>coordinate_frame</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    xs</span><span>,</span><span> ys</span><span class="z-l-8 z-d-10"> =</span><span> image_map</span><span>.</span><span>world_to_pixel</span><span>(</span><span>coords</span><span>)</span></span>
+<span class="giallo-l"><span>    xs</span><span>,</span><span> ys</span><span class="z-l-8 z-d-10"> =</span><span> xs</span><span>.</span><span>value</span><span>,</span><span> ys</span><span>.</span><span>value</span></span>
+<span class="giallo-l"><span>    xx</span><span>,</span><span> yy</span><span class="z-l-8 z-d-10"> =</span><span> polygon</span><span>(</span><span>xs</span><span>,</span><span> ys</span><span>)</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> yy</span><span>,</span><span> xx</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">if</span><span class="z-l-1 z-d-4"> __name__</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">__main__</span><span class="z-l-2 z-d-6">&quot;</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> process the arguments</span></span>
+<span class="giallo-l"><span>    args</span><span class="z-l-8 z-d-10"> =</span><span> get_args</span><span>(</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> open the suvi thematic map</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    with</span><span> fits</span><span>.</span><span>open</span><span>(</span><span>args</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">image</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span>)</span><span class="z-l-8 z-d-10"> as</span><span> hdu</span><span>:</span></span>
+<span class="giallo-l"><span>        header</span><span class="z-l-8 z-d-10"> =</span><span> hdu</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span><span>.</span><span>header</span></span>
+<span class="giallo-l"><span>        labels</span><span class="z-l-8 z-d-10"> =</span><span> hdu</span><span>[</span><span class="z-l-1 z-d-4">1</span><span>]</span><span>.</span><span>data</span></span>
+<span class="giallo-l"><span>    image_map</span><span class="z-l-8 z-d-10"> =</span><span> sunpy</span><span>.</span><span>map</span><span>.</span><span>Map</span><span>(</span><span>args</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">image</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span>)</span></span>
+<span class="giallo-l"><span>    spoca_map</span><span class="z-l-8 z-d-10"> =</span><span> np</span><span>.</span><span>zeros_like</span><span>(</span><span>image_map</span><span>.</span><span>data</span><span>)</span><span>.</span><span>astype</span><span>(</span><span>np</span><span>.</span><span>uint8</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> query hek for that time</span></span>
+<span class="giallo-l"><span>    query_time</span><span class="z-l-8 z-d-10"> =</span><span> parse_time</span><span>(</span><span>header</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">date-beg</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span>)</span></span>
+<span class="giallo-l"><span>    responses</span><span class="z-l-8 z-d-10"> =</span><span> query_hek</span><span>(</span><span>query_time</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> separate the coronal holes and active regions from SPoCA for drawing</span></span>
+<span class="giallo-l"><span>    coronal_holes</span><span class="z-l-8 z-d-10"> =</span><span> [</span><span>r</span><span class="z-l-8 z-d-10"> for</span><span> r</span><span class="z-l-8 z-d-10"> in</span><span> responses</span><span class="z-l-8 z-d-10"> if</span><span> r</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">event_type</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">CH</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-8 z-d-10"> and</span><span> r</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">frm_name</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">SPoCA</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span></span>
+<span class="giallo-l"><span>    active_regions</span><span class="z-l-8 z-d-10"> =</span><span> [</span><span>r</span><span class="z-l-8 z-d-10"> for</span><span> r</span><span class="z-l-8 z-d-10"> in</span><span> responses</span><span class="z-l-8 z-d-10"> if</span><span> r</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">event_type</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">AR</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-8 z-d-10"> and</span><span> r</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">frm_name</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">SPoCA</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> draw the coronal holes</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    for</span><span> ch</span><span class="z-l-8 z-d-10"> in</span><span> coronal_holes</span><span>:</span></span>
+<span class="giallo-l"><span>        xx</span><span>,</span><span> yy</span><span class="z-l-8 z-d-10"> =</span><span> generate_pixels</span><span>(</span><span>ch</span><span>,</span><span> image_map</span><span>)</span></span>
+<span class="giallo-l"><span>        ch_index</span><span class="z-l-8 z-d-10"> =</span><span> [</span><span>i</span><span class="z-l-8 z-d-10"> for</span><span> i</span><span>,</span><span> label</span><span class="z-l-8 z-d-10"> in</span><span> labels</span><span class="z-l-8 z-d-10"> if</span><span> label</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">coronal_hole</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span></span>
+<span class="giallo-l"><span>        spoca_map</span><span>[</span><span>xx</span><span>,</span><span> yy</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> ch_index</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> draw the active regions</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    for</span><span> ar</span><span class="z-l-8 z-d-10"> in</span><span> active_regions</span><span>:</span></span>
+<span class="giallo-l"><span>        xx</span><span>,</span><span> yy</span><span class="z-l-8 z-d-10"> =</span><span> generate_pixels</span><span>(</span><span>ar</span><span>,</span><span> image_map</span><span>)</span></span>
+<span class="giallo-l"><span>        br_index</span><span class="z-l-8 z-d-10"> =</span><span> [</span><span>i</span><span class="z-l-8 z-d-10"> for</span><span> i</span><span>,</span><span> label</span><span class="z-l-8 z-d-10"> in</span><span> labels</span><span class="z-l-8 z-d-10"> if</span><span> label</span><span class="z-l-8 z-d-10"> ==</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">bright_region</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span></span>
+<span class="giallo-l"><span>        spoca_map</span><span>[</span><span>xx</span><span>,</span><span> yy</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> br_index</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-5 z-d-3">    #</span><span class="z-l-5 z-d-3"> save to a file</span></span>
+<span class="giallo-l"><span>    fits</span><span>.</span><span>writeto</span><span>(</span><span>args</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">image</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span>.</span><span>split</span><span>(</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">.fits</span><span class="z-l-2 z-d-6">&quot;</span><span>)</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span><span class="z-l-8 z-d-10"> +</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">-hek.fits</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span>                 spoca_map</span><span>,</span></span>
+<span class="giallo-l"><span>                 header</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">                 overwrite</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">True</span><span>)</span></span></code></pre>
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="welpo/tabi-comments"
+    data-repo-id="R_kgDOG3bviQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOG3bvic4CjCSq"
+    
+        data-mapping="specific"
+        data-term="hek-thmap"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="bottom"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://jmbhughes.com/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+    <div id="button-container">
+        
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://jmbhughes.com/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel=""  href="https://jmbhughes.com/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://jmbhughes.com/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me"  href="https://github.com/jmbhughes">
+                                    <img loading="lazy" alt="github" title="github" src="https://jmbhughes.com/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me"  href="https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en">
+                                    <img loading="lazy" alt="google-scholar" title="google-scholar" src="https://jmbhughes.com/social_icons/google-scholar.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me"  href="mailto:marcus@jmbhughes.com">
+                                    <img loading="lazy" alt="email" title="email" src="https://jmbhughes.com/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 2026 J. Marcus Hughes • Unless otherwise noted, the content in this website is available under the <a class="external" rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel=""  href="https://github.com/jmbhughes/jmbhughes.github.io">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>

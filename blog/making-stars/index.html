@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;style-src 'self';frame-src https://www.youtube-nocookie.com 'self' giscus.app;connect-src &#39;self&#39; jmbhughes-stats.goatcounter.com/count;script-src &#39;self&#39; gc.zgo.at  giscus.app &#39;self&#39;">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://jmbhughes.com/">
+
+    
+    <title>jmbhughes • Making stars</title>
+
+    
+    
+        <link rel="icon" type="image/png" href="https://jmbhughes.com/icons/favicon.ico"/>
+    
+    
+
+    
+    
+        
+            
+                <link rel="alternate" type="application/atom+xml" title="jmbhughes - Atom Feed" href="https://jmbhughes.com/atom.xml">
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://jmbhughes.com/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://jmbhughes.com/giallo-light.css?h=78ebec1353a529799e64" />
+        <link rel="stylesheet" href="https://jmbhughes.com/giallo-dark.css?h=536598ee42e9e9a795bc" />
+        <link rel="stylesheet" href="https://jmbhughes.com/main.css?h=a0529235e6b8ecc8389e" />
+        <link rel="stylesheet" href="https://jmbhughes.com/skins/mint.css?h=504215cf6bc10586b487" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="Create realistic looking star images using Python" />
+        <meta property="og:description" content="Create realistic looking star images using Python" />
+
+    
+
+    <meta property="og:title" content="Making stars" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https://jmbhughes.com/blog/making-stars/" /><meta property="og:site_name" content="jmbhughes">
+        <noscript><link rel="stylesheet" href="https://jmbhughes.com/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://jmbhughes.com/js/initializeTheme.min.js"></script>
+        <script defer src="https://jmbhughes.com/js/themeSwitcher.min.js"></script>
+
+
+
+
+    
+    
+    <script async
+    
+        data-goatcounter="https://jmbhughes-stats.goatcounter.com/count"
+        src="https://gc.zgo.at/count.js"
+        
+    ></script>
+    
+
+
+<script defer src="https://jmbhughes.com/search_index.en.js?h=780b48b6958366e9cc58"></script>
+        <script defer src="https://jmbhughes.com/js/searchElasticlunr.min.js?h=28faa8abcfc2ce7469eb"></script>
+
+        
+    
+</head>
+
+
+<body dir="ltr">
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://jmbhughes.com/">jmbhughes</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/archive/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://jmbhughes.com/about/">about
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark/light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            Making stars
+        </h1>
+        <a class="u-url u-uid" href="https://jmbhughes.com/blog/making-stars/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https://jmbhughes.com/" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2024-06-28">28th Jun 2024</time></li><li title="441 words"><span class='separator' aria-hidden='true'>•</span>2 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/programming/">programming</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/python/">python</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://jmbhughes.com/tags/astronomy/">astronomy</a></li>
+        </ul>
+            
+
+<div class="toc-container">
+    
+        <h3>Table of Contents</h3>
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/making-stars/#why-make-stars">Why make stars?</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/making-stars/#making-the-first-version">Making the first version</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#imports-and-packages">Imports and packages</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#getting-a-catalog">Getting a catalog</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#filtering-for-relevant-stars">Filtering for relevant stars</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#making-the-actual-star-image">Making the actual star image</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/making-stars/#conlusions">Conlusions</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+        
+            <p class="p-summary" hidden>Create realistic looking star images using Python</p><section class="e-content body"><h2 id="why-make-stars"><a class="header-anchor no-hover-padding" href="#why-make-stars" aria-label="Anchor link for: why-make-stars"><span class="link-icon" aria-hidden="true"></span></a>
+Why make stars?</h2>
+<p>I want to test software I’m developing to determine pointing and disortion information.
+This requires a realistic star field where the pointing and distortion are known.
+The only way to get this is to make the star field yourself.</p>
+<h2 id="making-the-first-version"><a class="header-anchor no-hover-padding" href="#making-the-first-version" aria-label="Anchor link for: making-the-first-version"><span class="link-icon" aria-hidden="true"></span></a>
+Making the first version</h2>
+<p>There will be a follow up to this article about adding a point-spread function (PSF) to the star field.
+But for now, we’ll stick with Gaussian stars.</p>
+<h3 id="imports-and-packages"><a class="header-anchor no-hover-padding" href="#imports-and-packages" aria-label="Anchor link for: imports-and-packages"><span class="link-icon" aria-hidden="true"></span></a>
+Imports and packages</h3>
+<p>We only need a few packages for this work: <code>pandas</code>, <code>numpy</code>, <code>maptlotlib</code>, <code>astropy</code>, and <code>photutils</code>.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> pandas</span><span class="z-l-8 z-d-10"> as</span><span> pd</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> numpy</span><span class="z-l-8 z-d-10"> as</span><span> np</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> matplotlib</span><span>.</span><span>pyplot</span><span class="z-l-8 z-d-10"> as</span><span> plt</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> astropy</span><span>.</span><span>wcs</span><span class="z-l-8 z-d-10"> import</span><span class="z-l-1 z-d-4"> WCS</span><span>,</span><span> NoConvergence</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> astropy</span><span>.</span><span>coordinates</span><span class="z-l-8 z-d-10"> import</span><span> SkyCoord</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> astropy</span><span>.</span><span>table</span><span class="z-l-8 z-d-10"> import</span><span> QTable</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">import</span><span> astropy</span><span>.</span><span>units</span><span class="z-l-8 z-d-10"> as</span><span> u</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">from</span><span> photutils</span><span>.</span><span>datasets</span><span class="z-l-8 z-d-10"> import</span><span> make_gaussian_sources_image</span><span>,</span><span> make_noise_image</span></span></code></pre><h3 id="getting-a-catalog"><a class="header-anchor no-hover-padding" href="#getting-a-catalog" aria-label="Anchor link for: getting-a-catalog"><span class="link-icon" aria-hidden="true"></span></a>
+Getting a catalog</h3>
+<p>To make stars in real positions, we need a catalog. We’ll use the Hipparcos catalog.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span class="z-l-1 z-d-4">HIPPARCOS_URL</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">https://cdsarc.cds.unistra.fr/ftp/cats/I/239/hip_main.dat</span><span class="z-l-2 z-d-6">&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> load_raw_hipparcos_catalog</span><span>(</span></span>
+<span class="giallo-l"><span>    catalog_path</span><span>:</span><span class="z-l-1 z-d-4"> str</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> HIPPARCOS_URL</span></span>
+<span class="giallo-l"><span>    )</span><span> -&gt;</span><span> pd</span><span>.</span><span>DataFrame</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span><span class="z-l-2 z-d-6">Download hipparcos catalog from website.</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    Parameters</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    ----------</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    catalog_path : str</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        path to the Hipparcos catalog</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    Returns</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    -------</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    pd.DataFrame</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        loaded catalog with selected columns</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span>    column_names</span><span class="z-l-8 z-d-10"> =</span><span> (</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Catalog</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">HIP</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Proxy</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">RAhms</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">DEdms</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Vmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">VarFlag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">r_Vmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">RAdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">DEdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">AstroRef</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Plx</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmRA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmDE</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_RAdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_DEdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_Plx</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_pmRA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_pmDE</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">DE:RA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Plx:RA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Plx:DE</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmRA:RA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmRA:DE</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmRA:Plx</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmDE:RA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmDE:DE</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmDE:Plx</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">pmDE:pmRA</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">F1</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">F2</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">---</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">BTmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_BTmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">VTmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_VTmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">m_BTmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">B-V</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_B-V</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">r_B-V</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">V-I</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_V-I</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">r_V-I</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">CombMag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Hpmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_Hpmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Hpscat</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">o_Hpmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">m_Hpmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Hpmax</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">HPmin</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Period</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">HvarType</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">moreVar</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">morePhoto</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">CCDM</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">n_CCDM</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Nsys</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Ncomp</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">MultFlag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Source</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Qual</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">m_HIP</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">theta</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">rho</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_rho</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">dHp</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">e_dHp</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Survey</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Chart</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">Notes</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">HD</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">BD</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">CoD</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">CPD</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">(V-I)red</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">SpType</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &quot;</span><span class="z-l-2 z-d-6">r_SpType</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span>    )</span></span>
+<span class="giallo-l"><span>    df</span><span class="z-l-8 z-d-10"> =</span><span> pd</span><span>.</span><span>read_csv</span><span>(</span></span>
+<span class="giallo-l"><span>        catalog_path</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">        sep</span><span class="z-l-8 z-d-10">=</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">|</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">        names</span><span class="z-l-8 z-d-10">=</span><span>column_names</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">        usecols</span><span class="z-l-8 z-d-10">=</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">HIP</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">Vmag</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">RAdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">DEdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">Plx</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">        na_values</span><span class="z-l-8 z-d-10">=</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">     &quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">       &quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">        &quot;</span><span>,</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">            &quot;</span><span>]</span><span>,</span></span>
+<span class="giallo-l"><span>    )</span></span>
+<span class="giallo-l"><span>    df</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">distance</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 1000</span><span class="z-l-8 z-d-10"> /</span><span> df</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">Plx</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span></span>
+<span class="giallo-l"><span>    df</span><span class="z-l-8 z-d-10"> =</span><span> df</span><span>[</span><span>df</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">distance</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span class="z-l-8 z-d-10"> &gt;</span><span class="z-l-1 z-d-4"> 0</span><span>]</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> df</span><span>.</span><span>iloc</span><span>[</span><span>np</span><span>.</span><span>argsort</span><span>(</span><span>df</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">Vmag</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span>)</span><span>]</span></span></code></pre>
+<p>I recommend saving this as a CSV file and then opening it as needed instead of downloading it every time.</p>
+<h3 id="filtering-for-relevant-stars"><a class="header-anchor no-hover-padding" href="#filtering-for-relevant-stars" aria-label="Anchor link for: filtering-for-relevant-stars"><span class="link-icon" aria-hidden="true"></span></a>
+Filtering for relevant stars</h3>
+<p>There are a lot of stars in this catalog. We may only want to show up to a certain magnitude.
+Filtering on Pandas dataframes is easy though.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> filter_for_visible_stars</span><span>(</span></span>
+<span class="giallo-l"><span>    catalog</span><span>:</span><span> pd</span><span>.</span><span>DataFrame</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span>    dimmest_magnitude</span><span>:</span><span class="z-l-1 z-d-4"> float</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 6</span></span>
+<span class="giallo-l"><span>    )</span><span> -&gt;</span><span> pd</span><span>.</span><span>DataFrame</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span><span class="z-l-2 z-d-6">Filters to only include stars brighter than a given magnitude</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    Parameters</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    ----------</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    catalog : pd.DataFrame</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        a catalog data frame</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    dimmest_magnitude : float</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        the dimmest magnitude to keep</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    Returns</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    -------</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    pd.DataFrame</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        a catalog with stars dimmer than the `dimmest_magnitude` removed</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> catalog</span><span>[</span><span>catalog</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">Vmag</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span class="z-l-8 z-d-10"> &lt;</span><span> dimmest_magnitude</span><span>]</span></span></code></pre>
+<p>In addition, not all the stars will be visible in our image.
+A world coordinate system or WCS describes where an image is in the sky.
+We’ll use it to determine the pixel coordinates of each star and then throw away those outside the frame.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> find_catalog_in_image</span><span>(</span></span>
+<span class="giallo-l"><span>    catalog</span><span>:</span><span> pd</span><span>.</span><span>DataFrame</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span>    wcs</span><span>:</span><span class="z-l-1 z-d-4"> WCS</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span>    image_shape</span><span>:</span><span> (</span><span class="z-l-1 z-d-4">int</span><span>,</span><span class="z-l-1 z-d-4"> int</span><span>)</span><span>,</span></span>
+<span class="giallo-l"><span>    mode</span><span>:</span><span class="z-l-1 z-d-4"> str</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-2 z-d-6"> &quot;</span><span class="z-l-2 z-d-6">all</span><span class="z-l-2 z-d-6">&quot;</span></span>
+<span class="giallo-l"><span>    )</span><span> -&gt;</span><span> np</span><span>.</span><span>ndarray</span><span>:</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span><span class="z-l-2 z-d-6">Using the provided WCS converts the RA/DEC catalog into pixel coordinates</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    Parameters</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    ----------</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    catalog : pd.DataFrame</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        a catalog dataframe</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    wcs : WCS</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        the world coordinate system of a given image</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    image_shape: (int, int)</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        the shape of the image array associated with the WCS, </span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        used to only consider stars with coordinates in image</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    mode : str</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        either &quot;all&quot; or &quot;wcs&quot;,</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        see</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        &lt;https://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html#astropy.coordinates.SkyCoord.to_pixel&gt;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    Returns</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    -------</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    np.ndarray</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">        pixel coordinates of stars in catalog that are present in the image</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    try</span><span>:</span></span>
+<span class="giallo-l"><span>        xs</span><span>,</span><span> ys</span><span class="z-l-8 z-d-10"> =</span><span> SkyCoord</span><span>(</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">            ra</span><span class="z-l-8 z-d-10">=</span><span>np</span><span>.</span><span>array</span><span>(</span><span>catalog</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">RAdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> u</span><span>.</span><span>degree</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">            dec</span><span class="z-l-8 z-d-10">=</span><span>np</span><span>.</span><span>array</span><span>(</span><span>catalog</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">DEdeg</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> u</span><span>.</span><span>degree</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">            distance</span><span class="z-l-8 z-d-10">=</span><span>np</span><span>.</span><span>array</span><span>(</span><span>catalog</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">distance</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> u</span><span>.</span><span>parsec</span><span>,</span></span>
+<span class="giallo-l"><span>        )</span><span>.</span><span>to_pixel</span><span>(</span><span>wcs</span><span>,</span><span class="z-l-9 z-d-12"> mode</span><span class="z-l-8 z-d-10">=</span><span>mode</span><span>)</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    except</span><span> NoConvergence</span><span class="z-l-8 z-d-10"> as</span><span> e</span><span>:</span></span>
+<span class="giallo-l"><span>        xs</span><span>,</span><span> ys</span><span class="z-l-8 z-d-10"> =</span><span> e</span><span>.</span><span>best_solution</span><span>[</span><span>:</span><span>,</span><span class="z-l-1 z-d-4"> 0</span><span>]</span><span>,</span><span> e</span><span>.</span><span>best_solution</span><span>[</span><span>:</span><span>,</span><span class="z-l-1 z-d-4"> 1</span><span>]</span></span>
+<span class="giallo-l"><span>    bounds_mask</span><span class="z-l-8 z-d-10"> =</span><span> (</span><span class="z-l-1 z-d-4">0</span><span class="z-l-8 z-d-10"> &lt;=</span><span> xs</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> (</span><span>xs</span><span class="z-l-8 z-d-10"> &lt;</span><span> image_shape</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> (</span><span class="z-l-1 z-d-4">0</span><span class="z-l-8 z-d-10"> &lt;=</span><span> ys</span><span>)</span><span class="z-l-8 z-d-10"> *</span><span> (</span><span>ys</span><span class="z-l-8 z-d-10"> &lt;</span><span> image_shape</span><span>[</span><span class="z-l-1 z-d-4">1</span><span>]</span><span>)</span></span>
+<span class="giallo-l"><span>    reduced_catalog</span><span class="z-l-8 z-d-10"> =</span><span> catalog</span><span>[</span><span>bounds_mask</span><span>]</span><span>.</span><span>copy</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>    reduced_catalog</span><span>[</span><span class="z-l-2 z-d-6">&quot;</span><span class="z-l-2 z-d-6">x_pix</span><span class="z-l-2 z-d-6">&quot;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> xs</span><span>[</span><span>bounds_mask</span><span>]</span></span>
+<span class="giallo-l"><span>    reduced_catalog</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">y_pix</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> ys</span><span>[</span><span>bounds_mask</span><span>]</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> reduced_catalog</span></span></code></pre><h3 id="making-the-actual-star-image"><a class="header-anchor no-hover-padding" href="#making-the-actual-star-image" aria-label="Anchor link for: making-the-actual-star-image"><span class="link-icon" aria-hidden="true"></span></a>
+Making the actual star image</h3>
+<p>Finally, we can write a straightforward function to make a star field.
+It’ll use all our other work until now.
+We provide it with a <code>wcs</code>, the dimensions of an image (<code>img_shape</code>), and the full-width-half-maximum (<code>fwhm</code>) of our Gaussian PSF for stars.</p>
+<p>There are a few other helpful parameters here too.
+For example, <code>mag_set</code> and <code>flux_set</code> work together to scale the star brightnesses.
+If <code>mag_set=0</code> and <code>flux_set=500_000</code> then stars with magnitude 0 in the catalo will have a flux value of <code>500_000</code>.
+All other magnitude stars are scaled accordingly.</p>
+<p>We also sometimes want to add noise. We can currently add a Gaussian noise with mean of <code>noise_mean</code> and standard deviation of <code>noise_std</code>.
+If these parameters are set to None, then no noise is added.</p>
+<p>Finally, we can control the <code>dimmest_magnitude</code> to limit what magnitude stars are shown. The more stars you show, the slower the code is.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span class="z-l-8 z-d-10">def</span><span class="z-l-6 z-d-7"> simulate_star_image</span><span>(</span><span>wcs</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span>                        img_shape</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span>                        fwhm</span><span>,</span></span>
+<span class="giallo-l"><span>                        wcs_mode</span><span>:</span><span class="z-l-1 z-d-4"> str</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">all</span><span class="z-l-2 z-d-6">&#39;</span><span>,</span></span>
+<span class="giallo-l"><span>                        mag_set</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">0</span><span>,</span></span>
+<span class="giallo-l"><span>                        flux_set</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">500_000</span><span>,</span></span>
+<span class="giallo-l"><span>                        noise_mean</span><span>:</span><span class="z-l-1 z-d-4"> float</span><span class="z-l-8 z-d-10"> |</span><span class="z-l-1 z-d-4"> None</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 25.0</span><span>,</span></span>
+<span class="giallo-l"><span>                        noise_std</span><span>:</span><span class="z-l-1 z-d-4"> float</span><span class="z-l-8 z-d-10"> |</span><span class="z-l-1 z-d-4"> None</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 5.0</span><span>,</span></span>
+<span class="giallo-l"><span>                        dimmest_magnitude</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">8</span><span>)</span><span>:</span></span>
+<span class="giallo-l"><span>    sigma</span><span class="z-l-8 z-d-10"> =</span><span> fwhm</span><span class="z-l-8 z-d-10"> /</span><span class="z-l-1 z-d-4"> 2.355</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    catalog</span><span class="z-l-8 z-d-10"> =</span><span> load_raw_hipparcos_catalog</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>    filtered_catalog</span><span class="z-l-8 z-d-10"> =</span><span> filter_for_visible_stars</span><span>(</span><span>catalog</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">                                                dimmest_magnitude</span><span class="z-l-8 z-d-10">=</span><span>dimmest_magnitude</span><span>)</span></span>
+<span class="giallo-l"><span>    stars</span><span class="z-l-8 z-d-10"> =</span><span> find_catalog_in_image</span><span>(</span><span>filtered_catalog</span><span>,</span></span>
+<span class="giallo-l"><span>                                  wcs</span><span>,</span></span>
+<span class="giallo-l"><span>                                  img_shape</span><span>,</span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">                                  mode</span><span class="z-l-8 z-d-10">=</span><span>wcs_mode</span><span>)</span></span>
+<span class="giallo-l"><span>    star_mags</span><span class="z-l-8 z-d-10"> =</span><span> stars</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">Vmag</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    sources</span><span class="z-l-8 z-d-10"> =</span><span> QTable</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>    sources</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">x_mean</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> stars</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">x_pix</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span></span>
+<span class="giallo-l"><span>    sources</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">y_mean</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> stars</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">y_pix</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span></span>
+<span class="giallo-l"><span>    sources</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">x_stddev</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> np</span><span>.</span><span>ones</span><span>(</span><span class="z-l-1 z-d-4">len</span><span>(</span><span>stars</span><span>)</span><span>)</span><span class="z-l-8 z-d-10">*</span><span>sigma</span></span>
+<span class="giallo-l"><span>    sources</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">y_stddev</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> np</span><span>.</span><span>ones</span><span>(</span><span class="z-l-1 z-d-4">len</span><span>(</span><span>stars</span><span>)</span><span>)</span><span class="z-l-8 z-d-10">*</span><span>sigma</span></span>
+<span class="giallo-l"><span>    sources</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">flux</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> flux_set</span><span class="z-l-8 z-d-10"> *</span><span> np</span><span>.</span><span>power</span><span>(</span><span class="z-l-1 z-d-4">10</span><span>,</span><span class="z-l-8 z-d-10"> -</span><span class="z-l-1 z-d-4">0.4</span><span class="z-l-8 z-d-10">*</span><span>(</span><span>star_mags</span><span class="z-l-8 z-d-10"> -</span><span> mag_set</span><span>)</span><span>)</span></span>
+<span class="giallo-l"><span>    sources</span><span>[</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">theta</span><span class="z-l-2 z-d-6">&#39;</span><span>]</span><span class="z-l-8 z-d-10"> =</span><span> np</span><span>.</span><span>zeros</span><span>(</span><span class="z-l-1 z-d-4">len</span><span>(</span><span>stars</span><span>)</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    fake_image</span><span class="z-l-8 z-d-10"> =</span><span> make_gaussian_sources_image</span><span>(</span><span>img_shape</span><span>,</span><span> sources</span><span>)</span></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    if</span><span> noise_mean</span><span class="z-l-8 z-d-10"> is</span><span class="z-l-8 z-d-10"> not</span><span class="z-l-1 z-d-4"> None</span><span class="z-l-8 z-d-10"> and</span><span> noise_std</span><span class="z-l-8 z-d-10"> is</span><span class="z-l-8 z-d-10"> not</span><span class="z-l-1 z-d-4"> None</span><span>:</span><span class="z-l-5 z-d-3">  #</span><span class="z-l-5 z-d-3"> we only add noise if it&#39;s specified</span></span>
+<span class="giallo-l"><span>        fake_image</span><span class="z-l-8 z-d-10"> +=</span><span> make_noise_image</span><span>(</span><span>img_shape</span><span>,</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">gaussian</span><span class="z-l-2 z-d-6">&#39;</span><span>,</span><span class="z-l-9 z-d-12"> mean</span><span class="z-l-8 z-d-10">=</span><span>noise_mean</span><span>,</span><span class="z-l-9 z-d-12"> stddev</span><span class="z-l-8 z-d-10">=</span><span>noise_std</span><span>)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-l-8 z-d-10">    return</span><span> fake_image</span><span>,</span><span> sources</span></span></code></pre>
+<p>So let’s run it!</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span>m</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 1</span></span>
+<span class="giallo-l"><span>shape</span><span class="z-l-8 z-d-10"> =</span><span> (</span><span class="z-l-1 z-d-4">1024</span><span class="z-l-8 z-d-10">*</span><span>m</span><span>,</span><span class="z-l-1 z-d-4"> 1024</span><span class="z-l-8 z-d-10">*</span><span>m</span><span>)</span></span>
+<span class="giallo-l"><span>w</span><span class="z-l-8 z-d-10"> =</span><span> WCS</span><span>(</span><span class="z-l-9 z-d-12">naxis</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">2</span><span>)</span></span>
+<span class="giallo-l"><span>w</span><span>.</span><span>wcs</span><span>.</span><span>crpix</span><span class="z-l-8 z-d-10"> =</span><span> shape</span><span>[</span><span class="z-l-1 z-d-4">1</span><span>]</span><span class="z-l-8 z-d-10"> /</span><span class="z-l-1 z-d-4"> 2</span><span class="z-l-8 z-d-10"> -</span><span class="z-l-1 z-d-4"> 0.5</span><span>,</span><span> shape</span><span>[</span><span class="z-l-1 z-d-4">0</span><span>]</span><span class="z-l-8 z-d-10"> /</span><span class="z-l-1 z-d-4"> 2</span><span class="z-l-8 z-d-10"> -</span><span class="z-l-1 z-d-4"> 0.5</span></span>
+<span class="giallo-l"><span>w</span><span>.</span><span>wcs</span><span>.</span><span>crval</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 0</span><span>,</span><span class="z-l-1 z-d-4"> 0</span></span>
+<span class="giallo-l"><span>w</span><span>.</span><span>wcs</span><span>.</span><span>cdelt</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-1 z-d-4"> 0.0225</span><span>,</span><span class="z-l-1 z-d-4"> 0.0225</span></span>
+<span class="giallo-l"><span>w</span><span>.</span><span>wcs</span><span>.</span><span>ctype</span><span class="z-l-8 z-d-10"> =</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">RA---ARC</span><span class="z-l-2 z-d-6">&#39;</span><span>,</span><span class="z-l-2 z-d-6"> &#39;</span><span class="z-l-2 z-d-6">DEC--ARC</span><span class="z-l-2 z-d-6">&#39;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>img</span><span>,</span><span> stars</span><span class="z-l-8 z-d-10"> =</span><span> simulate_star_image</span><span>(</span></span>
+<span class="giallo-l"><span>    w</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span>    shape</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    fwhm</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">3</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    dimmest_magnitude</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">12</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    noise_mean</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">10</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    noise_std</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">5</span><span>)</span></span></code></pre>
+<p>And visualize it.</p>
+<pre class="giallo z-l-code z-d-code" ><code data-lang="python"><span class="giallo-l"><span>fig</span><span>,</span><span> ax</span><span class="z-l-8 z-d-10"> =</span><span> plt</span><span>.</span><span>subplots</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>ax</span><span>.</span><span>imshow</span><span>(</span></span>
+<span class="giallo-l"><span>    img</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    vmin</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">0</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    vmax</span><span class="z-l-8 z-d-10">=</span><span class="z-l-1 z-d-4">100</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    cmap</span><span class="z-l-8 z-d-10">=</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">Greys_r</span><span class="z-l-2 z-d-6">&#39;</span></span>
+<span class="giallo-l"><span>    )</span></span>
+<span class="giallo-l"><span>ax</span><span>.</span><span>set_axis_off</span><span>(</span><span>)</span></span>
+<span class="giallo-l"><span>fig</span><span>.</span><span>savefig</span><span>(</span></span>
+<span class="giallo-l"><span class="z-l-2 z-d-6">    &quot;</span><span class="z-l-2 z-d-6">first.png</span><span class="z-l-2 z-d-6">&quot;</span><span>,</span><span> </span></span>
+<span class="giallo-l"><span class="z-l-9 z-d-12">    bbox_inches</span><span class="z-l-8 z-d-10">=</span><span class="z-l-2 z-d-6">&#39;</span><span class="z-l-2 z-d-6">tight</span><span class="z-l-2 z-d-6">&#39;</span></span>
+<span class="giallo-l"><span>    )</span></span></code></pre>
+<p><img src="https://jmbhughes.com/blog/making-stars/first.png" alt="first star image" /></p>
+<p>Note that our WCS here is rather simple, but we could have added a distortion model too and that would’ve been applied.
+Be careful to set <code>wcs_mode=all</code> in that case.</p>
+<h2 id="conlusions"><a class="header-anchor no-hover-padding" href="#conlusions" aria-label="Anchor link for: conlusions"><span class="link-icon" aria-hidden="true"></span></a>
+Conlusions</h2>
+<p>This makes a rather convincing initial star field. But it lacks shot noise, a complex PSF, and other effects that we may want to simulate.</p>
+<p>In the follow up to this article, we’ll add those.</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+                
+                
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        
+            
+
+<div id="comments" class="comments"
+
+
+    data-repo="welpo/tabi-comments"
+    data-repo-id="R_kgDOG3bviQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOG3bvic4CjCSq"
+    
+        data-mapping="specific"
+        data-term="making-stars"
+    
+    data-strict="1"
+    data-reactions-enabled="1"
+    
+        data-input-position="bottom"
+    
+    data-light-theme="noborder_light"
+    data-dark-theme="noborder_dark"
+    
+        data-lang="en"
+    
+    data-lazy-loading="true"
+    >
+
+
+
+
+    <script src="https://jmbhughes.com/js/giscus.min.js" async></script>
+
+
+<noscript>You need JavaScript to view the comments.</noscript>
+</div>
+
+        </article>
+</main>
+    <div id="button-container">
+        
+        
+            <div id="toc-floating-container">
+                <input type="checkbox" id="toc-toggle" class="toggle"/>
+                <label for="toc-toggle" id="toc-button" class="button" title="Toggle Table of Contents">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M414.82-193.094q-18.044 0-30.497-12.32-12.453-12.319-12.453-30.036t12.453-30.086q12.453-12.37 30.497-12.37h392.767q17.237 0 29.927 12.487 12.69 12.486 12.69 30.203 0 17.716-12.69 29.919t-29.927 12.203H414.82Zm0-244.833q-18.044 0-30.497-12.487Q371.87-462.9 371.87-480.45t12.453-29.92q12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.511 12.69 12.512 12.69 29.845 0 17.716-12.69 30.086-12.69 12.37-29.927 12.37H414.82Zm0-245.167q-18.044 0-30.497-12.32t-12.453-30.037q0-17.716 12.453-30.086 12.453-12.369 30.497-12.369h392.767q17.237 0 29.927 12.486 12.69 12.487 12.69 30.203 0 17.717-12.69 29.92-12.69 12.203-29.927 12.203H414.82ZM189.379-156.681q-32.652 0-55.878-22.829t-23.226-55.731q0-32.549 23.15-55.647 23.151-23.097 55.95-23.097 32.799 0 55.313 23.484 22.515 23.484 22.515 56.246 0 32.212-22.861 54.893-22.861 22.681-54.963 22.681Zm0-245.167q-32.652 0-55.878-23.134-23.226-23.135-23.226-55.623 0-32.487 23.467-55.517t56.12-23.03q32.102 0 54.721 23.288 22.62 23.288 22.62 55.775 0 32.488-22.861 55.364-22.861 22.877-54.963 22.877Zm-.82-244.833q-32.224 0-55.254-23.288-23.03-23.289-23.03-55.623 0-32.333 23.271-55.364 23.272-23.03 55.495-23.03 32.224 0 55.193 23.288 22.969 23.289 22.969 55.622 0 32.334-23.21 55.364-23.21 23.031-55.434 23.031Z"/></svg>
+                </label>
+                <div class="toc-content">
+                    
+
+<div class="toc-container">
+    
+
+    <ul>
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/making-stars/#why-make-stars">Why make stars?</a>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/making-stars/#making-the-first-version">Making the first version</a>
+                    
+                        <ul>
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#imports-and-packages">Imports and packages</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#getting-a-catalog">Getting a catalog</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#filtering-for-relevant-stars">Filtering for relevant stars</a>
+                                        
+                                    </li>
+                                
+                            
+                                
+                                    <li><a href="https://jmbhughes.com/blog/making-stars/#making-the-actual-star-image">Making the actual star image</a>
+                                        
+                                    </li>
+                                
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+            
+            
+                <li><a href="https://jmbhughes.com/blog/making-stars/#conlusions">Conlusions</a>
+                    
+                </li>
+            
+        
+    </ul>
+</div>
+
+
+                </div>
+            </div>
+        
+
+        
+        <a href="#comments" id="comments-button" class="no-hover-padding" title="Go to the comments section">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" fill-rule="evenodd"/></svg>
+            </a>
+        
+
+        
+        <a href="#" id="top-button" class="no-hover-padding" title="Go to the top of the page">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z"/></svg>
+        </a>
+    </div>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://jmbhughes.com/js/copyCodeToClipboard.min.js"></script>
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel=""  href="https://jmbhughes.com/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://jmbhughes.com/social_icons/rss.svg">
+                        </a>
+                    </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me"  href="https://github.com/jmbhughes">
+                                    <img loading="lazy" alt="github" title="github" src="https://jmbhughes.com/social_icons/github.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me"  href="https://scholar.google.com/citations?user=YjcQEIkAAAAJ&hl=en">
+                                    <img loading="lazy" alt="google-scholar" title="google-scholar" src="https://jmbhughes.com/social_icons/google-scholar.svg">
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding social" rel=" me"  href="mailto:marcus@jmbhughes.com">
+                                    <img loading="lazy" alt="email" title="email" src="https://jmbhughes.com/social_icons/email.svg">
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+    
+    
+    
+    
+        
+    
+        
+    
+
+    
+
+    
+    
+    
+
+    
+    
+    <p><p>© 2026 J. Marcus Hughes • Unless otherwise noted, the content in this website is available under the <a class="external" rel="external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>
+
+                
+                Powered by
+                <a rel=""  href="https://www.getzola.org">Zola</a>
+                &
+                <a rel=""  href="https://github.com/welpo/tabi">tabi</a>
+
+                •
+                    <a rel=""  href="https://github.com/jmbhughes/jmbhughes.github.io">
+                        Site source
+                    </a></small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
