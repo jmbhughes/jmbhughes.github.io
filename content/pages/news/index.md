@@ -12,6 +12,11 @@ This is an incomplete view of my accomplishments and work history.
 {% timeline() %}
 [
     {
+        "title":"Promoted to Lead Computer Scientist",
+        "body":"I was promoted to Lead Computer Scientist at SwRI.",
+        "date":"Oct-2026"
+    },
+    {
         "title":"Promoted to Senior Computer Scientist",
         "body":"I was promoted to Senior Computer Scientist at SwRI and became the PUNCH Science Operations Center Manager.",
         "date":"Dec-2023"
